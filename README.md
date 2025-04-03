@@ -1,2 +1,25 @@
 # Dataprojekt
-Dataproject about detecting overbite and mapping the teeth
+This is our dataproject about detecting overbite and mapping the teeth
+
+
+# Table of contents
+## 1. Data - Folder - Contains our data
+
+#### 1.1 Clean Data - Folder - Contains the formatted data
+##### 1.1.1 Bolton Data - Folder - Contains images for bolton analysis
+##### 1.1.2 Overbite Data - Folder - Contains images for Overbite detection
+###### 1.1.2.1 Annotated Data Pairs - Folder - Contains images for training the model
+###### 1.1.2.2 Annotated Data Verification Pairs - Folder - Contains images for testing the model
+###### 1.1.2.3 Unannotated Data Pairs - Folder - Contains the images without annotations
+###### 1.1.2.4 Updated_Labels - CSV file - Contains annotations for the data (After the transformation)
+
+#### 1.2 Raw Data - Folder - Contains the raw data we started out with
+###### 1.2.1 Sample images - Folder - Contains the original images
+###### 1.2.2 Labels as of 28-02-2025 (FINAL - for now) - CSV file - Contains the annotations for the original image
+
+#### 1.3 Opdeling_og_flip_af_billeder.ipynb - Jupyter notebook file - This file does our datahandling
+#### 1.4 Pixel_flip_formel - Image - Image used for visualisation in the Jupyter notebook
+
+## 2. Overbite_Overjet
+#### 2.1 Kode - Folder - Contains the code used for training and testing, as well as performance overview
+#### 2.2 Pixel matrix - Folder - Contains the code used for fine tuning the model output
