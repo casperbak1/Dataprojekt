@@ -18,7 +18,6 @@ setup_logger()
 # import some common libraries
 import numpy as np
 import os, json, cv2, random
-from google.colab.patches import cv2_imshow
 import pandas as pd
 
 # import some common detectron2 utilities
@@ -48,10 +47,10 @@ from detectron2 import model_zoo
 # Reinitialize config
 cfg = get_cfg()
 cfg.merge_from_file(model_zoo.get_config_file("COCO-Keypoints/keypoint_rcnn_R_101_FPN_3x.yaml"))
-cfg.MODEL.WEIGHTS = os.path.join("output/Overbite_Model/model_0004499.pth")  # Ændre sti til placering af modellen
+cfg.MODEL.WEIGHTS = os.path.join("output/Overbite_Model/model_0009999.pth")  # Ændre sti til placering af modellen
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.9
 cfg.MODEL.KEYPOINT_ON = True
-cfg.MODEL.DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+cfg.MODEL.DEVICE = "cpu"
 cfg.MODEL.ROI_KEYPOINT_HEAD.NUM_KEYPOINTS = 1 # Matcher træning
 
 predictor = DefaultPredictor(cfg)
@@ -61,8 +60,14 @@ print("Model reloaded successfully!")
 
 
 # Test
+# Unregister dataset if already registered
+if "my_test_dataset" in DatasetCatalog.list():
+    DatasetCatalog.remove("my_test_dataset")
 
-test_folder = "Dataprojekt/Pipeline/Pipeline_data//Clean Data/Overbite Data" # Change folder for other images
+if "my_test_dataset" in MetadataCatalog.list():
+    MetadataCatalog.remove("my_test_dataset")
+
+test_folder = os.path.join("Pipeline_data", "Clean Data", "Overbite Data") # Change folder for other images
 
 def test_dataset_function():
     dataset_dicts = []
@@ -88,7 +93,7 @@ MetadataCatalog.get("my_test_dataset").set(thing_classes=["object"])
 
 
 # File paths
-image_folder = "Dataprojekt/Pipeline/Pipeline_data/Clean Data/Overbite Data"
+image_folder = os.path.join("Pipeline_data", "Clean Data", "Overbite Data")
 output_csv = "Predicted_keypoints.csv"
 
 # Conversion
