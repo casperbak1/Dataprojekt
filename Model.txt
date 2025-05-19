@@ -1,0 +1,4 @@
+The model is to large to be uplaoded to GitHub (Free version)
+The model can therefore be downlaoed from: https://aarhusuniversitet-my.sharepoint.com/:f:/g/personal/au751483_uni_au_dk/Er2EEdJAI31DlYAyhtGfaisBeVjdoZ412fPK2KnkTJ-HCg?e=3PaVR9
+Then save the model at Dataprojekt/Overbite/Output/Modeller to use it in test cases. 
+OR save it to a folder "output/Overbite_Model" in the pipeline folder
