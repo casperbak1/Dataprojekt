@@ -1,0 +1,34 @@
+# syntax=docker/dockerfile:1
+FROM gaetanlandreau/pytorch3d:latest
+
+# Create a non-root user with a specific user and group ID
+ARG UID=1000
+ARG GID=1000
+RUN groupadd -g $GID user && \
+    useradd -m -u $UID -g user -s /bin/bash user
+
+# Create a directory for your application
+WORKDIR /home/user/app
+
+# Change ownership of the working directory
+RUN chown -R user:user /home/user/app
+
+# Install Python dependencies
+RUN pip install open3d
+
+# pytorch3d
+RUN git clone https://github.com/facebookresearch/pytorch3d.git /opt/pytorch3d
+RUN pip install -e /opt/pytorch3d
+
+# detectron2
+RUN git clone https://github.com/facebookresearch/detectron2.git /opt/detectron2
+RUN python -m pip install -e /opt/detectron2
+
+# Install Jupyter Lab
+RUN pip install jupyterlab
+
+# Set user for the container session
+USER user
+
+# Default command
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--no-browser"]
