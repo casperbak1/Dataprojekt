@@ -3,6 +3,11 @@ This is our dataproject about detecting overbite and mapping the teeth
 
 
 # Table of contents
+## Quick overview:
+* "Data" contains the data we initially started out with - Folder primarily used for training and testing models
+* "Overbite" This folder contains the code used for training, testing, search refinement and overbite classification
+* "Pipeline" This folder "showcases" the workflow, so going from .PLY file to a keypoint placement
+
 ## 1. Data - Folder - Contains our data
 
 #### 1.1 Clean Data - Folder - Contains the formatted data
