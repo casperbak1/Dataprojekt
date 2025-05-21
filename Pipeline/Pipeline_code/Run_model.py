@@ -66,6 +66,7 @@ if "my_test_dataset" in DatasetCatalog.list():
 
 if "my_test_dataset" in MetadataCatalog.list():
     MetadataCatalog.remove("my_test_dataset")
+    print("My Test dataset was removed")
 
 test_folder = os.path.join("Pipeline_data", "Clean Data", "Overbite Data") # Change folder for other images
 

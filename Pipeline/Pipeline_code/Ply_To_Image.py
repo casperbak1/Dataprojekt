@@ -107,6 +107,9 @@ def render_and_save_images(source_folder, output_folder, image_size=1024, pixel_
 # Example usage
 render_and_save_images('Pipeline_data/Ply Files', 'Pipeline_data/Raw_data', clip_distance=10)
 
+import os
+from PIL import Image
+
 # Path to the image folder
 image_folder = "Pipeline_data/Raw_data"
 output_folder = "Pipeline_data/Clean Data/Overbite Data"
@@ -127,14 +130,29 @@ for filename in image_files:
     img_path = os.path.join(image_folder, filename)
     img = Image.open(img_path)
 
-    if number % 2 == 0:
-        # Even number: Rotate 90 degrees clockwise
-        img = img.rotate(-90, expand=True)
-        print(f"{filename}: Rotated 90° clockwise")
+    if "Upper" in filename:
+        if number % 2 == 0:
+            img = img.rotate(-90, expand=True)
+            print(f"{filename}: Rotated 90° clockwise (Upper, even)")
+        else:
+            img = img.transpose(Image.FLIP_TOP_BOTTOM).rotate(90, expand=True)
+            print(f"{filename}: Flipped on X-axis and rotated 90° clockwise (Upper, odd)")
+
+    elif "Lower" in filename:
+        if number == 1:
+            img = img.rotate(-90, expand=True)
+            print(f"{filename}: Rotated 90° clockwise (Lower, ends in 1)")
+        elif number == 0:
+            img = img.transpose(Image.FLIP_TOP_BOTTOM).rotate(90, expand=True)
+            print(f"{filename}: Transposed and rotated 90° clockwise (Lower, ends in 0)")
+        else:
+            print(f"{filename}: Skipping (Lower, but not ending in 0 or 1)")
+            continue
+
     else:
-        # Odd number: Flip vertically (X-axis), then rotate 90° clockwise
-        img = img.transpose(Image.FLIP_TOP_BOTTOM).rotate(90, expand=True)
-        print(f"{filename}: Flipped on X-axis and rotated 90° clockwise")
-    # Save back to a new location (overwrite)
+        print(f"{filename}: Skipping (neither Upper nor Lower)")
+        continue
+
+    # Save back to a new location
     output_path = os.path.join(output_folder, filename)
     img.save(output_path)
