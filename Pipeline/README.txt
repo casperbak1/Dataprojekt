@@ -22,13 +22,12 @@ GUIDE 2
 
 cd "C:\STUDIE\4. Semester\Dataprojekt\Pipeline\docker_detectron2_env" eller hvor du har "Dockerfile_pytorch3d_jupyter" liggende
 
+2. Kør Dockeren
+
 docker run -p 8888:8888 -it pytorch3d_jupyter:detectron2_installed
 
 Eller med en mappe: docker run -p 8888:8888 -v C:\Users\tueme\some-folder:/home/user/app -it pytorch3d_jupyter:detectron2_installed
 
-f.eks. docker run -p 8888:8888 -v "C:\STUDIE\4. Semester\Dataprojekt\Pipeline\Pipeline:/home/user/app" -it pytorch3d_jupyter:detectron2_installed
-
-
-docker run -p 8888:8888 -v "C:\STUDIE\4. Semester\Dataprojekt\Dataprojekt\Pipeline:/home/user/app" -it pytorch3d_jupyter:detectron2_installed
+f.eks. docker run -p 8888:8888 -v "C:\STUDIE\4. Semester\Dataprojekt\Dataprojekt\Pipeline:/home/user/app" -it pytorch3d_jupyter:detectron2_installed
 
 
