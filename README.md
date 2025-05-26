@@ -1,7 +1,4 @@
-# Dataprojekt
-![Image](https://github.com/user-attachments/assets/b3db6e84-c1ee-460c-910b-0eceaa46817a)
-
-# Table of contents
+# Table of contents (GitHub)
 ## Quick overview:
 * "Data" contains the data we initially started out with, CSV files and png files. - Folder primarily used for training and testing models
 * "Overbite" This folder contains the code used for training, testing, search refinement and overbite classification along with the outputs
@@ -31,3 +28,14 @@
 #### 3.1 Pipeline_code - Folder - Contains the .py files used in the pipeline.ipynb file
 #### 3.2 Pipeline_data - Folder - Contains the "data" so .PLY files, PNG files and the outputs
 #### 3.3 dock - Folder - Contains the "data" so .PLY files, PNG files and the outputs
+
+# Dataprojekt
+![Image](https://github.com/user-attachments/assets/b3db6e84-c1ee-460c-910b-0eceaa46817a)
+
+### Indholsfortegnelse
+##### Abstract
+##### Introduktion
+##### Data og databehandling
+##### CNN-netværk
+##### Resultater
+##### Pipeline
