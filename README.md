@@ -52,6 +52,5 @@ Der er altså mange forskellige metoder, som alle har sine fordele og ulemper, n
 Vi har i dette projekt haft 2 primære fokusområder:
 1. Trænet maskinlæringsmodeller på forskellige måder, for at opnå den mest præcise model.
 2. Udarbejdet et "proof of concept" Hvor vi går fra 3D filer af tænderne, til at have markeret hvor man skal måle overbiddet. Dette kan der læses mere om under sektionen "Pipeline".
-
-Nedestående figur er en GIF af en 3D model af en overkæbe.
 ![3D GIF](Data/Brunatest_UpperJawScan.gif)
+###### GIF af en 3D model af en overkæbe.
