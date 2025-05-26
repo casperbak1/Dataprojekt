@@ -1,6 +1,6 @@
 # Dataprojekt
 This is our dataproject about detecting overbite and mapping the teeth
-
+![Image](https://github.com/user-attachments/assets/b3db6e84-c1ee-460c-910b-0eceaa46817a)
 
 # Table of contents
 ## Quick overview:
