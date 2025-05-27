@@ -118,9 +118,9 @@ Til billederne var der **1166 annoteringer**, eksempelvis:
 
 <table>
   <tr>
-    <td><img src="Data/Figurer/Lower_Right.png" width="200" height="200"/></td>
-    <td><img src="Data/Figurer/Lower_Middle.png" width="200" height="200"/></td>
-    <td><img src="Data/Figurer/Lower_Left.png" width="200" height="200"/></td>
+    <td><img src="Data/Figurer/Lower_Right.png" width="250" height="250"/></td>
+    <td><img src="Data/Figurer/Lower_Middle.png" width="250" height="250"/></td>
+    <td><img src="Data/Figurer/Lower_Left.png" width="250" height="250"/></td>
   </tr>
 </table>
 
