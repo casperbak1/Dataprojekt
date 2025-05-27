@@ -94,7 +94,9 @@ Step 2:
 
 Vi tager nu lower left og lower right billedet og rykker ind i mappen "Overbite Data", det sidste billede rykkes i mappen "Bolton Data"
 
-Step 3: Vi transponerer nu "left" billedet så orienteringen mellem left og right er ens, samtidigt med at vi transpoterer x koordinatet for "left" billedet
+Step 3:
+
+Vi transponerer nu "left" billedet så orienteringen mellem left og right er ens, samtidigt med at vi transpoterer x koordinatet for "left" billedet
 
 <img src="Data/pixel_flip_formula.png" height="125" width="300" style="margin-right: 10px;"/>
 <img src="Data/Figurer/Lower_Right.png" height="200" width="200" style="margin-right: 10px;"/>
@@ -103,7 +105,9 @@ Step 3: Vi transponerer nu "left" billedet så orienteringen mellem left og righ
 Vores keypoint/koordinater er markeret med rød
 
 
-Step 4+5: Vi undersøger nu dataen for "par". Vi har et par når vi har 4 billeder med 4 annoteringer for en patient. Det vil sige har vi både left/right for overkæben og underkæben, med koordinater for alle 4 punkter, så har vi et gyldigt par.\
+Step 4+5:
+
+Vi undersøger nu dataen for "par". Vi har et par når vi har 4 billeder med 4 annoteringer for en patient. Det vil sige har vi både left/right for overkæben og underkæben, med koordinater for alle 4 punkter, så har vi et gyldigt par.\
 Alle patienter der ikke har kunnet danne et "par" bliver rykket i mappen "Unannotated Data Pairs". De resterende patienter er blevet indelt i 3 grupper; "Annotated Data Pairs", "Annotated Test data" og "Annotated Verication data".\
 "Annotated Data Pairs" er den mappe der indeholder de billeder der bliver brugt under træning.\
 "Annotated Verication data" er den mappe der indeholder de billeder der bliver brugt til at køre verifikation under træning.\
