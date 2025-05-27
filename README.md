@@ -1,4 +1,4 @@
-# Overbidsklassificering — Automatisering og Standardisering  
+# Overbidsklassificering — Automatisering og standardisering  
 *Et maskinlæringsprojekt til klassificering af overbid ud fra 3D-scanninger og billeder.*
 
 ---
@@ -18,7 +18,7 @@
 - [Folder Structure](#folder-structure)
 ---
 
-## Quick Overview
+## Hurtigt Overblik
 
 - **Data:** Indeholder alle rå og forarbejdede CSV- og PNG-filer, primært brugt til træning og test.
 - **Overbite:** Indeholder kode, scripts, outputs og forskellige versioner brugt til overbite-klassificering.
@@ -26,7 +26,7 @@
 
 ---
 
-## Folder Structure
+## Mappe struktur
 
 Data/\
 │\
@@ -114,7 +114,7 @@ Til billederne var der **1166 annoteringer**, eksempelvis:
 4. Gruppér data som billed-par
 5. Del data i træning, test, verifikation, og uannoteret data
 
-#### Step 1: Splitting
+#### Step 1: Opdeling af billeder
 
 <img src="Data/Figurer/Lower_Right.png" width="200" height="200"/>
 <img src="Data/Figurer/Lower_Middle.png" width="200" height="200"/>
