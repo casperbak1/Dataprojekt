@@ -59,7 +59,7 @@ Resten af projektbeskrivelsen refferere kun til fokusområde 1, fokusområde 2 v
 #### Databehandling
 
 Vores projekt er startet med at vi har fået givet 1351 billeder på følgende form:
-<img src="Data/Figurer/00OMSZGW_lower_combined.png" height="200" width="800" style="margin-right: 10px;"/>
+<img src="Data/Figurer/00OMSZGW_lower_combined.png" height="250" width="800" style="margin-right: 10px;"/>
 
 ###### Billede af underkæbe fra 3 vinkler.
 
@@ -96,7 +96,7 @@ Vi tager nu lower left og lower right billedet og rykker ind i mappen "Overbite 
 
 Step 3: Vi transponerer nu "left" billedet så orienteringen mellem left og right er ens, samtidigt med at vi transpoterer x koordinatet for "left" billedet
 
-<img src="Data/pixel_flip_formula.png" height="100" width="350" style="margin-right: 10px;"/>
+<img src="Data/pixel_flip_formula.png" height="125" width="300" style="margin-right: 10px;"/>
 <img src="Data/Figurer/Lower_Right.png" height="200" width="200" style="margin-right: 10px;"/>
 <img src="Data/Figurer/Lower_Left_Flipped.png" height="200" width="200" style="margin-right: 10px;"/>
 
