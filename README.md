@@ -47,10 +47,11 @@
 ## Introduction
 Vi har fået til opgave at automatisere processen for overbidsklassificering.\
 Som det er lige nu er der i tandlægepraksissen ikke en standardiseret metode, eller automatiseret metode for at undersøge en patients overbid. Nogle praksisser tager den på øjemål, nogle med en lineal, andre et røntenfotografi hvorfra det udregnes og nogle tager 3D scanninger af tænderne, og kan så udregne det derfra.\
-Der er altså mange forskellige metoder, som alle har sine fordele og ulemper, nogle er mere præcise, men også mere tidskrævende og vice versa. Hvis man kan standardisere og automatisere denne process, er der altså potentiale for både mere præcise målinger, men også tidsbesparelser.
+Der er altså mange forskellige metoder, som alle har sine fordele og ulemper, nogle er mere præcise, men også mere tidskrævende og vice versa. Hvis man kan standardisere og automatisere denne process, er der altså potentiale for både mere præcise målinger og tidsbesparelser.
 
 Vi har i dette projekt haft 2 primære fokusområder:
 1. Trænet maskinlæringsmodeller på forskellige måder, for at opnå den mest præcise model.
 2. Udarbejdet et "proof of concept" Hvor vi går fra 3D filer af tænderne, til at have markeret hvor man skal måle overbiddet. Dette kan der læses mere om under sektionen "Pipeline".
+
 ![3D GIF](Data/Brunatest_UpperJawScan.gif)
 ###### GIF af en 3D model af en overkæbe.
