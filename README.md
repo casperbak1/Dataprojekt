@@ -84,17 +84,17 @@ Målet med vores databehandling er så følgende:
 4. Gruper data efter par
 5. Gruper data efter træning/test/verificering/uannoteret-data
 
-Step 1:
+<b> Step 1: </b>
 
 <img src="Data/Figurer/Lower_Right.png" height="200" width="200" style="margin-right: 10px;"/>
 <img src="Data/Figurer/Lower_Middle.png" height="200" width="200" style="margin-right: 10px;"/>
 <img src="Data/Figurer/Lower_Left.png" height="200" width="200"/>
 
-Step 2:
+<b> Step 2: </b>
 
 Vi tager nu lower left og lower right billedet og rykker ind i mappen "Overbite Data", det sidste billede rykkes i mappen "Bolton Data"
 
-Step 3:
+<b> Step 3: </b>
 
 Vi transponerer nu "left" billedet så orienteringen mellem left og right er ens, samtidigt med at vi transpoterer x koordinatet for "left" billedet
 
@@ -105,7 +105,7 @@ Vi transponerer nu "left" billedet så orienteringen mellem left og right er ens
 Vores keypoint/koordinater er markeret med rød
 
 
-Step 4+5:
+<b> Step 4+5: </b>
 
 Vi undersøger nu dataen for "par". Vi har et par når vi har 4 billeder med 4 annoteringer for en patient. Det vil sige har vi både left/right for overkæben og underkæben, med koordinater for alle 4 punkter, så har vi et gyldigt par.\
 Alle patienter der ikke har kunnet danne et "par" bliver rykket i mappen "Unannotated Data Pairs". De resterende patienter er blevet indelt i 3 grupper; "Annotated Data Pairs", "Annotated Test data" og "Annotated Verication data".\
