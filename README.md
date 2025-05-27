@@ -142,8 +142,8 @@ Til billederne var der **1166 annoteringer**, eksempelvis:
 </table>
 
 Koordinatet justeres så med følgende formel:
-`x' = w - 1 - x`
-Her er `x = X2 = 2310` fra originalen, w = 3072 fra originalen, så det nye x er:
+`x' = w - 1 - x`\
+Her er `x = X2 = 2310` fra originalen, w = 3072 fra originalen, og derfor er det nye x beregnet til:
 `x' = 3072 - 1 - 2310 = 761`
 
 Og den nye CSV vil derfor blive til:
