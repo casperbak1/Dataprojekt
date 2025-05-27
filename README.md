@@ -89,6 +89,16 @@ Step 1:
 <img src="Data/Figurer/Lower_Middle.png" height="200" width="200" style="margin-right: 10px;"/>
 <img src="Data/Figurer/Lower_Left.png" height="200" width="200"/>
 
+Step 2:
+
+Vi tager nu lower left og lower right billedet og rykker ind i mappen "Overbite Data", det sidste billede rykkes i mappen "Bolton Data"
+
+Step 3: Vi transponerer nu "left" billedet så orienteringen mellem left og right er ens, samtidigt med at vi transpoterer x koordinatet for "left" billedet
+
+![Image]("Data/pixel_flip_formula.png")
+<img src="Data/Figurer/Lower_Right.png" height="200" width="200" style="margin-right: 10px;"/>
+<img src="Data/Figurer/Lower_Left_Flipped.png" height="200" width="200" style="margin-right: 10px;"/>
+
 
 
 ![3D GIF](Data/Figurer/Brunatest_UpperJawScan.gif)
