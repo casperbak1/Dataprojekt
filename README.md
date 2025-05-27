@@ -68,13 +68,6 @@ Til de 1351 er der fulgt 1166 annoteringer, følgende er et udsnit:
 | Filename                       | X1  | Y1  | X2   | Y2  |
 |---------------------------------|-----|-----|------|-----|
 | 00OMSZGW_lower_combined.png     | 777 | 492 | 2310 | 487 |
-| 00OMSZGW_upper_combined.png     | 817 | 371 | 2258 | 373 |
-| 01328DDN_lower_combined.png     | 815 | 352 | 2247 | 353 |
-| 01328DDN_upper_combined.png     | 806 | 295 | 2273 | 291 |
-| 0132CR0A_lower_combined.png     | 786 | 332 | 2296 | 328 |
-| 0132CR0A_upper_combined.png     | 751 | 287 | 2306 | 294 |
-| 01343APK_lower_combined.png     | 807 | 353 | 2255 | 361 |
-| 01343APK_upper_combined.png     | 784 | 314 | 2297 | 307 |
 
 Målet med vores databehandling er så følgende:
 
@@ -102,8 +95,16 @@ Vi transponerer nu "left" billedet så orienteringen mellem left og right er ens
 <img src="Data/Figurer/Lower_Right.png" height="200" width="200" style="margin-right: 10px;"/>
 <img src="Data/Figurer/Lower_Left_Flipped.png" height="200" width="200" style="margin-right: 10px;"/>
 
-Vores keypoint/koordinater er markeret med rød
+Vores keypoint/koordinater er markeret med rød og vi har nu en csv fil med punkter på følgende form:
 
+| Filename                       | X1  | Y1  |
+|---------------------------------|-----|-----|
+| 00OMSZGW_lower_right.png     | 777 | 492 |
+| 00OMSZGW_lower_left.png    | 761 | 487 |
+
+X2 = 2310 fra 00OMSZGW_lower_combined.png er altså blevet til X1 = 761 fra 00OMSZGW_lower_left\
+Fordi x' = w - 1  - x, hvor w = 3072 (Bredden af 00OMSZGW_lower_combined) og x = X2\
+x' = 3072 - 1 - 2310 = 761
 
 <b> Step 4+5: </b>
 
