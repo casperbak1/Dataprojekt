@@ -116,9 +116,14 @@ Til billederne var der **1166 annoteringer**, eksempelvis:
 
 #### Step 1: Opdeling af billeder
 
-<img src="Data/Figurer/Lower_Right.png" width="200" height="200"/>
-<img src="Data/Figurer/Lower_Middle.png" width="200" height="200"/>
-<img src="Data/Figurer/Lower_Left.png" width="200" height="200"/>
+<table>
+  <tr>
+    <td><img src="Data/Figurer/Lower_Right.png" width="200" height="200"/></td>
+    <td><img src="Data/Figurer/Lower_Middle.png" width="200" height="200"/></td>
+    <td><img src="Data/Figurer/Lower_Left.png" width="200" height="200"/></td>
+  </tr>
+</table>
+
 
 #### Step 2: Sortering
 
