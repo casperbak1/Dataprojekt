@@ -63,7 +63,7 @@ Vores projekt er startet med at vi har fået givet 1351 billeder på følgende f
 
 ###### Billede af underkæbe fra 3 vinkler.
 
-Til de 1351 er der fulgt 1166 annoteringer, følgende er et udsnit:
+Til de 1351 billeder er der fulgt 1166 annoteringer med, følgende er et udsnit:
 
 | Filename                       | X1  | Y1  | X2   | Y2  |
 |---------------------------------|-----|-----|------|-----|
@@ -102,7 +102,7 @@ Vores keypoint/koordinater er markeret med rød og vi har nu en csv fil med punk
 | 00OMSZGW_lower_right.png     | 777 | 492 |
 | 00OMSZGW_lower_left.png    | 761 | 487 |
 
-X2 = 2310 fra 00OMSZGW_lower_combined.png er altså blevet til X1 = 761 fra 00OMSZGW_lower_left\
+X2 = 2310 fra 00OMSZGW_lower_combined.png er altså blevet til X1 = 761 for 00OMSZGW_lower_left\
 Fordi x' = w - 1  - x, hvor w = 3072 (Bredden af 00OMSZGW_lower_combined) og x = X2\
 x' = 3072 - 1 - 2310 = 761
 
@@ -113,6 +113,22 @@ Alle patienter der ikke har kunnet danne et "par" bliver rykket i mappen "Unanno
 "Annotated Data Pairs" er den mappe der indeholder de billeder der bliver brugt under træning.\
 "Annotated Verication data" er den mappe der indeholder de billeder der bliver brugt til at køre verifikation under træning.\
 "Annotated Test data" er den mappe der indeholder de billeder der bliver brugt til at teste modellen efter træning er kørt.
+
+Efter overstående har vi tjekket den nye csv fil for evt. outliers eller andre fejl, og derefter rettet evt. småfejl der kunne være.
+
+Alt databehandling er udført med filen "Splitting_and_flipping_of_images.ipynb" som kan findes inde i "Data" mappen
+
+#### Data
+Dataen er nu fordelt på følgende mapper:
+
+| Folder                       | Image count  |
+|---------------------------------|-----|
+| Bolton Data     | 1351 |
+| Overbite Data   | 2702 |
+| Overbite Data/Annotated Data Pairs   | 1580 |
+| Overbite Data/Annotated Verication data   | 100 |
+| Overbite Data/Annotated Test data   | 300 |
+| Overbite Data/Unannotated Data Pairs   | 722 |
 
 ![3D GIF](Data/Figurer/Brunatest_UpperJawScan.gif)
 ###### GIF af en 3D model af en overkæbe.
