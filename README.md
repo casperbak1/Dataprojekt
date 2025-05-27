@@ -132,7 +132,7 @@ Til billederne var der **1166 annoteringer**, eksempelvis:
 
 #### Step 3: Ensretning
 
-"Right" billedet transponeres (flippes), så orienteringen matcher "Left" billedet, og koordinater justeres:
+"Right" billedet transponeres (flippes), så orienteringen matcher "Left" billedet, og koordinater justeres:\
 
 <table>
   <tr>
@@ -140,6 +140,7 @@ Til billederne var der **1166 annoteringer**, eksempelvis:
     <td><img src="Data/Figurer/Lower_Left_Flipped.png" width="400" height="400"/></td>
   </tr>
 </table>
+> Keypoint/Annoteringen er markeret med rød på de 2 billeder
 
 Koordinatet justeres så med følgende formel:
 `x' = w - 1 - x`\
