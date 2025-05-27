@@ -135,8 +135,13 @@ Til billederne var der **1166 annoteringer**, eksempelvis:
 "Left" billedet transponeres (flippes), så orienteringen matcher "right" billedet, og koordinater justeres:
 
 <img src="Data/pixel_flip_formula.png" width="300" height="125"/>
-<img src="Data/Figurer/Lower_Right.png" width="200" height="200"/>
-<img src="Data/Figurer/Lower_Left_Flipped.png" width="200" height="200"/>
+<table>
+  <tr>
+    <td><img src="Data/Figurer/Lower_Right.png" width="200" height="200"/></td>
+    <td><img src="Data/Figurer/Lower_Left_Flipped.png" width="200" height="200"/></td>
+  </tr>
+</table>
+
 
 Eksempel:
 
