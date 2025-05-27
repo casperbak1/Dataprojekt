@@ -56,7 +56,7 @@ Resten af projektbeskrivelsen refferere kun til fokusområde 1, fokusområde 2 v
 
 ## Data og databehandling
 
-#### Databehandling
+### Databehandling
 
 Vores projekt er startet med at vi har fået givet 1351 billeder på følgende form:
 <img src="Data/Figurer/00OMSZGW_lower_combined.png" height="250" width="800" style="margin-right: 10px;"/>
@@ -118,7 +118,7 @@ Efter overstående har vi tjekket den nye csv fil for evt. outliers eller andre 
 
 Alt databehandling er udført med filen "Splitting_and_flipping_of_images.ipynb" som kan findes inde i "Data" mappen
 
-#### Data
+### Data
 Dataen er nu fordelt på følgende mapper:
 
 | Folder                       | Image count  |
