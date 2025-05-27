@@ -161,23 +161,29 @@ Formel:
 
 ### Data
 
-Oversigt over fordelingen:
+Oversigt over fordelingen af billeder:
 
-| Folder                               | Image count |
-|---------------------------------------|-------------|
-| Bolton Data                          | 1351        |
-| Overbite Data                        | 2702        |
-| Overbite Data/Annotated Data Pairs   | 1580        |
-| Overbite Data/Annotated Verication data | 100      |
-| Overbite Data/Annotated Test data    | 300         |
-| Overbite Data/Unannotated Data Pairs | 722         |
+| Folder                               | Image count | Patient count |
+|---------------------------------------|-------------|-------------|
+| Bolton Data                          | 1351        | 675 |
+| Overbite Data                        | 2702        | 675 |
+| Overbite Data/Annotated Data Pairs   | 1580        | 395 |
+| Overbite Data/Annotated Verication data | 100      | 25 |
+| Overbite Data/Annotated Test data    | 300         | 75 |
+| Overbite Data/Unannotated Data Pairs | 722         | 180 |
 
----
+Deskriptiv statistik
 
-#### Eksempel på 3D model (GIF):
-
-![3D GIF](Data/Figurer/Brunatest_UpperJawScan.gif)
-> *GIF af en 3D model af en overkæbe*
+| Folder                              |
+|---------------------------------------|
+| Overbite Data/Annotated Data Pairs   |
+    Klasse A:
+    Klasse B:
+    Klasse C:
+    Klasse D:
+    Klasse E:
+| Overbite Data/Annotated Verication data |
+| Overbite Data/Annotated Test data    |
 
 ---
 
