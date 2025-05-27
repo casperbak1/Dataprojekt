@@ -134,7 +134,6 @@ Til billederne var der **1166 annoteringer**, eksempelvis:
 
 "Left" billedet transponeres (flippes), så orienteringen matcher "right" billedet, og koordinater justeres:
 
-<img src="Data/pixel_flip_formula.png" width="300" height="125"/>
 <table>
   <tr>
     <td><img src="Data/Figurer/Lower_Right.png" width="400" height="400"/></td>
@@ -142,18 +141,18 @@ Til billederne var der **1166 annoteringer**, eksempelvis:
   </tr>
 </table>
 
+Koordinatet justeres så med følgende formel:
+`x' = w - 1 - x`
+Her er `x = X2 = 2310` fra originalen, w = 3072 fra originalen, så det nye x er:
+`x' = 3072 - 1 - 2310 = 761`
 
-Eksempel:
+Og den nye CSV vil derfor blive til:
 
 | Filename                   | X1  | Y1  |
 |----------------------------|-----|-----|
 | 00OMSZGW_lower_right.png   | 777 | 492 |
 | 00OMSZGW_lower_left.png    | 761 | 487 |
 
-Her er `X2=2310` fra originalen blevet til `X1=761` i det flippede billede.  
-Formel:  
-`x' = w - 1 - x`, hvor `w=3072`, `x=2310`  
-`x' = 3072 - 1 - 2310 = 761`
 
 #### Step 4 + 5: Par og grupper
 
