@@ -40,7 +40,7 @@ Data/\
 │\
 ├── Raw Data/\
 │ └── Sample images/ # De originale billeder\
-│\
+│ └── Labels as of 28-02-2025 (FINAL - for now) # Den originale CSV fil\
 └── Splitting_and_flipping_of_images.ipynb # Notebook til dataprocessering\
 
 Overbite/\
