@@ -28,32 +28,32 @@
 
 ## Folder Structure
 
-Data/
-│
-├── Clean Data/
-│ ├── Bolton Data/ # Billeder til Bolton-analyse
-│ └── Overbite Data/ # Billeder til overbite-detektion
-│ ├── Annotated Data Pairs/ # Træningsdata med annotationer
-│ ├── Annotated Data Verication Pairs/ # Verifikationsdata
-│ ├── Unannotated Data Pairs/ # Uannoterede billeder
-│ └── Annotated Data Test Pairs/ # Testdata efter træning
-│
-├── Raw Data/
-│ └── Sample images/ # De originale billeder
-│
-└── Splitting_and_flipping_of_images.ipynb # Notebook til dataprocessering
+Data/\
+│\
+├── Clean Data/\
+│ ├── Bolton Data/ # Billeder til Bolton-analyse\
+│ └── Overbite Data/ # Billeder til overbite-detektion\
+│ ├── Annotated Data Pairs/ # Træningsdata med annotationer\
+│ ├── Annotated Data Verication Pairs/ # Verifikationsdata\
+│ ├── Unannotated Data Pairs/ # Uannoterede billeder\
+│ └── Annotated Data Test Pairs/ # Testdata efter træning\
+│\
+├── Raw Data/\
+│ └── Sample images/ # De originale billeder\
+│\
+└── Splitting_and_flipping_of_images.ipynb # Notebook til dataprocessering\
 
-Overbite/
-│
-├── Kode/ # Kode til træning og test
-├── Output/ # Output fra model (billeder, csv, plots)
-└── Other Versions/ # Alternative modeller og outputs
+Overbite/\
+│\
+├── Kode/ # Kode til træning og test\
+├── Output/ # Output fra model (billeder, csv, plots)\
+└── Other Versions/ # Alternative modeller og outputs\
 
-Pipeline/
-│
-├── Pipeline_code/ # Python scripts brugt i pipeline
-├── Pipeline_data/ # .PLY, PNG og outputfiler
-└── dock/ # Yderligere pipeline-relaterede data
+Pipeline/\
+│\
+├── Pipeline_code/ # Python scripts brugt i pipeline\
+├── Pipeline_data/ # .PLY, PNG og outputfiler\
+└── dock/ # Yderligere pipeline-relaterede data\
 
 
 ---
