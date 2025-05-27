@@ -132,7 +132,7 @@ Til billederne var der **1166 annoteringer**, eksempelvis:
 
 #### Step 3: Ensretning
 
-"Left" billedet transponeres (flippes), så orienteringen matcher "right" billedet, og koordinater justeres:
+"Right" billedet transponeres (flippes), så orienteringen matcher "Left" billedet, og koordinater justeres:
 
 <table>
   <tr>
