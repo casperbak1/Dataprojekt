@@ -29,8 +29,7 @@
 #### 3.2 Pipeline_data - Folder - Contains the "data" so .PLY files, PNG files and the outputs
 #### 3.3 dock - Folder - Contains the "data" so .PLY files, PNG files and the outputs
 
-# Dataprojekt
-![Image](https://github.com/user-attachments/assets/b3db6e84-c1ee-460c-910b-0eceaa46817a)
+# Projektbeskrivelse
 
 ## Indholsfortegnelse
 
@@ -47,11 +46,45 @@
 ## Introduction
 Vi har fået til opgave at automatisere processen for overbidsklassificering.\
 Som det er lige nu er der i tandlægepraksissen ikke en standardiseret metode, eller automatiseret metode for at undersøge en patients overbid. Nogle praksisser tager den på øjemål, nogle med en lineal, andre et røntenfotografi hvorfra det udregnes og nogle tager 3D scanninger af tænderne, og kan så udregne det derfra.\
-Der er altså mange forskellige metoder, som alle har sine fordele og ulemper, nogle er mere præcise, men også mere tidskrævende og vice versa. Hvis man kan standardisere og automatisere denne process, er der altså potentiale for både mere præcise målinger og tidsbesparelser.
+Der er altså mange forskellige metoder, som alle har sine fordele og ulemper, nogle er mere præcise, men også mere tidskrævende andre er hurtigere men mere upræcise. Kan man standardisere og automatisere denne process, er der altså potentiale for både mere præcise målinger og tidsbesparelser.
 
 Vi har i dette projekt haft 2 primære fokusområder:
 1. Trænet maskinlæringsmodeller på forskellige måder, for at opnå den mest præcise model.
 2. Udarbejdet et "proof of concept" Hvor vi går fra 3D filer af tænderne, til at have markeret hvor man skal måle overbiddet. Dette kan der læses mere om under sektionen "Pipeline".
 
+Resten af projektbeskrivelsen refferere kun til træningen og testene og pipelinen vil kun blive omtalt i pipeline sektionen
+
 ![3D GIF](Data/Brunatest_UpperJawScan.gif)
 ###### GIF af en 3D model af en overkæbe.
+
+## Data og databehandling
+
+#### Databehandling
+
+Vores projekt er startet med at vi har fået givet 1351 billeder på følgende form:
+![Image](https://github.com/user-attachments/assets/b3db6e84-c1ee-460c-910b-0eceaa46817a)
+###### Billede af underkæbe fra 3 vinkler.
+
+Til de 1351 er der fulgt 1166 annoteringer, følgende er et udsnit:
+
+| Filename                       | X1  | Y1  | X2   | Y2  |
+|---------------------------------|-----|-----|------|-----|
+| 00OMSZGW_lower_combined.png     | 777 | 492 | 2310 | 487 |
+| 00OMSZGW_upper_combined.png     | 817 | 371 | 2258 | 373 |
+| 01328DDN_lower_combined.png     | 815 | 352 | 2247 | 353 |
+| 01328DDN_upper_combined.png     | 806 | 295 | 2273 | 291 |
+| 0132CR0A_lower_combined.png     | 786 | 332 | 2296 | 328 |
+| 0132CR0A_upper_combined.png     | 751 | 287 | 2306 | 294 |
+| 01343APK_lower_combined.png     | 807 | 353 | 2255 | 361 |
+| 01343APK_upper_combined.png     | 784 | 314 | 2297 | 307 |
+
+Målet med vores databehandling er så følgende:
+
+1. Få delt de kombinerede billeder op i 3 forskellige billeder
+2. Del billeder op i 2 mapper; "Bolton Data" og "Overbite Data"
+3. Sørg for billederne i "Overbite Data" vender ens samtidig med koordinaterne til annoteringen følger med evt. rotationer eller transponeringer
+4. Gruper data efter par
+5. Gruper data efter træning/test/verificering/uannoteret-data
+
+![Image](Data/Figurer/Diagram_Databehandling.png)
+
