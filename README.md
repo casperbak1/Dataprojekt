@@ -174,16 +174,17 @@ Oversigt over fordelingen af billeder:
 
 Deskriptiv statistik
 
-| Folder                              |
-|---------------------------------------|
-| Overbite Data/Annotated Data Pairs   |
-    Klasse A:
-    Klasse B:
-    Klasse C:
-    Klasse D:
-    Klasse E:
-| Overbite Data/Annotated Verication data |
-| Overbite Data/Annotated Test data    |
+| Folder                     | Counts  |
+|----------------------------|--------------|
+| Annotated Data Pairs       | 1580         |
+| &nbsp;&nbsp;&nbsp;Klasse A | xxx          |
+| &nbsp;&nbsp;&nbsp;Klasse B | xxx          |
+| &nbsp;&nbsp;&nbsp;Klasse C | xxx          |
+| &nbsp;&nbsp;&nbsp;Klasse D | xxx          |
+| &nbsp;&nbsp;&nbsp;Klasse E | xxx          |
+| Annotated Verication data  | 100          |
+| Annotated Test data        | 300          |
+
 
 ---
 
