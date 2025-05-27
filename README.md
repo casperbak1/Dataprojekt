@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-- [Quick Overview](#quick-overview)
+- [Hurtigt Overblik](#hurtigt-overblik)
 - [Projektbeskrivelse](#projektbeskrivelse)
   - [Abstract](#abstract)
   - [Introduktion](#introduktion)
