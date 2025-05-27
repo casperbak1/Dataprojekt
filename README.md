@@ -84,9 +84,9 @@ Målet med vores databehandling er så følgende:
 5. Gruper data efter træning/test/verificering/uannoteret-data
 
 Step 1:
-<img src="Data/Figurer/Lower_Right.png" width="200" style="margin-right: 10px;"/>
-<img src="Data/Figurer/Lower_Middle.png" width="200" style="margin-right: 10px;"/>
-<img src="Data/Figurer/Lower_Left.png" width="200"/>
+<img src="Data/Figurer/Lower_Right.png" height="250" width="200" style="margin-right: 10px;"/>
+<img src="Data/Figurer/Lower_Middle.png" height="250" width="200" style="margin-right: 10px;"/>
+<img src="Data/Figurer/Lower_Left.png" height="250" width="200"/>
 
 
 
