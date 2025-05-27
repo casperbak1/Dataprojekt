@@ -52,17 +52,14 @@ Vi har i dette projekt haft 2 primære fokusområder:
 1. Trænet maskinlæringsmodeller på forskellige måder, for at opnå den mest præcise model.
 2. Udarbejdet et "proof of concept" Hvor vi går fra 3D filer af tænderne, til at have markeret hvor man skal måle overbiddet. Dette kan der læses mere om under sektionen "Pipeline".
 
-Resten af projektbeskrivelsen refferere kun til træningen og testene og pipelinen vil kun blive omtalt i pipeline sektionen
-
-![3D GIF](Data/Brunatest_UpperJawScan.gif)
-###### GIF af en 3D model af en overkæbe.
+Resten af projektbeskrivelsen refferere kun til fokusområde 1, fokusområde 2 vil kun blive omtalt i pipeline sektionen
 
 ## Data og databehandling
 
 #### Databehandling
 
 Vores projekt er startet med at vi har fået givet 1351 billeder på følgende form:
-![Image](https://github.com/user-attachments/assets/b3db6e84-c1ee-460c-910b-0eceaa46817a)
+![Image]("Data/Figurer/00OMSZGW_lower_combined.png")
 ###### Billede af underkæbe fra 3 vinkler.
 
 Til de 1351 er der fulgt 1166 annoteringer, følgende er et udsnit:
@@ -86,5 +83,12 @@ Målet med vores databehandling er så følgende:
 4. Gruper data efter par
 5. Gruper data efter træning/test/verificering/uannoteret-data
 
-![Image](Data/Figurer/Diagram_Databehandling.png)
+Step 1:
+<img src="Data/Figurer/Lower_Right.png" width="200" style="margin-right: 10px;"/>
+<img src="Data/Figurer/Lower_Middle.png" width="200" style="margin-right: 10px;"/>
+<img src="Data/Figurer/Lower_Left.png" width="200"/>
 
+
+
+![3D GIF](Data/Figurer/Brunatest_UpperJawScan.gif)
+###### GIF af en 3D model af en overkæbe.
