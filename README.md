@@ -137,8 +137,8 @@ Til billederne var der **1166 annoteringer**, eksempelvis:
 <img src="Data/pixel_flip_formula.png" width="300" height="125"/>
 <table>
   <tr>
-    <td><img src="Data/Figurer/Lower_Right.png" width="300" height="300"/></td>
-    <td><img src="Data/Figurer/Lower_Left_Flipped.png" width="300" height="300"/></td>
+    <td><img src="Data/Figurer/Lower_Right.png" width="400" height="400"/></td>
+    <td><img src="Data/Figurer/Lower_Left_Flipped.png" width="400" height="400"/></td>
   </tr>
 </table>
 
