@@ -175,7 +175,7 @@ Og den nye CSV vil derfor blive til:
 Oversigt over fordelingen af billeder:
 
 | Folder                               | Image count | Patient count | Annotated |
-|---------------------------------------|-------------|-------------|
+|---------------------------------------|-------------|-------------|-------------|
 | Bolton Data                          | 1351        | 675 | No |
 | Overbite Data                        | 2702        | 675 | NaN |
 | Overbite Data/Annotated Data Pairs   | 1580        | 395 | Yes |
