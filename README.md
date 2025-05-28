@@ -152,8 +152,8 @@ Og den nye CSV vil derfor blive til:
 
 | Filename                   | X1  | Y1  |
 |----------------------------|-----|-----|
-| 00OMSZGW_lower_right.png   | 777 | 492 |
-| 00OMSZGW_lower_left.png    | 761 | 487 |
+| 00OMSZGW_lower_left.png   | 777 | 492 |
+| 00OMSZGW_lower_right.png    | 761 | 487 |
 
 
 #### Step 4 + 5: Par og grupper
@@ -174,32 +174,26 @@ Og den nye CSV vil derfor blive til:
 
 Oversigt over fordelingen af billeder:
 
-| Folder                               | Image count | Patient count |
+| Folder                               | Image count | Patient count | Annotated |
 |---------------------------------------|-------------|-------------|
-| Bolton Data                          | 1351        | 675 |
-| Overbite Data                        | 2702        | 675 |
-| Overbite Data/Annotated Data Pairs   | 1580        | 395 |
-| Overbite Data/Annotated Verication data | 100      | 25 |
-| Overbite Data/Annotated Test data    | 300         | 75 |
-| Overbite Data/Unannotated Data Pairs | 722         | 180 |
-
-Deskriptiv statistik
-
-| Folder                     | Counts  |
-|----------------------------|--------------|
-| Annotated Data Pairs       | 1580         |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Klasse A | xxx          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Klasse B | xxx          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Klasse C | xxx          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Klasse D | xxx          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Klasse E | xxx          |
-| Annotated Verication data  | 100          |
-| Annotated Test data        | 300          |
+| Bolton Data                          | 1351        | 675 | No |
+| Overbite Data                        | 2702        | 675 | NaN |
+| Overbite Data/Annotated Data Pairs   | 1580        | 395 | Yes |
+| Overbite Data/Annotated Verication data | 100      | 25 | Yes |
+| Overbite Data/Annotated Test data    | 300         | 75 | Yes |
+| Overbite Data/Unannotated Data Pairs | 722         | 180 | NaN|
 
 
+Dataen er nu klargjort til at træne og teste en maskinlæringsmodel.
 ---
 
-<!-- Placeholder: Her kan du indsætte flere afsnit om CNN-arkitektur, resultater, pipeline osv. hvis du ønsker det senere! -->
+## CNN-netværk
+
+Vi trænede vores model ved at benytte os af en forudtrænet model fra Detectron2. Den model vi har anvendt hedder "keypoint_rcnn_X_101_32x8d_FPN_3x".\
+Modellen er altså en Keypoint R-CNN model hvor X_101_32x8d_FPN er selve backbone-arkitekturen:\
+X_101_32x8d betyder ResNeXt-101 (101 lag) med 32 grupper og en bredde på 8 per gruppe\
+FPN står for Feature Pyramid Network, hvilket betyder, at modellen bruger flere “feature-maps” på forskellige skalaer\
+
 
 ---
 
