@@ -183,17 +183,53 @@ Oversigt over fordelingen af billeder:
 | Overbite Data/Annotated Test data    | 300         | 75 | Yes |
 | Overbite Data/Unannotated Data Pairs | 722         | 180 | NaN|
 
-
 Dataen er nu klargjort til at træne og teste en maskinlæringsmodel.
+
 ---
 
 ## CNN-netværk
 
-Vi trænede vores model ved at benytte os af en forudtrænet model fra Detectron2. Den model vi har anvendt hedder "keypoint_rcnn_X_101_32x8d_FPN_3x".\
+Vi trænede vores model ved at benytte os af en forudtrænet model fra Detectron2.\
+Den model vi har anvendt hedder "keypoint_rcnn_X_101_32x8d_FPN_3x".\
 Modellen er altså en Keypoint R-CNN model hvor X_101_32x8d_FPN er selve backbone-arkitekturen:\
 X_101_32x8d betyder ResNeXt-101 (101 lag) med 32 grupper og en bredde på 8 per gruppe\
 FPN står for Feature Pyramid Network, hvilket betyder, at modellen bruger flere “feature-maps” på forskellige skalaer\
 
+Den grundlæggende måde vores træning har kørt på er:
+
+Vi starter med billeder af størrelsen 1024x1024 som hver har et ground truth keypoint.
+Det næste der sker er at billederne bliver augmenteret på forskellige måder, f.eks. med andre billedstørrelser, spejlinger, lys- og kontrastjusteringer så modellen ikke kun lærer et specifikt udseende. Annoteringerne følger selvfølgelig med spejlinger osv.
+Denne augmentering er med til at gøre modellen mere robust.
+
+Det næste der sker er at vi indlæser billederne i batches.
+Dette gør vi fordi at havde vi kun taget et billede af gangen, havde vi fået langsommere træning og en mere ustabil træning.
+Når vi træner modellen med en batch str. på 16, så vil modellens vægte blive opdateret på gennemsnittet af fejlen for hele batchen. Havde vi nu kun brugt 1 billede af gangen, så ville modellens vægte blive opdateret på baggrund af fejlen for dette ene billede og havde billedet nu været en outlier, så ville modellens vægte altså blive opdateret i retning af en outlier.
+
+Efter augmentering og batch indlæsning kommer vi til ResNeXt-101, dette er selve CNN delen.
+Her har vi 101 lag, som hver laver en convulution.
+Hver enkelt convulution bliver så indelt i 32 grupper.
+De 32 grupper finder så mønstre.
+Efter ResNeXt-101 ender vi op med en masse "Feature maps" hvor hver pixel svarer til styrken af et bestemt mønster i billedet.
+
+Nu har vi en masse feature maps og det er her FPN kommer ind i billedet.
+FPN samler feature maps fra alle de forskellige lag.
+De tidligste lag finder de helt små mønstre, og de sene lag finder helhedderne.
+
+Vi er nu ankommet til RPN (Region Proposal Network).
+RPN foreslår tusindvis af små bokse med forskellige størrelser og former alle  de steder, hvor der kan være noget spændende.
+For hver enkelt af disse bokse scorer RPN, hvor sandsynligt det er, at boksen indeholder et objekt. De bedste forslag går videre til næste skridt.
+
+Vi er nu ved at være ved vejs ende.
+For hver af de vidersendte forslag fra RPN skaber modellen et heatmap hvor hver pixel viser sandsynligheden for at vores keypoint ligger der.
+Sandsynlighederne laves med en softmax-funktion, så de summer til 1.
+Så tager modellen den pixel på heatmappet, hvor sandsynligheden er højest, da det er modellens bedste bud på keypointets placering.
+
+Til sidst er der loss, backpropagation og optimering.
+Efter modellen har givet sit bedste bud på hvor keypointet skal placeres, så beregnes det hvor galt den tog fejl, med en cross-entropy loss mellem predicted og ground truth.
+Efter det sker der backpropagation;
+Den starter med fejlen og regner, hvor meget hver vægt i netværket har påvirket fejlen, dette sker lag-for-lag bagud gennem hele netværket med kædereglen for differenciering.
+Vægtene justeres en smule, så fejlen bliver mindre næste gang.
+Det her gentager vi for hver batch indtil modellen er konvergeret.
 
 ---
 
