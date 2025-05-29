@@ -244,19 +244,21 @@ Weighted kappa
 De er defineret som følge:
 
 $$MRE = \frac{\sum_{i=1}^N R_i}{N}$$
+
 Her er N antallet af predikterede punkter og R_i er den euclidiske afstand mellem ground truth og moddelens punkt.
 
 $$SDR = \frac{K}{N} \cdot 100$$
+
 Her er N antallet af predikterede punkter og K er antallet af korrekt placerede punkter, indenfor et tilladt "fejl" interval. Vi har brugt intevallerne der tillader 0.5,1,2mm afstand ift. Ground truth.
 
 $$\kappa_w = 1 - \frac{\sum_{i,j} w_{i,j} O_{i,j}}{\sum_{i,j} w_{i,j} E_{i,j}}$$
 
-\text{hvor:}
-\begin{align*}
-w_{i,j} &= \left(\frac{i - j}{k - 1}\right)^2 \quad \text{(kvadratisk vægt for kategorier $i$ og $j$)} \\
-O_{i,j} &= \text{Andel af observerede tilfælde hvor annotator 1 vælger $i$ og annotator 2 vælger $j$} \\
-E_{i,j} &= \text{Forventet andel, hvis annotator 1 og 2 er uafhængige} \\
-k &= \text{Antal klasser (her: 5)}
-\end{align*}
+hvor
+$w_{i,j} &= \left(\frac{i - j}{k - 1}\right)^2$
+er en kvadratisk vægt for kategorier $i$ og $j$
+$O_{i,j} &= \text{Andel af observerede tilfælde hvor annotator 1 vælger $i$ og annotator 2 vælger $j$}$
+
+$E_{i,j} &= \text{Forventet andel, hvis annotator 1 og 2 er uafhængige}$
+$k &= \text{Antal klasser (her: 5)}$
 
 ---
