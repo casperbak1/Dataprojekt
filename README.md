@@ -256,9 +256,11 @@ $$\kappa_w = 1 - \frac{\sum_{i,j} w_{i,j} O_{i,j}}{\sum_{i,j} w_{i,j} E_{i,j}}$$
 hvor
 $w_{i,j} = \left(\frac{i - j}{k - 1}\right)^2$
 er en kvadratisk vægt for kategorier $i$ og $j$
-$O_{i,j} = \text{Andel af observerede tilfælde hvor annotator 1 vælger $i$ og annotator 2 vælger $j$}$
 
-$E_{i,j} = \text{Forventet andel, hvis annotator 1 og 2 er uafhængige}$
-$k = \text{Antal klasser (her: 5)}$
+$O_{i,j}$ Er andelen af observerede tilfælde hvor annotator 1 vælger $i$ og annotator 2 vælger $j$
+
+$E_{i,j}$ Den forventet andel, hvis annotator 1 og 2 er uafhængige
+
+$k$ Er antal klasser, altså 5
 
 ---
