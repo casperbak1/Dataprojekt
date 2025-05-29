@@ -234,33 +234,57 @@ Det her gentager vi for hver batch indtil modellen er konvergeret.
 
 ---
 
+
+
 ## Evaluering
 
-Til evaluering af modellen har vi benyttet os af 3 metoder:
-Mean radial error (MRE)
-Succesful detection rate (SDR)
-Weighted kappa
+Til evaluering af modellen har vi benyttet os af tre metoder:
 
-De er defineret som følge:
+1. **Mean radial error (MRE)**
+2. **Succesful detection rate (SDR)**
+3. **Weighted Cohen’s kappa**
 
-$$MRE = \frac{\sum_{i=1}^N R_i}{N}$$
+De er defineret som følger:
 
-Her er N antallet af predikterede punkter og R_i er den euclidiske afstand mellem ground truth og moddelens punkt.
+**Mean radial error**:
 
-$$SDR = \frac{K}{N} \cdot 100$$
+$$
+MRE = \frac{\sum_{i=1}^N R_i}{N}
+$$
 
-Her er N antallet af predikterede punkter og K er antallet af korrekt placerede punkter, indenfor et tilladt "fejl" interval. Vi har brugt intevallerne der tillader 0.5,1,2mm afstand ift. Ground truth.
+Her er \$N\$ antallet af predikterede punkter, og \$R\_i\$ er den euklidiske afstand mellem ground truth og modellens punkt.
 
-$$\kappa_w = 1 - \frac{\sum_{i,j} w_{i,j} O_{i,j}}{\sum_{i,j} w_{i,j} E_{i,j}}$$
+MRE giver os indsigt i, hvor tæt modellens forudsigelser i gennemsnit ligger på det korrekte punkt (ground truth). Jo lavere MRE, desto mere præcis er modellens gennemsnitlige punktplacering.
 
-hvor
-$w_{i,j} = \left(\frac{i - j}{k - 1}\right)^2$
-er en kvadratisk vægt for kategorier $i$ og $j$
+**Succesful detection rate**:
 
-$O_{i,j}$ Er andelen af observerede tilfælde hvor annotator 1 vælger $i$ og annotator 2 vælger $j$
+$$
+SDR = \frac{K}{N} \cdot 100
+$$
 
-$E_{i,j}$ Den forventet andel, hvis annotator 1 og 2 er uafhængige
+Her er \$N\$ antallet af predikterede punkter, og \$K\$ er antallet af korrekt placerede punkter indenfor et tilladt "fejl"-interval. Vi har brugt intervaller, der tillader 0.5, 1 og 2 mm afstand i forhold til ground truth.
 
-$k$ Er antal klasser, altså 5
+SDR viser, hvor stor en andel af modellens forudsigelser der ligger indenfor et givent toleranceniveau fra ground truth (fx 0.5, 1 eller 2 mm). Det er særligt nyttigt, hvis man vil vide, hvor ofte modellen rammer “tilstrækkeligt tæt” på det korrekte punkt, givet at man accepterer en vis fejlmargin.
+
+**Weighted Cohen’s kappa** (\$\kappa\_w\$) bruges til at måle, hvor god overensstemmelse der er mellem modellens klassifikation og den sande (ekspert-annoterede) klasse, hvor tilfældig overensstemmelse er korrigeret for:
+
+$$
+\kappa_w = 1 - \frac{\sum_{i,j} w_{i,j} O_{i,j}}{\sum_{i,j} w_{i,j} E_{i,j}}
+$$
+
+Her er \$O\_{i,j}\$ andelen af tilfælde, hvor ground truth er klasse \$i\$ og modellen valgte klasse \$j\$, og \$E\_{i,j}\$ er den forventede andel af sådanne tilfælde, hvis annotatorerne var uafhængige.
+
+Vægtene \$w\_{i,j}\$ bruges til at straffe større fejl hårdere. Ved **kvadratisk vægtning** (“quadratic weights”) beregnes vægten som:
+
+$$
+w_{i,j} = \left( \frac{i - j}{k - 1} \right)^2
+$$
+
+hvor \$k\$ er antallet af klasser (her 5 for “A”–“E”).
+
+Det vil sige, at hvis modellen forveksler “A” og “E”, tæller det som en større fejl end hvis den forveksler “A” og “B”.
 
 ---
+
+
+
