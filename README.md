@@ -236,7 +236,7 @@ Det her gentager vi for hver batch indtil modellen er konvergeret.
 
 
 
-## Evaluering
+## Evalueringsmetoder
 
 Til evaluering af modellen har vi benyttet os af tre metoder:
 
