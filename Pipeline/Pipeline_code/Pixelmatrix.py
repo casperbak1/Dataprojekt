@@ -20,7 +20,7 @@ df = pd.read_csv(csv_path)
 refined_data = []
 
 # === UTILITY FUNCTION ===
-def refine_guess_with_pixel_matrix(image, x_center, y_center, window_size=15): # ÆNDRER MIG FOR MATRIX STØRRELSE
+def refine_guess_with_pixel_matrix(image, x_center, y_center, window_size=15): # Change matrix size if needed
     half_size = window_size // 2
     x_min = int(max(x_center - half_size, 0))
     x_max = int(min(x_center + half_size + 1, image.shape[1]))
@@ -52,6 +52,8 @@ def refine_guess_with_pixel_matrix(image, x_center, y_center, window_size=15): #
     return refined_x, refined_y
 
 # === MAIN LOOP ===
+
+# Finding the refined keypoints using pixel matrix refinement
 for idx, row in tqdm(df.iterrows(), total=len(df)):
     filename = row['Filename'] + ".png"
     img_path = os.path.join(image_folder, filename)

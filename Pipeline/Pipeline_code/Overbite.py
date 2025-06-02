@@ -71,4 +71,4 @@ print(df_patient_summary)
 
 # === Save result
 df_patient_summary.to_csv(output_csv, index=False)
-print(f"\n✅ Patient-level summary saved to: {output_csv}")
+print(f"\n Patient-level summary saved to: {output_csv}")
