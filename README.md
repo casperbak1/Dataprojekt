@@ -286,5 +286,9 @@ Det vil sige, at hvis modellen forveksler “A” og “E”, tæller det som en
 
 ---
 
+## Resultater 
 
+
+
+## Pipeline
 
