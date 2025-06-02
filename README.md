@@ -19,7 +19,7 @@
 - [Folder Structure](#folder-structure)
 ---
 
-## Hurtigt Overblik
+## Hurtigt Overblik & Filstruktur
 
 - **Data:** Indeholder alle rå og forarbejdede CSV- og PNG-filer, primært brugt til træning og test.
 - **Overbite:** Indeholder kode, scripts, outputs og forskellige versioner brugt til overbite-klassificering.
@@ -28,35 +28,95 @@
 ---
 
 ## Mappe struktur
-
-Data/\
-│\
-├── Clean Data/\
-│ ├── Bolton Data/ # Billeder til Bolton-analyse\
-│ └── Overbite Data/ # Billeder til overbite-detektion\
-│ ├── Annotated Data Pairs/ # Træningsdata med annotationer\
-│ ├── Annotated Data Verication Pairs/ # Verifikationsdata\
-│ ├── Unannotated Data Pairs/ # Uannoterede billeder\
-│ └── Annotated Data Test Pairs/ # Testdata efter træning\
-│\
-├── Raw Data/\
-│ └── Sample images/ # De originale billeder\
-│ └── Labels as of 28-02-2025 (FINAL - for now) # Den originale CSV fil\
-└── Splitting_and_flipping_of_images.ipynb # Notebook til dataprocessering\
-
-Overbite/\
-│\
-├── Kode/ # Kode til træning og test\
-├── Output/ # Output fra model (billeder, csv, plots)\
-└── Other Versions/ # Alternative modeller og outputs\
-
-Pipeline/\
-│\
-├── Pipeline_code/ # Python scripts brugt i pipeline\
-├── Pipeline_data/ # .PLY, PNG og outputfiler\
-└── dock/ # Yderligere pipeline-relaterede data\
-
-
+- 📁 **Dataprojekt/**
+    - 📄 .gitignore
+    - 📄 Model.txt
+    - 📄 README.md
+    - 📁 **Data/**
+        - 📄 pixel_flip_formula.png
+        - 📄 Splitting_and_flipping_of_images.ipynb
+        - 📁 **Clean Data/**
+            - 📁 **Bolton Data/**
+                - 📄 Example_lower_middle.png
+            - 📁 **Overbite Data/**
+                - 📄 Updated_Labels.csv
+                - 📁 **Annotated Data Pairs/**
+                    - 📄 Example_lower_left.png
+                - 📁 **Annotated Test data/**
+                    - 📄 Example_lower_left.png
+                - 📁 **Annotated Verication data/**
+                    - 📄 Example_lower_left.png
+                - 📁 **Unannotated Data Pairs/**
+                    - 📄 Example_lower_left.png
+        - 📁 **Figurer/**
+        - 📁 **Raw Data/**
+            - 📄 2024-04-08 Test data for overbite classification.xlsx
+            - 📄 2025-05-08 TRANSLATE_KEY(1).xlsx
+            - 📄 Definitions of columns.docx
+            - 📄 Labels as of 19-02-2025 (Sample images).csv
+            - 📄 Labels as of 28-02-2025 (FINAL - for now).csv
+            - 📁 **Sample images/**
+                - 📄 Example_lower_combined.png
+    - 📁 **Overbite/**
+        - 📁 **Kode/**
+            - 📄 Overbite.ipynb
+            - 📄 Pixel_Matrix_Optimizer.ipynb
+            - 📄 Test_Model.ipynb
+            - 📄 Train_Model.ipynb
+        - 📁 **Other Versions (Overbite)/**
+            - 📁 **Kode/**
+            - 📁 **Output/**
+                - 📁 **Modeller/**
+                - 📁 **Overbite Detection/**
+                - 📁 **Pixel Matrix/**
+        - 📁 **Output/**
+            - 📁 **Keypoint Placement/**
+                - 📄 KP_Placement.csv
+            - 📁 **Modeller/**
+                - 📄 Model.txt
+            - 📁 **Overbite Detection/**
+                - 📄 All_FALSE_Classification_Rows.csv
+                - 📄 Overbite_Classification9.csv
+                - 📄 Results.ipynb
+            - 📁 **Pixel Matrix/**
+                - 📄 KP_Refinement.csv
+                - 📄 KP_Refinement_Distance.csv
+                - 📁 **Image Output/**
+                    - 📄 Example_lower_left.html
+    - 📁 **Pipeline/**
+        - 📄 pipeline.ipynb
+        - 📄 README.txt
+        - 📁 **docker_detectron2_env/**
+            - 📄 Dockerfile_pytorch3d_jupyter
+        - 📁 **output/**
+            - 📁 **Overbite_Model/**
+        - 📁 **Pipeline_code/**
+            - 📄 Opdeling_og_flip_af_billeder.py
+            - 📄 Overbite.py
+            - 📄 Pixelmatrix.py
+            - 📄 Ply_To_Image.py
+            - 📄 Run_model.py
+        - 📁 **Pipeline_data/**
+            - 📄 patient_level_summary4.csv
+            - 📄 Predicted_keypoints.csv
+            - 📁 **Clean Data/**
+                - 📁 **Overbite Data/**
+                    - 📄 Info.txt
+            - 📁 **Model/**
+                - 📄 Info.txt
+                - 📄 Model.txt
+            - 📁 **Output_after_pixel_matrix/**
+                - 📄 Info.txt
+            - 📁 **Ply Files/**
+                - 📄 Brunatest LowerJawScan.ply
+                - 📄 Brunatest_UpperJawScan.ply
+                - 📄 Info.txt
+            - 📁 **Raw_data/**
+                - 📄 Brunatest LowerJawScan_0.png
+                - 📄 Brunatest LowerJawScan_1.png
+                - 📄 Brunatest_UpperJawScan_0.png
+                - 📄 Brunatest_UpperJawScan_1.png
+                - 📄 Info.txt                    
 ---
 
 # Projektbeskrivelse
@@ -88,6 +148,10 @@ I tandlægepraksis findes der ikke én standardiseret metode til måling af over
 2. Udarbejdelse af en pipeline, der går fra 3D-filer (.PLY) til keypoint-markering, der muliggør automatisk måling.
 
 **Bemærk:** Resten af denne projektbeskrivelse omhandler kun punkt 1. Pipeline beskrives separat i sektionen "Pipeline".
+
+Projektet bygger på et offentligt datasæt bestående af 1.351 tredimensionelle intraorale scanninger. Til dette projekt er 3D-scanningerne konverteret til todimensionelle billeder, hvilket gør det muligt at anvende gængse deep-learning-metoder til billedanalyse. 
+
+Som model anvender vi Keypoint R-CNN, en videreudvikling af Mask R-CNN, der er designet til at finde præcise keypoints i billeder. Ved at kombinere regions­forslag med punktdetektion gør modellen det muligt at identificere nøjagtige punkter på tænder, hvilket er afgørende for vores opgave, da overbid måles som den vertikale afstand mellem to præcise punkter på fortænderne.
 
 ---
 
@@ -188,7 +252,7 @@ Dataen er nu klargjort til at træne og teste en maskinlæringsmodel.
 
 ---
 
-## CNN-netværk
+## Keypoints R-CNN-netværk
 
 Vi trænede vores model ved at benytte os af en forudtrænet model fra Detectron2.\
 Den model vi har anvendt hedder "keypoint_rcnn_X_101_32x8d_FPN_3x".\
