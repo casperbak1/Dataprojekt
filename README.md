@@ -30,124 +30,243 @@
 ## Mappe struktur
 
 +---Dataprojekt
+
     ª   .gitignore
+    
     ª   Model.txt
+    
     ª   README.md
+    
     ª   
+    
     +---Data
+    
     ª   ª   pixel_flip_formula.png
+    
     ª   ª   Splitting_and_flipping_of_images.ipynb
+    
     ª   ª   
+    
     ª   +---Clean Data
+    
     ª   ª   +---Bolton Data
+    
     ª   ª   ª       Example_lower_middle.png
+    
     ª   ª   ª       
+    
     ª   ª   +---Overbite Data
+    
     ª   ª       ª   Updated_Labels.csv
+    
     ª   ª       ª   
+    
     ª   ª       +---Annotated Data Pairs
+    
     ª   ª       ª       Example_lower_left.png
+    
     ª   ª       ª       
+    
     ª   ª       +---Annotated Test data
+    
     ª   ª       ª       Example_lower_left.png
+    
     ª   ª       ª       
+    
     ª   ª       +---Annotated Verication data
+    
     ª   ª       ª       Example_lower_left.png
+    
     ª   ª       ª       
+    
     ª   ª       +---Unannotated Data Pairs
+    
     ª   ª               Example_lower_left.png
+    
     ª   ª               
+    
     ª   +---Figurer
+    
     ª   ª       
+    
     ª   +---Raw Data
+    
     ª       ª   2024-04-08 Test data for overbite classification.xlsx
+    
     ª       ª   2025-05-08 TRANSLATE_KEY(1).xlsx
+    
     ª       ª   Definitions of columns.docx
+    
     ª       ª   Labels as of 19-02-2025 (Sample images).csv
+    
     ª       ª   Labels as of 28-02-2025 (FINAL - for now).csv
+    
     ª       ª   
+    
     ª       +---Sample images
+    
     ª               Example_lower_combined.png
+    
     ª               
+    
     +---Overbite
+    
     ª   +---Kode
+    
     ª   ª       Overbite.ipynb
+    
     ª   ª       Pixel_Matrix_Optimizer.ipynb
+    
     ª   ª       Test_Model.ipynb
+    
     ª   ª       Train_Model.ipynb
+    
     ª   ª       
+    
     ª   +---Other Versions (Overbite)
+    
     ª   ª   +---Kode
+    
     ª   ª   ª       
+    
     ª   ª   +---Output
+    
     ª   ª       +---Modeller         
+    
     ª   ª       ª                   
+    
     ª   ª       +---Overbite Detection         
+    
     ª   ª       ª                   
+    
     ª   ª       +---Pixel Matrix
+    
     ª   ª                       
+    
     ª   +---Output
+    
     ª       +---Keypoint Placement
+    
     ª       ª       KP_Placement.csv
+    
     ª       ª       
+    
     ª       +---Modeller
+    
     ª       ª   ª   Model.txt
+    
     ª       ª   ª   
+    
     ª       +---Overbite Detection
+    
     ª       ª       All_FALSE_Classification_Rows.csv
+    
     ª       ª       Overbite_Classification9.csv
+    
     ª       ª       Results.ipynb
+    
     ª       ª       
+    
     ª       +---Pixel Matrix
+    
     ª           ª   KP_Refinement.csv
+    
     ª           ª   KP_Refinement_Distance.csv
+    
     ª           ª   
+    
     ª           +---Image Output
+    
     ª                   Example_lower_left.html
+    
     ª                   
+    
     +---Pipeline
+    
         ª   pipeline.ipynb
+        
         ª   README.txt
+        
         ª   
+        
         +---docker_detectron2_env
+        
         ª       Dockerfile_pytorch3d_jupyter
+        
         ª       
+        
         +---output
+        
         ª   +---Overbite_Model
+        
         ª           
+        
         +---Pipeline_code
+        
         ª       Opdeling_og_flip_af_billeder.py
+        
         ª       Overbite.py
+        
         ª       Pixelmatrix.py
+        
         ª       Ply_To_Image.py
+        
         ª       Run_model.py
+        
         ª       
+        
         +---Pipeline_data
+        
             ª   patient_level_summary4.csv
+            
             ª   Predicted_keypoints.csv
+            
             ª   
+            
             +---Clean Data
+            
             ª   +---Overbite Data
+            
             ª           Info.txt
+            
             ª           
+            
             +---Model
+            
             ª       Info.txt
+            
             ª       Model.txt
+            
             ª       
+            
             +---Output_after_pixel_matrix
+            
             ª       Info.txt
+            
             ª       
+            
             +---Ply Files
+            
             ª       Brunatest LowerJawScan.ply
+            
             ª       Brunatest_UpperJawScan.ply
+            
             ª       Info.txt
+            
             ª       
+            
             +---Raw_data
+            
                     Brunatest LowerJawScan_0.png
+                    
                     Brunatest LowerJawScan_1.png
+                    
                     Brunatest_UpperJawScan_0.png
+                    
                     Brunatest_UpperJawScan_1.png
+                    
                     Info.txt
+                    
 ---
 
 # Projektbeskrivelse
