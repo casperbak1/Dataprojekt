@@ -29,8 +29,6 @@
 
 ## Mappe struktur
 
-## Mappe struktur
-
 **Dataprojekt**
     .gitignore
 
