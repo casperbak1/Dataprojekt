@@ -13,6 +13,7 @@
     - [Databehandling](#databehandling)
     - [Data](#data)
   - [CNN-netværk](#cnn-netværk)
+  - [Pixel-matrix](#pixel-matrix)
   - [Evalueringsmetoder](#evalueringsmetoder)
   - [Resultater](#resultater)
   - [Pipeline](#pipeline)
@@ -298,7 +299,7 @@ Det her gentager vi for hver batch indtil modellen er konvergeret.
 
 ---
 
-
+## Pixel-matrix
 
 ## Evalueringsmetoder
 
