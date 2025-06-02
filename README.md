@@ -29,186 +29,153 @@
 
 ## Mappe struktur
 
-Dataprojekt/
+## Mappe struktur
 
-├── .gitignore
+**Dataprojekt**
+    .gitignore
 
-├── Model.txt
+    Model.txt
 
-├── README.md
+    README.md
 
-│
-├── Data/
+    **Data**
+        pixel_flip_formula.png
 
-│ ├── pixel_flip_formula.png
+        Splitting_and_flipping_of_images.ipynb
 
-│ ├── Splitting_and_flipping_of_images.ipynb
+        **Clean Data**
+            **Bolton Data**
+                Example_lower_middle.png
 
-│ ├── Clean Data/
+            **Overbite Data**
+                Updated_Labels.csv
 
-│ │ ├── Bolton Data/
+                **Annotated Data Pairs**
+                    Example_lower_left.png
 
-│ │ │ └── Example_lower_middle.png
+                **Annotated Test data**
+                    Example_lower_left.png
 
-│ │ └── Overbite Data/
+                **Annotated Verication data**
+                    Example_lower_left.png
 
-│ │ ├── Updated_Labels.csv
+                **Unannotated Data Pairs**
+                    Example_lower_left.png
 
-│ │ ├── Annotated Data Pairs/
+        **Figurer**
 
-│ │ │ └── Example_lower_left.png
+        **Raw Data**
+            2024-04-08 Test data for overbite classification.xlsx
 
-│ │ ├── Annotated Test data/
+            2025-05-08 TRANSLATE_KEY(1).xlsx
 
-│ │ │ └── Example_lower_left.png
+            Definitions of columns.docx
 
-│ │ ├── Annotated Verication data/
+            Labels as of 19-02-2025 (Sample images).csv
 
-│ │ │ └── Example_lower_left.png
+            Labels as of 28-02-2025 (FINAL - for now).csv
 
-│ │ └── Unannotated Data Pairs/
+            **Sample images**
+                Example_lower_combined.png
 
-│ │ └── Example_lower_left.png
+**Overbite**
+    **Kode**
+        Overbite.ipynb
 
-│ ├── Figurer/
+        Pixel_Matrix_Optimizer.ipynb
 
-│ └── Raw Data/
+        Test_Model.ipynb
 
-│ ├── 2024-04-08 Test data for overbite classification.xlsx
+        Train_Model.ipynb
 
-│ ├── 2025-05-08 TRANSLATE_KEY(1).xlsx
+    **Other Versions (Overbite)**
+        **Kode**
 
-│ ├── Definitions of columns.docx
+        **Output**
+            **Modeller**
 
-│ ├── Labels as of 19-02-2025 (Sample images).csv
+            **Overbite Detection**
 
-│ ├── Labels as of 28-02-2025 (FINAL - for now).csv
+            **Pixel Matrix**
 
-│ └── Sample images/
+    **Output**
+        **Keypoint Placement**
+            KP_Placement.csv
 
-│ └── Example_lower_combined.png
+        **Modeller**
+            Model.txt
 
-│
-├── Overbite/
+        **Overbite Detection**
+            All_FALSE_Classification_Rows.csv
 
-│ ├── Kode/
+            Overbite_Classification9.csv
 
-│ │ ├── Overbite.ipynb
+            Results.ipynb
 
-│ │ ├── Pixel_Matrix_Optimizer.ipynb
+        **Pixel Matrix**
+            KP_Refinement.csv
 
-│ │ ├── Test_Model.ipynb
+            KP_Refinement_Distance.csv
 
-│ │ └── Train_Model.ipynb
+            **Image Output**
+                Example_lower_left.html
 
-│ ├── Other Versions (Overbite)/
+**Pipeline**
+    pipeline.ipynb
 
-│ │ ├── Kode/
+    README.txt
 
-│ │ └── Output/
+    **docker_detectron2_env**
+        Dockerfile_pytorch3d_jupyter
 
-│ │ ├── Modeller/
+    **output**
+        **Overbite_Model**
 
-│ │ ├── Overbite Detection/
+    **Pipeline_code**
+        Opdeling_og_flip_af_billeder.py
 
-│ │ └── Pixel Matrix/
+        Overbite.py
 
-│ └── Output/
+        Pixelmatrix.py
 
-│ ├── Keypoint Placement/
+        Ply_To_Image.py
 
-│ │ └── KP_Placement.csv
+        Run_model.py
 
-│ ├── Modeller/
+    **Pipeline_data**
+        patient_level_summary4.csv
 
-│ │ └── Model.txt
+        Predicted_keypoints.csv
 
-│ ├── Overbite Detection/
+        **Clean Data**
+            **Overbite Data**
+                Info.txt
 
-│ │ ├── All_FALSE_Classification_Rows.csv
+        **Model**
+            Info.txt
 
-│ │ ├── Overbite_Classification9.csv
+            Model.txt
 
-│ │ └── Results.ipynb
+        **Output_after_pixel_matrix**
+            Info.txt
 
-│ └── Pixel Matrix/
+        **Ply Files**
+            Brunatest LowerJawScan.ply
 
-│ ├── KP_Refinement.csv
+            Brunatest_UpperJawScan.ply
 
-│ ├── KP_Refinement_Distance.csv
+            Info.txt
 
-│ └── Image Output/
+        **Raw_data**
+            Brunatest LowerJawScan_0.png
 
-│ └── Example_lower_left.html
+            Brunatest LowerJawScan_1.png
 
-│
-├── Pipeline/
+            Brunatest_UpperJawScan_0.png
 
-│ ├── pipeline.ipynb
+            Brunatest_UpperJawScan_1.png
 
-│ ├── README.txt
-
-│ ├── docker_detectron2_env/
-
-│ │ └── Dockerfile_pytorch3d_jupyter
-
-│ ├── output/
-
-│ │ └── Overbite_Model/
-
-│ ├── Pipeline_code/
-
-│ │ ├── Opdeling_og_flip_af_billeder.py
-
-│ │ ├── Overbite.py
-
-│ │ ├── Pixelmatrix.py
-
-│ │ ├── Ply_To_Image.py
-
-│ │ └── Run_model.py
-
-│ └── Pipeline_data/
-
-│ ├── patient_level_summary4.csv
-
-│ ├── Predicted_keypoints.csv
-
-│ ├── Clean Data/
-
-│ │ └── Overbite Data/
-
-│ │ └── Info.txt
-
-│ ├── Model/
-
-│ │ ├── Info.txt
-
-│ │ └── Model.txt
-
-│ ├── Output_after_pixel_matrix/
-
-│ │ └── Info.txt
-
-│ ├── Ply Files/
-
-│ │ ├── Brunatest LowerJawScan.ply
-
-│ │ ├── Brunatest_UpperJawScan.ply
-
-│ │ └── Info.txt
-
-│ └── Raw_data/
-
-│ ├── Brunatest LowerJawScan_0.png
-
-│ ├── Brunatest LowerJawScan_1.png
-
-│ ├── Brunatest_UpperJawScan_0.png
-
-│ ├── Brunatest_UpperJawScan_1.png
-
-│ └── Info.txt
+            Info.txt
                     
 ---
 
