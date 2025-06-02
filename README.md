@@ -298,7 +298,9 @@ Den første version af pipelinen byggede på kode, som vores vejleder havde stil
 Vi udvidede og ændrede koden, så den nu tager to PLY-filer (over- og underkæbe) som input. Vores tilføjelser omfatter:
 
 • Justering og ensretning af billederne
+
 • Kørsel af modellen til overbidsklassifikation
+
 • Fremstilling af et endeligt output, der viser både de forudsagte keypoints og klassifikationsresultatet
 
 På nuværende tidspunkt kan vi ikke evaluere pipelinens ydeevne på virkelige eksempler. For at pipelinen kan give nøjagtige forudsigelser, skal både over- og underkæbemodellerne være i samme koordinatsystem. Denne justering findes dog ikke i de PLY-filer, vi har til rådighed.
