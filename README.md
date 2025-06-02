@@ -370,7 +370,7 @@ Vi udvidede og ændrede koden, så den nu tager to PLY-filer (over- og underkæb
 På nuværende tidspunkt kan vi ikke evaluere pipelinens ydeevne på virkelige eksempler. For at pipelinen kan give nøjagtige forudsigelser, skal både over- og underkæbemodellerne være i samme koordinatsystem. Denne justering findes dog ikke i de PLY-filer, vi har til rådighed.
 
 
-## Referancer 
+## Referencer 
 
 Ben-Hamadou, Achraf, Neifar, Nour, Rekik, Ahmed, Smaoui, Oussama, Bouzguenda, Firas, Pujades, Sergi, Boyer, Edmond, and Ladroit, Edouard. "Teeth3Ds+: An Extended Benchmark for Intra-oral 3D Scans Analysis." arXiv preprint arXiv:2210.06094 (2022). https://arxiv.org/abs/2210.06094
 
