@@ -19,7 +19,7 @@
 - [Folder Structure](#folder-structure)
 ---
 
-## Hurtigt Overblik
+## Hurtigt Overblik Filstruktur
 
 - **Data:** Indeholder alle rå og forarbejdede CSV- og PNG-filer, primært brugt til træning og test.
 - **Overbite:** Indeholder kode, scripts, outputs og forskellige versioner brugt til overbite-klassificering.
