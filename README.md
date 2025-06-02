@@ -13,7 +13,7 @@
     - [Databehandling](#databehandling)
     - [Data](#data)
   - [CNN-netværk](#cnn-netværk)
-  - [Evaluering](#evaluering)
+  - [Evalueringsmetoder](#evalueringsmetoder)
   - [Resultater](#resultater)
   - [Pipeline](#pipeline)
 - [Folder Structure](#folder-structure)
