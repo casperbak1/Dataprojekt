@@ -207,6 +207,7 @@ I tandlægepraksis findes der ikke én standardiseret metode til måling af over
 
 **Bemærk:** Resten af denne projektbeskrivelse omhandler kun punkt 1. Pipeline beskrives separat i sektionen "Pipeline".
 
+Projektet bygger på et relativt lille offentligt datasæt bestående af 1.351 tredimensionelle intraorale scanninger. Til dette projekt er 3D-scanningerne konverteret til todimensionelle billeder, hvilket gør det muligt at anvende gængse deep-learning-metoder til billedanalyse. På trods af datasættets begrænsede størrelse søger tilgangen at demonstrere, at det er både muligt og klinisk relevant at bruge maskinlæringsmetoder—særligt CNN-modeller—til at støtte diagnostiske beslutninger i tandplejen.
 ---
 
 ## Data og Databehandling
