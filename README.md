@@ -19,7 +19,7 @@
 - [Folder Structure](#folder-structure)
 ---
 
-## Hurtigt Overblik Filstruktur
+## Hurtigt Overblik & Filstruktur
 
 - **Data:** Indeholder alle rå og forarbejdede CSV- og PNG-filer, primært brugt til træning og test.
 - **Overbite:** Indeholder kode, scripts, outputs og forskellige versioner brugt til overbite-klassificering.
@@ -252,7 +252,7 @@ Dataen er nu klargjort til at træne og teste en maskinlæringsmodel.
 
 ---
 
-## CNN-netværk
+## Keypoints R-CNN-netværk
 
 Vi trænede vores model ved at benytte os af en forudtrænet model fra Detectron2.\
 Den model vi har anvendt hedder "keypoint_rcnn_X_101_32x8d_FPN_3x".\
