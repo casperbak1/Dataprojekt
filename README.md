@@ -710,6 +710,18 @@ Eftersom overbid måles ud fra de vertikale afstande mellem fortænderne, har vi
 
 Vores model rammer i gennemsnit 1.18 pixels eller 0.095 mm fra den korrekte y-værdi. Den gennemsnitlige difference på 0.53 pixels (0.043 mm) indikerer, at modellen har en tendens til at placere keypointet lidt over den sande værdi. Både middel- og medianværdierne er små, hvilket tyder på en god præcision for langt de fleste punkter. Dog viser minimums- og maksimumsværdierne, at der eksisterer enkelte outliers, hvor modellen afviger markant fra det korrekte resultat.
 
+### Resultater efter pixel-matrix-søgning
+
+Efter at have anvendt pixel-matrix-søgning opnås justerede keypoints. Afstanden mellem disse raffinerede keypoints og de sande værdier er målt i både pixels og millimeter og gemt i KP_Refinement_Distance.csv:
+
+| Filename | X_Model  | Y_Model  | X_Refined  | Y_Refined | X_True | Y_True | Refined_Pixel_Dist| Refined_mm_Dist|
+|----------------------------|-----|-----|-----|-----|-----|-----|-----|-----|
+| 013FHA7K_lower_left   | 842| 368|843 | 369 | 844 |369 | 1 | 0.08 |
+
+
+Nedenfor ses et histogram over fordelingen af den euklidiske afstand mellem ground truth og de raffinerede keypoints. Det fremgår tydeligt, at fejlen er reduceret markant i forhold til modellens oprindelige forudsigelser.
+
+<img src="Data/Figurer/Histogram_efter_pixelmatrix.png" width="900" height="400"/> 
 
 ### Detection Metrics (gælder for alle tests)
 
