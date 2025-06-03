@@ -8,8 +8,6 @@ CUDA_VERSION = torch.__version__.split("+")[-1]
 print("torch: ", TORCH_VERSION, "; cuda: ", CUDA_VERSION)
 print("detectron2:", detectron2.__version__)
 
-# Andre pakker
-
 # Some basic setup:
 # Setup detectron2 logger
 from detectron2.utils.logger import setup_logger
@@ -28,30 +26,25 @@ from detectron2.utils.visualizer import Visualizer
 from detectron2.data import MetadataCatalog, DatasetCatalog
 from detectron2.structures import BoxMode
 
-import os
-import cv2
-from detectron2.data import DatasetCatalog, MetadataCatalog
 from detectron2.engine import DefaultTrainer
-from detectron2.config import get_cfg
-from detectron2 import model_zoo
 from detectron2.evaluation import COCOEvaluator, inference_on_dataset
 from detectron2.data import build_detection_test_loader
 from detectron2.data.datasets import convert_to_coco_json
 import shutil
-from detectron2.engine import DefaultTrainer
-from detectron2.config import get_cfg
-from detectron2 import model_zoo
 
-# Indlæs model:
+
+
+
+# Load model
 
 # Reinitialize config
 cfg = get_cfg()
 cfg.merge_from_file(model_zoo.get_config_file("COCO-Keypoints/keypoint_rcnn_X_101_32x8d_FPN_3x.yaml"))
-cfg.MODEL.WEIGHTS = os.path.join("Pipeline_data", "Model", "Final_model_0014999.pth")  # Ændre sti til placering af modellen
-cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.95
+cfg.MODEL.WEIGHTS = os.path.join("Pipeline_data", "Model", "model_0054999.pth")  # Change to the path of model
+cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.9
 cfg.MODEL.KEYPOINT_ON = True
 cfg.MODEL.DEVICE = "cpu"
-cfg.MODEL.ROI_KEYPOINT_HEAD.NUM_KEYPOINTS = 1 # Matcher træning
+cfg.MODEL.ROI_KEYPOINT_HEAD.NUM_KEYPOINTS = 1 # Matches training setup
 
 predictor = DefaultPredictor(cfg)
 
@@ -82,7 +75,7 @@ def test_dataset_function():
             record["image_id"] = idx
             record["height"] = height
             record["width"] = width
-            record["annotations"] = []  # Ingen annotations (ren test data)
+            record["annotations"] = []  # No annotation for test dataset
 
             dataset_dicts.append(record)
     return dataset_dicts
@@ -97,7 +90,7 @@ MetadataCatalog.get("my_test_dataset").set(thing_classes=["object"])
 image_folder = os.path.join("Pipeline_data", "Clean Data", "Overbite Data")
 output_csv = "Pipeline_data/Predicted_keypoints.csv"
 
-# Conversion
+# Conversion factor from pixels to mm
 PIXEL_TO_MM = 0.08
 
 # Load metadata and test dataset
@@ -123,7 +116,7 @@ for sample in dataset_dicts:
 
     keypoints = instances.pred_keypoints
     if len(keypoints) == 0:
-        print(f"Empty keypoint list in: {filename}")
+        print(f"⚠️ Empty keypoint list in: {filename}")
         continue
 
     # Assume first instance

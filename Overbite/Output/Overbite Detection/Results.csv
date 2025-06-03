@@ -1,0 +1,14 @@
+SDR (e <= 0.5 mm);SDR (e <= 1 mm);SDR (e <= 2 mm);Mean Radial Error (MRE);
+89.33 %;96.00 %;99.00 %;0.22 mm;
+;;;;
+Summary Name;Classification Accuracy;Weighted Cohen's Kappa;Patients Total;Patients Excluded
+Overbite_Classification1.csv;97.22%;0.9927;75;3
+Overbite_Classification2.csv;94.44%;0.9841;75;3
+Overbite_Classification3.csv;95.89%;0.9906;75;2
+Overbite_Classification4.csv;95.83%;0.9906;75;3
+Overbite_Classification5.csv;94.59%;0.9860;75;1
+Overbite_Classification6.csv;94.59%;0.9875;75;1
+Overbite_Classification7.csv;95.89%;0.9894;75;2
+Overbite_Classification8.csv;94.52%;0.9882;75;2
+Overbite_Classification9.csv;97.30%;0.9935;75;1
+Overbite_Classification10.csv;93.15%;0.9836;75;2
