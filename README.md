@@ -696,7 +696,7 @@ Nedenfor vises histogrammer over de euklidiske afstande mellem modelens forudsig
 
 > Uden outliers > 3.5 mm. 300/300 Resultater.
 
-### Statistisk evaluering af y-værdier
+### Statistik for y-værdier
 
 Eftersom overbid måles ud fra de vertikale afstande mellem fortænderne, har vi fundet det relevant at udarbejde statistik for y-værdierne:
 
@@ -722,6 +722,23 @@ Efter at have anvendt pixel-matrix-søgning opnås justerede keypoints. Afstande
 Nedenfor ses et histogram over fordelingen af den euklidiske afstand mellem ground truth og de raffinerede keypoints. Det fremgår tydeligt, at fejlen er reduceret markant i forhold til modellens oprindelige forudsigelser.
 
 <img src="Data/Figurer/Histogram_efter_pixelmatrix.png" width="900" height="400"/> 
+
+### Statistik for y-værdier efter pixel-matrix-søgning
+
+Efter anvendelse af pixel-matrix-søgning er der udarbejdet følgende statistik for forskellene i y-koordinater mellem de justerede keypoints og de korrekte (ground truth) værdier:
+
+|Statistic | Value (pixels)| Value (mm)|
+|------------------------|------|-----|
+|Mean absolute difference|	0.457|	0.037|
+|Mean difference|	0.03|	0.0024|
+|Median difference|	0.0|	0.0|
+|Min difference|	-9.0|	-0.72|
+|Max difference|	20.0|	1.60|
+
+Efter pixel-søgningen er modellens absolutte gennemsnitlige afvigelse reduceret til 0.457 pixels, svarende til 0.037 mm fra den korrekte y-værdi. Den gennemsnitlige forskel ligger nu tæt på 0.03, hvilket indikerer, at modellen kun i meget begrænset omfang har en systematisk tendens til at overskyde y-værdien.
+Både medianen og middelværdien for forskellene er faldet markant sammenlignet med før pixel-søgningen, hvilket vidner om en tydelig forbedring i modellens præcision. Selvom der stadig findes enkelte outliers, er både minimums- og maksimumafvigelserne blevet mindre, hvilket viser, at også de mest ekstreme fejl er reduceret.
+
+
 
 ### Detection Metrics (gælder for alle tests)
 
