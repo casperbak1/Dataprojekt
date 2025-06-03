@@ -29,95 +29,231 @@
 ---
 
 ## Mappe struktur
-- 📁 **Dataprojekt/**
-    - 📄 .gitignore
-    - 📄 Model.txt
-    - 📄 README.md
-    - 📁 **Data/**
-        - 📄 pixel_flip_formula.png
-        - 📄 Splitting_and_flipping_of_images.ipynb
-        - 📁 **Clean Data/**
-            - 📁 **Bolton Data/**
-                - 📄 Example_lower_middle.png
-            - 📁 **Overbite Data/**
-                - 📄 Updated_Labels.csv
-                - 📁 **Annotated Data Pairs/**
-                    - 📄 Example_lower_left.png
-                - 📁 **Annotated Test data/**
-                    - 📄 Example_lower_left.png
-                - 📁 **Annotated Verication data/**
-                    - 📄 Example_lower_left.png
-                - 📁 **Unannotated Data Pairs/**
-                    - 📄 Example_lower_left.png
-        - 📁 **Figurer/**
-        - 📁 **Raw Data/**
-            - 📄 2024-04-08 Test data for overbite classification.xlsx
-            - 📄 2025-05-08 TRANSLATE_KEY(1).xlsx
-            - 📄 Definitions of columns.docx
-            - 📄 Labels as of 19-02-2025 (Sample images).csv
-            - 📄 Labels as of 28-02-2025 (FINAL - for now).csv
-            - 📁 **Sample images/**
-                - 📄 Example_lower_combined.png
-    - 📁 **Overbite/**
-        - 📁 **Kode/**
-            - 📄 Overbite.ipynb
-            - 📄 Pixel_Matrix_Optimizer.ipynb
-            - 📄 Test_Model.ipynb
-            - 📄 Train_Model.ipynb
-        - 📁 **Other Versions (Overbite)/**
-            - 📁 **Kode/**
-            - 📁 **Output/**
-                - 📁 **Modeller/**
-                - 📁 **Overbite Detection/**
-                - 📁 **Pixel Matrix/**
-        - 📁 **Output/**
-            - 📁 **Keypoint Placement/**
-                - 📄 KP_Placement.csv
-            - 📁 **Modeller/**
-                - 📄 Model.txt
-            - 📁 **Overbite Detection/**
-                - 📄 All_FALSE_Classification_Rows.csv
-                - 📄 Overbite_Classification9.csv
-                - 📄 Results.ipynb
-            - 📁 **Pixel Matrix/**
-                - 📄 KP_Refinement.csv
-                - 📄 KP_Refinement_Distance.csv
-                - 📁 **Image Output/**
-                    - 📄 Example_lower_left.html
-    - 📁 **Pipeline/**
-        - 📄 pipeline.ipynb
-        - 📄 README.txt
-        - 📁 **docker_detectron2_env/**
-            - 📄 Dockerfile_pytorch3d_jupyter
-        - 📁 **output/**
-            - 📁 **Overbite_Model/**
-        - 📁 **Pipeline_code/**
-            - 📄 Opdeling_og_flip_af_billeder.py
-            - 📄 Overbite.py
-            - 📄 Pixelmatrix.py
-            - 📄 Ply_To_Image.py
-            - 📄 Run_model.py
-        - 📁 **Pipeline_data/**
-            - 📄 patient_level_summary4.csv
-            - 📄 Predicted_keypoints.csv
-            - 📁 **Clean Data/**
-                - 📁 **Overbite Data/**
-                    - 📄 Info.txt
-            - 📁 **Model/**
-                - 📄 Info.txt
-                - 📄 Model.txt
-            - 📁 **Output_after_pixel_matrix/**
-                - 📄 Info.txt
-            - 📁 **Ply Files/**
-                - 📄 Brunatest LowerJawScan.ply
-                - 📄 Brunatest_UpperJawScan.ply
-                - 📄 Info.txt
-            - 📁 **Raw_data/**
-                - 📄 Brunatest LowerJawScan_0.png
-                - 📄 Brunatest LowerJawScan_1.png
-                - 📄 Brunatest_UpperJawScan_0.png
-                - 📄 Brunatest_UpperJawScan_1.png
-                - 📄 Info.txt                    
+<details open>
+<summary>📁 Dataprojekt/</summary>
+
+- 📄 .gitignore  
+- 📄 Model.txt  
+- 📄 README.md  
+
+<details>
+<summary>📁 Data/</summary>
+
+- 📄 pixel_flip_formula.png  
+- 📄 Splitting_and_flipping_of_images.ipynb  
+
+<details>
+<summary>📁 Clean Data/</summary>
+
+<details>
+<summary>📁 Bolton Data/</summary>
+
+- 📄 Example_lower_middle.png  
+
+</details>
+
+<details>
+<summary>📁 Overbite Data/</summary>
+
+- 📄 Updated_Labels.csv  
+
+<details>
+<summary>📁 Annotated Data Pairs/</summary>
+- 📄 Example_lower_left.png  
+</details>
+
+<details>
+<summary>📁 Annotated Test data/</summary>
+- 📄 Example_lower_left.png  
+</details>
+
+<details>
+<summary>📁 Annotated Verication data/</summary>
+- 📄 Example_lower_left.png  
+</details>
+
+<details>
+<summary>📁 Unannotated Data Pairs/</summary>
+- 📄 Example_lower_left.png  
+</details>
+
+</details>
+
+</details>
+
+<details>
+<summary>📁 Figurer/</summary>
+</details>
+
+<details>
+<summary>📁 Raw Data/</summary>
+
+- 📄 2024-04-08 Test data for overbite classification.xlsx  
+- 📄 2025-05-08 TRANSLATE_KEY(1).xlsx  
+- 📄 Definitions of columns.docx  
+- 📄 Labels as of 19-02-2025 (Sample images).csv  
+- 📄 Labels as of 28-02-2025 (FINAL - for now).csv  
+
+<details>
+<summary>📁 Sample images/</summary>
+- 📄 Example_lower_combined.png  
+</details>
+
+</details>
+
+</details>
+
+<details>
+<summary>📁 Overbite/</summary>
+
+<details>
+<summary>📁 Kode/</summary>
+- 📄 Overbite.ipynb  
+- 📄 Pixel_Matrix_Optimizer.ipynb  
+- 📄 Test_Model.ipynb  
+- 📄 Train_Model.ipynb  
+</details>
+
+<details>
+<summary>📁 Other Versions (Overbite)/</summary>
+
+<details>
+<summary>📁 Kode/</summary>
+</details>
+
+<details>
+<summary>📁 Output/</summary>
+
+<details>
+<summary>📁 Modeller/</summary>
+</details>
+
+<details>
+<summary>📁 Overbite Detection/</summary>
+</details>
+
+<details>
+<summary>📁 Pixel Matrix/</summary>
+</details>
+
+</details>
+
+</details>
+
+<details>
+<summary>📁 Output/</summary>
+
+<details>
+<summary>📁 Keypoint Placement/</summary>
+- 📄 KP_Placement.csv  
+</details>
+
+<details>
+<summary>📁 Modeller/</summary>
+- 📄 Model.txt  
+</details>
+
+<details>
+<summary>📁 Overbite Detection/</summary>
+- 📄 All_FALSE_Classification_Rows.csv  
+- 📄 Overbite_Classification9.csv  
+- 📄 Results.ipynb  
+</details>
+
+<details>
+<summary>📁 Pixel Matrix/</summary>
+- 📄 KP_Refinement.csv  
+- 📄 KP_Refinement_Distance.csv  
+
+<details>
+<summary>📁 Image Output/</summary>
+- 📄 Example_lower_left.html  
+</details>
+
+</details>
+
+</details>
+
+</details>
+
+<details>
+<summary>📁 Pipeline/</summary>
+
+- 📄 pipeline.ipynb  
+- 📄 README.txt  
+
+<details>
+<summary>📁 docker_detectron2_env/</summary>
+- 📄 Dockerfile_pytorch3d_jupyter  
+</details>
+
+<details>
+<summary>📁 output/</summary>
+
+<details>
+<summary>📁 Overbite_Model/</summary>
+</details>
+
+</details>
+
+<details>
+<summary>📁 Pipeline_code/</summary>
+- 📄 Opdeling_og_flip_af_billeder.py  
+- 📄 Overbite.py  
+- 📄 Pixelmatrix.py  
+- 📄 Ply_To_Image.py  
+- 📄 Run_model.py  
+</details>
+
+<details>
+<summary>📁 Pipeline_data/</summary>
+
+- 📄 patient_level_summary4.csv  
+- 📄 Predicted_keypoints.csv  
+
+<details>
+<summary>📁 Clean Data/</summary>
+
+<details>
+<summary>📁 Overbite Data/</summary>
+- 📄 Info.txt  
+</details>
+
+</details>
+
+<details>
+<summary>📁 Model/</summary>
+- 📄 Info.txt  
+- 📄 Model.txt  
+</details>
+
+<details>
+<summary>📁 Output_after_pixel_matrix/</summary>
+- 📄 Info.txt  
+</details>
+
+<details>
+<summary>📁 Ply Files/</summary>
+- 📄 Brunatest LowerJawScan.ply  
+- 📄 Brunatest_UpperJawScan.ply  
+- 📄 Info.txt  
+</details>
+
+<details>
+<summary>📁 Raw_data/</summary>
+- 📄 Brunatest LowerJawScan_0.png  
+- 📄 Brunatest LowerJawScan_1.png  
+- 📄 Brunatest_UpperJawScan_0.png  
+- 📄 Brunatest_UpperJawScan_1.png  
+- 📄 Info.txt  
+</details>
+
+</details>
+
+</details>
+
+</details>
+
 ---
 
 # Projektbeskrivelse
@@ -259,7 +395,7 @@ Annoteringerne skal til sidst konverteres til et format som kan læses af modell
 
 Modellen modtager altså som input til træning 1580 billeder af følgende format:
 
-<img src="Data/Figurer/Data_For_Training.png" width="800" height="700"/>
+<img src="Data/Figurer/Data_For_Training.png" width="600" height="600"/>
 
 > *Keypoint markeret med rød, og bounding box markeret med grå*
 
@@ -350,6 +486,13 @@ Det her gentager vi for hver batch indtil modellen er konvergeret.
 
 ## Pixel-matrix
 
+Efter modellen har placeret keypoints på billederne, finjusteres disse positioner ved hjælp af pixelsøgning. Dette sker ved at definere en matrix (af forudbestemt størrelse) omkring det keypoint, som modellen har forudsagt. Inden for denne matrix identificeres den pixel, der ligger højest og er lysest, og denne pixel vælges herefter som det nye, justerede keypoint. Hvis der findes to pixels med samme værdi, bliver den pixel, der ligger længst til venstre, valgt. Dette valg bygger på hvordan det sande keypoint bliver annoteret. 
+Formålet med denne proces er at sikre, at keypointet placeres så præcist som muligt ud fra det forudsagte keypoint fra modellen, hvilket forbedrer den samlede nøjagtighed og robusthed af keypoint placeringen.
+
+Figuren viser fordelingen af fejl for placeringen af keypoints efter pixelsøgningen er implementeret.
+
+<img src="Data/Figurer/Histogram_efter_pixelmatrix.png" width="600" height="600"/> 
+
 ## Evalueringsmetoder
 
 Til evaluering af modellen har vi benyttet os af tre metoder:
@@ -401,7 +544,26 @@ Det vil sige, at hvis modellen forveksler “A” og “E”, tæller det som en
 ---
 
 ## Resultater 
+### Detection Metrics (gælder for alle tests)
 
+| SDR (≤ 0.5 mm) | SDR (≤ 1 mm) | SDR (≤ 2 mm) | Mean Radial Error (MRE) |
+|----------------|--------------|--------------|--------------------------|
+| 89.33 %        | 96.00 %      | 99.00 %      | 0.22 mm                  |
+
+### Test Results
+
+| Summary Name                | Classification Accuracy | Weighted Cohen's Kappa | Patients Total | Patients Excluded |
+|----------------------------|--------------------------|------------------------|----------------|-------------------|
+| Overbite_Classification1.csv | 97.22 %                 | 0.9927                 | 75             | 3                 |
+| Overbite_Classification2.csv | 94.44 %                 | 0.9841                 | 75             | 3                 |
+| Overbite_Classification3.csv | 95.89 %                 | 0.9906                 | 75             | 2                 |
+| Overbite_Classification4.csv | 95.83 %                 | 0.9906                 | 75             | 3                 |
+| Overbite_Classification5.csv | 94.59 %                 | 0.9860                 | 75             | 1                 |
+| Overbite_Classification6.csv | 94.59 %                 | 0.9875                 | 75             | 1                 |
+| Overbite_Classification7.csv | 95.89 %                 | 0.9894                 | 75             | 2                 |
+| Overbite_Classification8.csv | 94.52 %                 | 0.9882                 | 75             | 2                 |
+| Overbite_Classification9.csv | 97.30 %                 | 0.9935                 | 75             | 1                 |
+| Overbite_Classification10.csv| 93.15 %                 | 0.9836                 | 75             | 2                 |
 
 
 ## Pipeline
