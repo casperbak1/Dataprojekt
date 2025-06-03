@@ -738,7 +738,15 @@ Efter anvendelse af pixel-matrix-søgning er der udarbejdet følgende statistik 
 Efter pixel-søgningen er modellens absolutte gennemsnitlige afvigelse reduceret til 0.457 pixels, svarende til 0.037 mm fra den korrekte y-værdi. Den gennemsnitlige forskel ligger nu på 0.03, hvilket indikerer, at modellen kun i meget begrænset omfang overskyder y-værdien.
 Både medianen og middelværdien for forskellene er faldet markant sammenlignet med før pixel-søgningen, hvilket illustrerer en tydelig forbedring i modellens præcision. Selvom der stadig findes enkelte outliers, er både minimums- og maksimumafvigelserne blevet mindre, hvilket viser, at de mest ekstreme fejl er reduceret.
 
+Outputtet fra pixel matrixen kan findes i mappen **Pixel Matrix/Image Output**. Her er det muligt at downloade enhver html fil, åbne den i sin browser og interagere med visualiseringen. 
 
+<img src="Data/Figurer/Forudsagt_og_true_keypoint_1.png.png" width="900" height="400"/> 
+
+<img src="Data/Figurer/Forudsagt_og_true_keypoint_2.png.png" width="900" height="400"/> 
+
+<img src="Data/Figurer/Forudsagt_og_true_keypoint_3.png.png" width="900" height="400"/> 
+
+>  Rød: Model punkt, grøn: ground truth punkt, blå: refined punkt og gul: søgefelt):
 
 ### Detection Metrics (gælder for alle tests)
 
