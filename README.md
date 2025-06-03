@@ -265,7 +265,37 @@ Modellen modtager altså som input til træning 1580 billeder af følgende forma
 
 Og annoteringen:
 
-<pre lang="markdown"> ```json { "images": [ { "file_name": "Dataprojekt/Data/Clean Data/Overbite Data/Annotated Data Pairs/00OMSZGW_lower_left.png", "height": 1024, "width": 1024, "id": 0 } ], "annotations": [ { "bbox": [740, 492, 62, 125], "bbox_mode": 1, "category_id": 0, "keypoints": [777, 492, 2], "num_keypoints": 1, "image_id": 0, "id": 0 } ], "categories": [ { "id": 0, "name": "tooth", "keypoints": ["apex"], "skeleton": [] } ] } ``` </pre>
+```json
+{
+  "images": [
+    {
+      "file_name": "Dataprojekt/Data/Clean Data/Overbite Data/Annotated Data Pairs/00OMSZGW_lower_left.png",
+      "height": 1080,
+      "width": 1920,
+      "id": 0
+    }
+  ],
+  "annotations": [
+    {
+      "bbox": [740, 492, 62, 125],
+      "bbox_mode": 1,
+      "category_id": 0,
+      "keypoints": [777, 492, 2],
+      "num_keypoints": 1,
+      "image_id": 0,
+      "id": 0
+    }
+  ],
+  "categories": [
+    {
+      "id": 0,
+      "name": "tooth",
+      "keypoints": ["apex"],
+      "skeleton": []
+    }
+  ]
+}
+
 
 Modellen er altså nu klar til at blive trænet.
 
