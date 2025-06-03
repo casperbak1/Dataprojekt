@@ -6,6 +6,7 @@
 ## Table of Contents
 
 - [Hurtigt Overblik](#hurtigt-overblik-over-filstruktur )
+  - [Mappestruktur](#Mappestruktur)
 - [Projektbeskrivelse](#projektbeskrivelse)
   - [Abstract](#abstract)
   - [Introduktion](#introduktion)
@@ -27,7 +28,7 @@
 
 ---
 
-## Mappe struktur
+## Mappestruktur
 <details open>
   <summary>📁 Dataprojekt/</summary>
   <ul>
