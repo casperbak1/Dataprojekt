@@ -358,20 +358,36 @@
 
 I tandlægepraksis findes der ikke én standardiseret metode til måling af overbid. Nogle anvender øjemål, andre lineal, røntgenbilleder eller 3D-scanninger. Alle metoder har fordele og ulemper, men ofte er der en afvejning mellem præcision og tidsforbrug.
 
-**Overbid**
+<h3>Overbid</h3>
 
 Overbid refererer til den vertikale afstand mellem de øverste og nederste fortænder, målt fra spidsen af overkæbens fortænder til spidsen af underkæbens. Et for stort overbid indikerer, at de øverste fortænder dækker en unormalt stor del af de nederste, hvilket kan have funktionelle og æstetiske konsekvenser.
 Ved at måle denne afstand kan man klassificere graden af overbid hos en patient og på den baggrund vurdere, om der er behov for behandling.
 Et normalt overbid defineres typisk som en vertikal afstand på mellem 2 og 4 mm.
 I dette projekt er følgende klassifikationer blevet anvendt som udgangspunkt for evaluering og test af modellen. Disse klasser er udarbejdet af vores vejledere:
 
-| Klasse | Vertikal afstand |
-|--------|------------------|
-| A      | < 1 mm           |
-| B      | 1–2 mm           |
-| C      | 2–3 mm           |
-| D      | 3–4 mm           |
-| E      | > 4 mm           |
+<h4>Overbidsklasser</h4>
+
+<table>
+  <tr>
+    <!-- First column: the table content as plain HTML rows -->
+    <td>
+      <table border="1">
+        <tr><th>Klasse</th><th>Vertikal afstand</th></tr>
+        <tr><td>A</td><td>&lt; 1 mm</td></tr>
+        <tr><td>B</td><td>1–2 mm</td></tr>
+        <tr><td>C</td><td>2–3 mm</td></tr>
+        <tr><td>D</td><td>3–4 mm</td></tr>
+        <tr><td>E</td><td>&gt; 4 mm</td></tr>
+      </table>
+    </td>
+    <!-- Second column: the image -->
+    <td style="padding-left: 30px;">
+      <img src="Data/Figurer/Overbite_Figure.png" alt="Illustration af overbid" width="400" height="280"/>
+    </td>
+  </tr>
+</table>
+
+> https://www.mdpi.com/2075-4426/13/10/1472 Figur 1 (03/06/2025)
 
 
 **Dette projekt har to hovedfokusområder:**
@@ -624,7 +640,7 @@ $$
 \kappa_w = 1 - \frac{\sum_{i,j} w_{i,j} O_{i,j}}{\sum_{i,j} w_{i,j} E_{i,j}}
 $$
 
-Her er \$O\_{i,j}\$ andelen af tilfælde, hvor ground truth er klasse \$i\$ og modellen valgte klasse \$j\$, og \$E\_{i,j}\$ er den forventede andel af sådanne tilfælde, hvis annotatorerne var uafhængige.
+Her er \$O\_{i,j}\$ antallet af observationer, hvor annoteringen var klasse \$i\$ og modellen valgte klasse \$j\$, og \$E\_{i,j}\$ er den forventede andel af sådanne tilfælde udregnet ved (række*kolonne/total).
 
 Vægtene \$w\_{i,j}\$ bruges til at straffe større fejl hårdere. Ved **kvadratisk vægtning** (“quadratic weights”) beregnes vægten som:
 
@@ -668,25 +684,81 @@ Eksempel på indhold:
 
 Nedenfor vises histogrammer over de euklidiske afstande mellem modelens forudsigelser og de sande punkter (ground truth).
 
-<img src="Data/Figurer/Histogram_0_6mm.png" width="600" height="412"/>
+<img src="Data/Figurer/Histogram_0_6mm.png" width="600" height="450"/>
 
 > Uden outliers > 0.6 mm. 276/300 Resultater.
 
-<img src="Data/Figurer/Histogram_1_mm.png" width="562" height="380"/>
+<img src="Data/Figurer/Histogram_1_mm.png" width="600" height="450"/>
 
 > Uden outliers > 1 mm. 285/300 Resultater.
 
-<img src="Data/Figurer/Histogram_3_5mm.png" width="576" height="379"/>
+<img src="Data/Figurer/Histogram_3_5mm.png" width="600" height="450"/>
 
 > Uden outliers > 3.5 mm. 300/300 Resultater.
 
-### Detection Metrics (gælder for alle tests)
+### Statistik for y-værdier
+
+Eftersom overbid måles ud fra de vertikale afstande mellem fortænderne, har vi fundet det relevant at udarbejde statistik for y-værdierne:
+
+|Statistic | Value (pixels)| Value (mm)|
+|------------------------|------|-----|
+|Mean absolute difference|	1.18|	0.095|
+|Mean difference|	0.53|	0.043|
+|Median difference|	0.43|	0.035|
+|Min difference|	-9.41|	-0.75|
+|Max difference|	24.08|	1.93|
+
+Vores model rammer i gennemsnit 1.18 pixels eller 0.095 mm fra den korrekte y-værdi. Den gennemsnitlige difference på 0.53 pixels (0.043 mm) indikerer, at modellen har en tendens til at placere keypointet lidt over den sande værdi. Både middel- og medianværdierne er små, hvilket tyder på en god præcision for langt de fleste punkter. Dog viser minimums- og maksimumsværdierne, at der eksisterer enkelte outliers, hvor modellen afviger markant fra det korrekte resultat.
+
+### Resultater efter pixel-matrix-søgning
+
+Efter at have anvendt pixel-matrix-søgning opnås justerede keypoints. Afstanden mellem disse raffinerede keypoints og de sande værdier er målt i både pixels og millimeter og gemt i KP_Refinement_Distance.csv:
+
+| Filename | X_Model  | Y_Model  | X_Refined  | Y_Refined | X_True | Y_True | Refined_Pixel_Dist| Refined_mm_Dist|
+|----------------------------|-----|-----|-----|-----|-----|-----|-----|-----|
+| 013FHA7K_lower_left   | 842| 368|843 | 369 | 844 |369 | 1 | 0.08 |
+
+
+Nedenfor ses et histogram over fordelingen af den euklidiske afstand mellem ground truth og de raffinerede keypoints. Det fremgår tydeligt, at fejlen er reduceret markant i forhold til modellens oprindelige forudsigelser.
+
+<img src="Data/Figurer/Histogram_efter_pixelmatrix.png" width="900" height="400"/> 
+
+### Statistik for y-værdier efter pixel-matrix-søgning
+
+Efter anvendelse af pixel-matrix-søgning er der udarbejdet følgende statistik for forskellene i y-koordinater mellem de justerede keypoints og de korrekte (ground truth) værdier:
+
+|Statistic | Value (pixels)| Value (mm)|
+|------------------------|------|-----|
+|Mean absolute difference|	0.457|	0.037|
+|Mean difference|	0.03|	0.0024|
+|Median difference|	0.0|	0.0|
+|Min difference|	-9.0|	-0.72|
+|Max difference|	20.0|	1.60|
+
+Efter pixel-søgningen er modellens absolutte gennemsnitlige afvigelse reduceret til 0.457 pixels, svarende til 0.037 mm fra den korrekte y-værdi. Den gennemsnitlige forskel ligger nu på 0.03, hvilket indikerer, at modellen kun i meget begrænset omfang overskyder y-værdien.
+Både medianen og middelværdien for forskellene er faldet markant sammenlignet med før pixel-søgningen, hvilket illustrerer en tydelig forbedring i modellens præcision. Selvom der stadig findes enkelte outliers, er både minimums- og maksimumafvigelserne blevet mindre, hvilket viser, at de mest ekstreme fejl er reduceret.
+
+Outputtet fra pixel matrixen kan findes i mappen **Pixel Matrix/Image Output**. Her er det muligt at downloade enhver html fil, åbne den i sin browser og interagere med visualiseringen. 
+
+<img src="Data/Figurer/Forudsagt_og_true_keypoint_1.png.png" width="400" height="400"/> 
+<img src="Data/Figurer/Forudsagt_og_true_keypoint_2.png.png" width="400" height="400"/> 
+<img src="Data/Figurer/Forudsagt_og_true_keypoint_3.png.png" width="400" height="400"/> 
+
+>  Rød: Model punkt, grøn: ground truth punkt, blå: refined punkt og gul: søgefelt):
+
+### Test med simulerede CSV-filer
+Til sidst er modellen blevet testet på simulerede CSV-filer. Hver fil repræsenterer 75 patienter, hvor en vertikal translate key er angivet for hver patient. Denne nøgle bruges til at justere overkæben vertikalt, så både over- og underkæbe bringes ind i samme koordinatsystem og danner et “bid”.
+Disse translate keys er udarbejdet af vores vejledere og sikrer, at hvert tandsæt i testdata har en bestemt grad af overbid. Vi har modtaget 10 af disse simulerede CSV-filer, som gør det muligt at evaluere modellen i en simuleret virkelighed. Hvis en patients overbid ligger på grænsen mellem to klasser, så klassificeres patienten med klassen None og bliver ekskluderet fra testen.
+Ved brug af de evalueringsmetoder, der er beskrevet i det foregående afsnit, har vi opnået følgende nøglemålinger for de 10 tests:
+
+
+#### Detection Metrics (gælder for alle tests)
 
 | SDR (≤ 0.5 mm) | SDR (≤ 1 mm) | SDR (≤ 2 mm) | Mean Radial Error (MRE) |
 |----------------|--------------|--------------|--------------------------|
 | 89.33 %        | 96.00 %      | 99.00 %      | 0.22 mm                  |
 
-### Test Results
+#### Test Results
 
 | Summary Name                | Classification Accuracy | Weighted Cohen's Kappa | Patients Total | Patients Excluded |
 |----------------------------|--------------------------|------------------------|----------------|-------------------|
@@ -701,6 +773,7 @@ Nedenfor vises histogrammer over de euklidiske afstande mellem modelens forudsig
 | Overbite_Classification9.csv | 97.30 %                 | 0.9935                 | 75             | 1                 |
 | Overbite_Classification10.csv| 93.15 %                 | 0.9836                 | 75             | 2                 |
 
+SDR og MRE er målt på forudsigelserne efter pixelmatrix-søgning, hvor de resterende målinger er for hvert af de 10 testfiler. 
 
 ## Pipeline
 Som den sidste del af projektet har vi udviklet en pipeline, der tager to PLY-filer — én for overkæben og én for underkæben — som input. Pipelinen giver som output en visuel forudsigelse af det samlede tandsæt samt en klassifikation af overbid.
