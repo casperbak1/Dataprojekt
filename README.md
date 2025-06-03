@@ -11,7 +11,7 @@
   - [Introduktion](#introduktion)
   - [Data og Databehandling](#data-og-databehandling)
     - [Databehandling](#databehandling)
-  - [CNN-netværk](#cnn-netværk)
+  - [RCNN-netværk](#Keypoints-R-CNN-netværk)
   - [Pixel-matrix](#pixel-matrix)
   - [Evalueringsmetoder](#evalueringsmetoder)
   - [Resultater](#resultater)
