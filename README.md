@@ -29,228 +29,312 @@
 ---
 
 ## Mappe struktur
-
 <details open>
-<summary>📁 Dataprojekt/</summary>
-
-- 📄 .gitignore  
-- 📄 Model.txt  
-- 📄 README.md  
-
-  <details>
-  <summary>📁 Data/</summary>
-
-  - 📄 pixel_flip_formula.png  
-  - 📄 Splitting_and_flipping_of_images.ipynb  
-
-    <details>
-    <summary>📁 Clean Data/</summary>
-
+  <summary>📁 Dataprojekt/</summary>
+  <ul>
+    <li>📄 .gitignore</li>
+    <li>📄 Model.txt</li>
+    <li>📄 README.md</li>
+    <li>
       <details>
-      <summary>📁 Bolton Data/</summary>
-      &emsp;- 📄 Example_lower_middle.png  
+        <summary>📁 Data/</summary>
+        <ul>
+          <li>📄 pixel_flip_formula.png</li>
+          <li>📄 Splitting_and_flipping_of_images.ipynb</li>
+          <li>
+            <details>
+              <summary>📁 Clean Data/</summary>
+              <ul>
+                <li>
+                  <details>
+                    <summary>📁 Bolton Data/</summary>
+                    <ul>
+                      <li>📄 Example_lower_middle.png</li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>📁 Overbite Data/</summary>
+                    <ul>
+                      <li>📄 Updated_Labels.csv</li>
+                      <li>
+                        <details>
+                          <summary>📁 Annotated Data Pairs/</summary>
+                          <ul>
+                            <li>📄 Example_lower_left.png</li>
+                          </ul>
+                        </details>
+                      </li>
+                      <li>
+                        <details>
+                          <summary>📁 Annotated Test data/</summary>
+                          <ul>
+                            <li>📄 Example_lower_left.png</li>
+                          </ul>
+                        </details>
+                      </li>
+                      <li>
+                        <details>
+                          <summary>📁 Annotated Verication data/</summary>
+                          <ul>
+                            <li>📄 Example_lower_left.png</li>
+                          </ul>
+                        </details>
+                      </li>
+                      <li>
+                        <details>
+                          <summary>📁 Unannotated Data Pairs/</summary>
+                          <ul>
+                            <li>📄 Example_lower_left.png</li>
+                          </ul>
+                        </details>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>📁 Figurer/</summary>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>📁 Raw Data/</summary>
+              <ul>
+                <li>📄 2024-04-08 Test data for overbite classification.xlsx</li>
+                <li>📄 2025-05-08 TRANSLATE_KEY(1).xlsx</li>
+                <li>📄 Definitions of columns.docx</li>
+                <li>📄 Labels as of 19-02-2025 (Sample images).csv</li>
+                <li>📄 Labels as of 28-02-2025 (FINAL - for now).csv</li>
+                <li>
+                  <details>
+                    <summary>📁 Sample images/</summary>
+                    <ul>
+                      <li>📄 Example_lower_combined.png</li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
       </details>
+    </li>
 
+    <li>
       <details>
-      <summary>📁 Overbite Data/</summary>
-      &emsp;- 📄 Updated_Labels.csv  
-
-        <details>
-        <summary>📁 Annotated Data Pairs/</summary>
-        &emsp;&emsp;- 📄 Example_lower_left.png  
-        </details>
-
-        <details>
-        <summary>📁 Annotated Test data/</summary>
-        &emsp;&emsp;- 📄 Example_lower_left.png  
-        </details>
-
-        <details>
-        <summary>📁 Annotated Verication data/</summary>
-        &emsp;&emsp;- 📄 Example_lower_left.png  
-        </details>
-
-        <details>
-        <summary>📁 Unannotated Data Pairs/</summary>
-        &emsp;&emsp;- 📄 Example_lower_left.png  
-        </details>
-
+        <summary>📁 Overbite/</summary>
+        <ul>
+          <li>
+            <details>
+              <summary>📁 Kode/</summary>
+              <ul>
+                <li>📄 Overbite.ipynb</li>
+                <li>📄 Pixel_Matrix_Optimizer.ipynb</li>
+                <li>📄 Test_Model.ipynb</li>
+                <li>📄 Train_Model.ipynb</li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>📁 Other Versions (Overbite)/</summary>
+              <ul>
+                <li>
+                  <details>
+                    <summary>📁 Kode/</summary>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>📁 Output/</summary>
+                    <ul>
+                      <li>
+                        <details>
+                          <summary>📁 Modeller/</summary>
+                        </details>
+                      </li>
+                      <li>
+                        <details>
+                          <summary>📁 Overbite Detection/</summary>
+                        </details>
+                      </li>
+                      <li>
+                        <details>
+                          <summary>📁 Pixel Matrix/</summary>
+                        </details>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>📁 Output/</summary>
+              <ul>
+                <li>
+                  <details>
+                    <summary>📁 Keypoint Placement/</summary>
+                    <ul>
+                      <li>📄 KP_Placement.csv</li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>📁 Modeller/</summary>
+                    <ul>
+                      <li>📄 Model.txt</li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>📁 Overbite Detection/</summary>
+                    <ul>
+                      <li>📄 All_FALSE_Classification_Rows.csv</li>
+                      <li>📄 Overbite_Classification9.csv</li>
+                      <li>📄 Results.ipynb</li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>📁 Pixel Matrix/</summary>
+                    <ul>
+                      <li>📄 KP_Refinement.csv</li>
+                      <li>📄 KP_Refinement_Distance.csv</li>
+                      <li>
+                        <details>
+                          <summary>📁 Image Output/</summary>
+                          <ul>
+                            <li>📄 Example_lower_left.html</li>
+                          </ul>
+                        </details>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
       </details>
+    </li>
 
-    </details>
-
-    <details>
-    <summary>📁 Figurer/</summary>
-    </details>
-
-    <details>
-    <summary>📁 Raw Data/</summary>
-
-    - 📄 2024-04-08 Test data for overbite classification.xlsx  
-    - 📄 2025-05-08 TRANSLATE_KEY(1).xlsx  
-    - 📄 Definitions of columns.docx  
-    - 📄 Labels as of 19-02-2025 (Sample images).csv  
-    - 📄 Labels as of 28-02-2025 (FINAL - for now).csv  
-
+    <li>
       <details>
-      <summary>📁 Sample images/</summary>
-      &emsp;- 📄 Example_lower_combined.png  
+        <summary>📁 Pipeline/</summary>
+        <ul>
+          <li>📄 pipeline.ipynb</li>
+          <li>📄 README.txt</li>
+          <li>
+            <details>
+              <summary>📁 docker_detectron2_env/</summary>
+              <ul>
+                <li>📄 Dockerfile_pytorch3d_jupyter</li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>📁 output/</summary>
+              <ul>
+                <li>
+                  <details>
+                    <summary>📁 Overbite_Model/</summary>
+                    </details>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>📁 Pipeline_code/</summary>
+              <ul>
+                <li>📄 Opdeling_og_flip_af_billeder.py</li>
+                <li>📄 Overbite.py</li>
+                <li>📄 Pixelmatrix.py</li>
+                <li>📄 Ply_To_Image.py</li>
+                <li>📄 Run_model.py</li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>📁 Pipeline_data/</summary>
+              <ul>
+                <li>📄 patient_level_summary4.csv</li>
+                <li>📄 Predicted_keypoints.csv</li>
+                <li>
+                  <details>
+                    <summary>📁 Clean Data/</summary>
+                    <ul>
+                      <li>
+                        <details>
+                          <summary>📁 Overbite Data/</summary>
+                          <ul>
+                            <li>📄 Info.txt</li>
+                          </ul>
+                        </details>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>📁 Model/</summary>
+                    <ul>
+                      <li>📄 Info.txt</li>
+                      <li>📄 Model.txt</li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>📁 Output_after_pixel_matrix/</summary>
+                    <ul>
+                      <li>📄 Info.txt</li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>📁 Ply Files/</summary>
+                    <ul>
+                      <li>📄 Brunatest LowerJawScan.ply</li>
+                      <li>📄 Brunatest_UpperJawScan.ply</li>
+                      <li>📄 Info.txt</li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>📁 Raw_data/</summary>
+                    <ul>
+                      <li>📄 Brunatest LowerJawScan_0.png</li>
+                      <li>📄 Brunatest LowerJawScan_1.png</li>
+                      <li>📄 Brunatest_UpperJawScan_0.png</li>
+                      <li>📄 Brunatest_UpperJawScan_1.png</li>
+                      <li>📄 Info.txt</li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
       </details>
-
-    </details>
-
-  </details>
-
-  <details>
-  <summary>📁 Overbite/</summary>
-
-    <details>
-    <summary>📁 Kode/</summary>
-    - 📄 Overbite.ipynb  
-    - 📄 Pixel_Matrix_Optimizer.ipynb  
-    - 📄 Test_Model.ipynb  
-    - 📄 Train_Model.ipynb  
-    </details>
-
-    <details>
-    <summary>📁 Other Versions (Overbite)/</summary>
-
-      <details>
-      <summary>📁 Kode/</summary>
-      </details>
-
-      <details>
-      <summary>📁 Output/</summary>
-
-        <details>
-        <summary>📁 Modeller/</summary>
-        </details>
-
-        <details>
-        <summary>📁 Overbite Detection/</summary>
-        </details>
-
-        <details>
-        <summary>📁 Pixel Matrix/</summary>
-        </details>
-
-      </details>
-
-    </details>
-
-    <details>
-    <summary>📁 Output/</summary>
-
-      <details>
-      <summary>📁 Keypoint Placement/</summary>
-      - 📄 KP_Placement.csv  
-      </details>
-
-      <details>
-      <summary>📁 Modeller/</summary>
-      - 📄 Model.txt  
-      </details>
-
-      <details>
-      <summary>📁 Overbite Detection/</summary>
-      - 📄 All_FALSE_Classification_Rows.csv  
-      - 📄 Overbite_Classification9.csv  
-      - 📄 Results.ipynb  
-      </details>
-
-      <details>
-      <summary>📁 Pixel Matrix/</summary>
-      - 📄 KP_Refinement.csv  
-      - 📄 KP_Refinement_Distance.csv  
-
-        <details>
-        <summary>📁 Image Output/</summary>
-        &emsp;- 📄 Example_lower_left.html  
-        </details>
-
-      </details>
-
-    </details>
-
-  </details>
-
-  <details>
-  <summary>📁 Pipeline/</summary>
-
-  - 📄 pipeline.ipynb  
-  - 📄 README.txt  
-
-    <details>
-    <summary>📁 docker_detectron2_env/</summary>
-    - 📄 Dockerfile_pytorch3d_jupyter  
-    </details>
-
-    <details>
-    <summary>📁 output/</summary>
-
-      <details>
-      <summary>📁 Overbite_Model/</summary>
-      </details>
-
-    </details>
-
-    <details>
-    <summary>📁 Pipeline_code/</summary>
-    - 📄 Opdeling_og_flip_af_billeder.py  
-    - 📄 Overbite.py  
-    - 📄 Pixelmatrix.py  
-    - 📄 Ply_To_Image.py  
-    - 📄 Run_model.py  
-    </details>
-
-    <details>
-    <summary>📁 Pipeline_data/</summary>
-
-    - 📄 patient_level_summary4.csv  
-    - 📄 Predicted_keypoints.csv  
-
-      <details>
-      <summary>📁 Clean Data/</summary>
-
-        <details>
-        <summary>📁 Overbite Data/</summary>
-        &emsp;- 📄 Info.txt  
-        </details>
-
-      </details>
-
-      <details>
-      <summary>📁 Model/</summary>
-      - 📄 Info.txt  
-      - 📄 Model.txt  
-      </details>
-
-      <details>
-      <summary>📁 Output_after_pixel_matrix/</summary>
-      - 📄 Info.txt  
-      </details>
-
-      <details>
-      <summary>📁 Ply Files/</summary>
-      - 📄 Brunatest LowerJawScan.ply  
-      - 📄 Brunatest_UpperJawScan.ply  
-      - 📄 Info.txt  
-      </details>
-
-      <details>
-      <summary>📁 Raw_data/</summary>
-      - 📄 Brunatest LowerJawScan_0.png  
-      - 📄 Brunatest LowerJawScan_1.png  
-      - 📄 Brunatest_UpperJawScan_0.png  
-      - 📄 Brunatest_UpperJawScan_1.png  
-      - 📄 Info.txt  
-      </details>
-
-    </details>
-
-  </details>
-
+    </li>
+  </ul>
 </details>
+
 ---
 
 # Projektbeskrivelse
