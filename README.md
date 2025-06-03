@@ -663,5 +663,6 @@ På nuværende tidspunkt kan vi ikke evaluere pipelinens ydeevne på virkelige e
 
 ## Referencer 
 
+Data:
 Ben-Hamadou, Achraf, Neifar, Nour, Rekik, Ahmed, Smaoui, Oussama, Bouzguenda, Firas, Pujades, Sergi, Boyer, Edmond, and Ladroit, Edouard. "Teeth3Ds+: An Extended Benchmark for Intra-oral 3D Scans Analysis." arXiv preprint arXiv:2210.06094 (2022). https://arxiv.org/abs/2210.06094
 
