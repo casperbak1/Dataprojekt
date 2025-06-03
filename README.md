@@ -555,27 +555,27 @@ I vores arbejde har vi trænet en model ved hjælp af en forudtrænet model fra 
 
 * **Modeltype:** Keypoint R-CNN. Dette indikerer, at modellen er designet til at identificere specifikke nøglepunkter (keypoints) på objekter.
 * **Backbone-arkitektur:** X_101_32x8d_FPN. Dette er kernen i modellen og består af:
-    * **ResNeXt-101 (X_101_32x8d):** En ResNeXt-arkitektur med 101 lag. "32x8d" specificerer, at netværket anvender 32 parallelle grupperede convolutions, hvor hver gruppe har en bredde på 8. Dette design forbedrer modellens evne til at lære komplekse mønstre.
-    * **FPN (Feature Pyramid Network):** Denne komponent gør det muligt for modellen at lære og detektere objekter på tværs af forskellige skalaer ved at udnytte feature-maps fra flere niveauer i netværket.
+    * **ResNeXt-101 (X_101_32x8d):** En ResNeXt-arkitektur med 101 lag. "32x8d" specificerer, at netværket anvender 32 parallelle grupperede convolutions, hvor hver gruppe har en bredde på 8. Dette forbedrer modellens evne til at lære komplekse mønstre.
+    * **FPN (Feature Pyramid Network):** Gør det muligt for modellen at lære og detektere objekter på tværs af forskellige skalaer ved at udnytte feature-maps fra flere niveauer i netværket.
 
-### Træningsprocessen Trin for Trin
+### Træningsprocessen
 
-Vores træningsprocedure kan grundlæggende opdeles i følgende faser:
+Træningen kan grundlæggende opdeles i følgende faser:
 
 1.  **Inputdata:**
     * Vi starter med billeder i en opløsning på 1024x1024 pixels.
     * Hvert billede er forsynet med et "ground truth" keypoint, hvilket er den korrekte, manuelt markerede placering af det ønskede nøglepunkt.
 
 2.  **Data Augmentering:**
-    * For at gøre modellen mere robust og forhindre overtilpasning (at modellen kun lærer de specifikke træningsbilleder at kende), udsættes billederne for forskellige augmenteringsteknikker.
-    * Dette inkluderer variationer i billedstørrelse, spejlinger (horisontalt/vertikalt), samt justeringer af lys og kontrast.
-    * De tilhørende annoteringer (keypoints) justeres automatisk for at matche de augmenterede billeder (f.eks. flyttes keypointet med, hvis billedet spejles).
+    * Gør modellen mere robust ved at udsætte billederne for forskellige augmenteringsteknikker.
+    * Inkluderer variationer i billedstørrelse, spejlinger (horisontalt/vertikalt), samt justeringer af lys og kontrast.
+    * Tilhørende annoteringer (keypoints) justeres automatisk for at matche de augmenterede billeder (f.eks. flyttes keypointet med, hvis billedet spejles).
 
 3.  **Batch-indlæsning:**
     * Billederne indlæses i modellen i "batches" (grupper af billeder). Vi har anvendt en batch-størrelse på 16.
     * Træning med batches frem for individuelle billeder har to primære fordele:
         * **Hurtigere træning:** Parallel processering af flere billeder er mere effektivt.
-        * **Mere stabil træning:** Modellens vægtjusteringer baseres på gennemsnittet af fejlen for hele batchen. Dette reducerer risikoen for, at enkelte afvigende billeder (outliers) får uforholdsmæssig stor indflydelse på læringen, hvilket ville være tilfældet ved opdatering baseret på ét billede ad gangen.
+        * **Mere stabil træning:** Modellens vægtjusteringer baseres på gennemsnittet af fejlen for hele batchen. Dette reducerer risikoen for, at enkelte afvigende billeder (outliers) får stor indflydelse på læringen, hvilket ville være tilfældet ved opdatering baseret på ét billede ad gangen.
 
 4.  **Feature Extraction med ResNeXt-101:**
     * De augmenterede billeder (i batches) føres nu igennem ResNeXt-101 backbone-arkitekturen.
@@ -588,28 +588,50 @@ Vores træningsprocedure kan grundlæggende opdeles i følgende faser:
     * Styrken ved FPN er, at den kombinerer feature maps fra forskellige dybder (lag) i netværket.
         * Tidlige lag fanger typisk simple, lav-niveau mønstre (kanter, teksturer).
         * Sene lag fanger mere komplekse, høj-niveau mønstre og helheder (objektdele, hele objekter).
-    * Ved at samle disse informationer kan modellen bedre detektere objekter og keypoints uanset deres størrelse i billedet.
+    * Ved at samle disse informationer kan modellen bedre finde objekter og keypoints uanset deres størrelse i billedet.
 
 6.  **Region Proposal Network (RPN):**
     * RPN modtager de kombinerede feature maps fra FPN.
-    * Dens opgave er at generere tusindvis af potentielle "region proposals" – små afgrænsede bokse af forskellige størrelser og former, der dækker områder i billedet, hvor der potentielt kunne være et relevant objekt.
+    * Dens opgave er at generere tusindvis af "region proposals" – små afgrænsede bokse af forskellige størrelser og former, der dækker områder i billedet, hvor der potentielt kunne være et relevant objekt.
     * For hver af disse foreslåede bokse beregner RPN en score, der angiver sandsynligheden for, at boksen rent faktisk indeholder et objekt af interesse.
     * De mest lovende forslag (dem med højest score) sendes videre til det næste trin.
 
 7.  **Keypoint Lokalisering:**
-    * For hver af de udvalgte region proposals fra RPN genererer modellen et "heatmap".
-    * Et heatmap er et billede, hvor hver pixelværdi repræsenterer sandsynligheden for, at det søgte keypoint befinder sig netop på dén pixelposition inden for den foreslåede region.
+    * For hver af de udvalgte region proposals fra RPN genererer modellen et "heatmap", hvor hver pixelværdi repræsenterer sandsynligheden for, at det søgte keypoint befinder sig netop på dén pixelposition inden for den foreslåede region.
     * Disse sandsynligheder beregnes ved hjælp af en softmax-funktion. Softmax sikrer, at summen af alle sandsynlighederne i et heatmap er lig med 1, hvilket gør det muligt at tolke værdierne som en sandsynlighedsfordeling.
     * Til sidst identificerer modellen den pixel i heatmappet, der har den højeste sandsynlighedsværdi. Denne pixelposition betragtes som modellens endelige bud på placeringen af keypointet.
 
-(ikke rettet)Til sidst er der loss, backpropagation og optimering.
-Efter modellen har givet sit bedste bud på hvor keypointet skal placeres, så beregnes det hvor galt den tog fejl, med en cross-entropy loss mellem predicted og ground truth.
-Efter det sker der backpropagation;
-Den starter med fejlen og regner, hvor meget hver vægt i netværket har påvirket fejlen, dette sker lag-for-lag bagud gennem hele netværket med kædereglen for differenciering.
-Vægtene justeres en smule, så fejlen bliver mindre næste gang.
-Det her gentager vi for hver batch indtil modellen er konvergeret.
+8.  **Loss, Backpropagation og Optimering:**
+    Når modellen har afgivet sit bud på keypointets placering (via det genererede heatmap), er næste skridt at evaluere, hvor præcist dette bud er, og derefter justere modellen for at forbedre fremtidige forudsigelser. Denne proces involverer tre centrale elementer:
 
----
+    * **Loss-beregning:**
+        Først beregnes modellens fejl. Dette gøres ved at sammenligne modellens **forudsagte heatmap** med det **ground truth heatmap**. En **loss-funktion** beregner en score, der angiver, hvor stor forskellen er mellem forudsigelsen og sandheden. For denne opgave anvendes følgende loss-funktioner:
+
+| Modul                     | Formål                        | Loss-navn i logs | Loss-funktion                                     | Optimizer / Gradient Flow                 |
+|---------------------------|-------------------------------|------------------|---------------------------------------------------|-------------------------------------------|
+| **RPN - Region Proposal** | Objekt-foreslag (anchors)     | `loss_rpn_cls`   | Binary Cross Entropy (BCE)                        | Backprop via **SGD** |
+|                           |                               | `loss_rpn_loc`   | Smooth L1                                         | Backprop via **SGD** |
+| **ROI Box Head** | Objektklassifikation + BBox   | `loss_cls`       | Cross Entropy (Softmax)                           | Backprop via **SGD** |
+|                           |                               | `loss_box_reg`   | Smooth L1                                         | Backprop via **SGD** |
+| **ROI Keypoint Head** | Forudsig keypoints (heatmaps) | `loss_keypoint`  | Binary Cross Entropy (sigmoid pr. keypoint pixel) | Backprop via **SGD** |
+| **SGD Optimizer** | Vægt-opdatering               | –                | –                                                 | `torch.optim.SGD` med momentum = 0.9      |
+| **Learning Rate** | Læringshastighed              | –                | –                                                 | Starter ved `BASE_LR = 0.002` + warmup  |
+| **AMP (Mixed Precision)** | Hurtigere træning             | –                | –                                                 | Ja (`cfg.SOLVER.AMP.ENABLED = True`)    |
+    
+    * **Backpropagation:**
+        Når fejlen (loss) er beregnet, skal vi finde ud af, hvordan hver enkelt vægt (parameter) i netværket har bidraget til denne fejl. Det er her, **backpropagation** kommer ind i billedet.
+        * Processen starter med den beregnede loss-værdi.
+        * Ved hjælp af **kædereglen for differentiering** beregnes gradienten af loss-funktionen med hensyn til hver vægt i netværket. Gradienten fortæller os, hvor meget loss-værdien ville ændre sig, hvis vi ændrede den pågældende vægt en lille smule – altså vægtens "ansvar" for fejlen.
+        * Denne beregning foregår baglæns gennem netværket, lag for lag, fra outputlaget tilbage mod inputlaget.
+
+    * **Optimering:**
+        Med gradienterne beregnet via backpropagation ved vi nu, i hvilken "retning" hver vægt skal justeres for at reducere fejlen. En **optimeringsalgoritme** (f.eks. Adam, SGD) bruger disse gradienter til at opdatere modellens vægte.
+        * Vægtene justeres typisk en lille smule i modsat retning af deres gradient. Målet er at tage et lille skridt i den retning, der minimerer loss-funktionen. Størrelsen af dette skridt styres af hyperparameteren "learning rate".
+
+    * **Iteration og Konvergens:**
+        Hele denne cyklus – data gennem modellen, loss-beregning, backpropagation, og vægtjustering – gentages for hver **batch** af billeder. Én fuld gennemgang af hele træningsdatasættet kaldes en **epoch**.
+        Modellen bliver gradvist bedre (dvs. loss-værdien falder), efterhånden som dens vægte finjusteres. Træningen stoppes, når modellen **konvergerer**, hvilket betyder, at dens ydeevne på et separat valideringsdatasæt ikke længere forbedres signifikant, eller når et forudbestemt antal epochs er nået. For den valgte model stoppede vi træningen efter 152 epochs.
+
 
 ## Pixel-matrix
 
