@@ -29,7 +29,7 @@
 ---
 
 ## Mappe struktur
-<details>
+<details open>
 <summary>📁 Dataprojekt/</summary>
 
 - 📄 .gitignore  
