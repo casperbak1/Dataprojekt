@@ -367,16 +367,32 @@ I dette projekt er følgende klassifikationer blevet anvendt som udgangspunkt fo
 
 ### Overbidsklasser
 
-| Klasse | Vertikal afstand |
-|--------|------------------|
-| A      | < 1 mm           |
-| B      | 1–2 mm           |
-| C      | 2–3 mm           |
-| D      | 3–4 mm           |
-| E      | > 4 mm           |
+<table>
+  <tr>
+    <td>
 
+      <table>
+        <thead>
+          <tr>
+            <th>Klasse</th>
+            <th>Vertikal afstand</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>&lt; 1 mm</td></tr>
+          <tr><td>B</td><td>1–2 mm</td></tr>
+          <tr><td>C</td><td>2–3 mm</td></tr>
+          <tr><td>D</td><td>3–4 mm</td></tr>
+          <tr><td>E</td><td>&gt; 4 mm</td></tr>
+        </tbody>
+      </table>
+    </td>
+    <td style="padding-left: 30px;">
+      <img src="Data/Figurer/Overbite_Figure.png" alt="Illustration af overbid" width="300" height="210"/>
+    </td>
+  </tr>
+</table>
 
-<img src="Data/Figurer/Overbite_Figure.png" alt="Illustration af overbid" width="614" height="431"/>
 
 **Dette projekt har to hovedfokusområder:**
 
