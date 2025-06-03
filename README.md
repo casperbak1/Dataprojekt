@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-- [Hurtigt Overblik](#hurtigt-overblik)
+- [Hurtigt Overblik](#hurtigt-overblik-over-filstruktur )
 - [Projektbeskrivelse](#projektbeskrivelse)
   - [Abstract](#abstract)
   - [Introduktion](#introduktion)
@@ -20,7 +20,7 @@
 
 ---
 
-## Hurtigt Overblik over filstruktur
+## Hurtigt overblik over filstruktur
 
 - **Data:** Indeholder alle rå og forarbejdede CSV- og PNG-filer, primært brugt til træning og test.
 - **Overbite:** Indeholder kode, scripts, outputs og forskellige versioner brugt til overbite-klassificering.
