@@ -615,35 +615,15 @@ Træningen kan grundlæggende opdeles i følgende faser:
 
     * **Loss-beregning:**
         Først beregnes modellens fejl. Dette gøres ved at sammenligne modellens **forudsagte heatmap** med det **ground truth heatmap**. En **loss-funktion** beregner en score, der angiver, hvor stor forskellen er mellem forudsigelsen og sandheden. For denne opgave anvendes følgende loss-funktioner:
+          *    | Modul                     | Loss-funktion                                     |
+  |---------------------------|-------------------------------|
+  | **RPN - Region Proposal** | Binary Cross Entropy (BCE)                        |
+  |                           |                               | Smooth L1                                         |
+  | **ROI Box Head** | Cross Entropy (Softmax)                           |
+  |                           |                               | Smooth L1                                         |
+  | **ROI Keypoint Head** | Binary Cross Entropy (sigmoid pr. keypoint pixel) |
 
-<table>
-  <thead>
-    <tr>
-      <th>Modul</th>
-      <th>Loss-funktion</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="2"><strong>RPN - Region Proposal</strong></td>
-      <td>Binary Cross Entropy (BCE)</td>
-    </tr>
-    <tr>
-      <td>Smooth L1</td>
-    </tr>
-    <tr>
-      <td rowspan="2"><strong>ROI Box Head</strong></td>
-      <td>Cross Entropy (Softmax)</td>
-    </tr>
-    <tr>
-      <td>Smooth L1</td>
-    </tr>
-    <tr>
-      <td><strong>ROI Keypoint Head</strong></td>
-      <td>Binary Cross Entropy (sigmoid pr. keypoint pixel)</td>
-    </tr>
-  </tbody>
-</table>
+    
     * **Backpropagation:**
         Når fejlen er beregnet, skal vi finde ud af, hvordan hver enkelt vægt i netværket har bidraget til denne fejl. Det er her, **backpropagation** kommer ind i billedet.
         * Processen starter med den beregnede loss-værdi.
