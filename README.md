@@ -29,6 +29,7 @@
 ---
 
 ## Mappe struktur
+
 <details open>
 <summary>📁 Dataprojekt/</summary>
 
@@ -47,31 +48,31 @@
 
       <details>
       <summary>📁 Bolton Data/</summary>
-      - 📄 Example_lower_middle.png  
+      &emsp;- 📄 Example_lower_middle.png  
       </details>
 
       <details>
       <summary>📁 Overbite Data/</summary>
-      - 📄 Updated_Labels.csv  
+      &emsp;- 📄 Updated_Labels.csv  
 
         <details>
         <summary>📁 Annotated Data Pairs/</summary>
-        - 📄 Example_lower_left.png  
+        &emsp;&emsp;- 📄 Example_lower_left.png  
         </details>
 
         <details>
         <summary>📁 Annotated Test data/</summary>
-        - 📄 Example_lower_left.png  
+        &emsp;&emsp;- 📄 Example_lower_left.png  
         </details>
 
         <details>
         <summary>📁 Annotated Verication data/</summary>
-        - 📄 Example_lower_left.png  
+        &emsp;&emsp;- 📄 Example_lower_left.png  
         </details>
 
         <details>
         <summary>📁 Unannotated Data Pairs/</summary>
-        - 📄 Example_lower_left.png  
+        &emsp;&emsp;- 📄 Example_lower_left.png  
         </details>
 
       </details>
@@ -93,7 +94,7 @@
 
       <details>
       <summary>📁 Sample images/</summary>
-      - 📄 Example_lower_combined.png  
+      &emsp;- 📄 Example_lower_combined.png  
       </details>
 
     </details>
@@ -164,7 +165,7 @@
 
         <details>
         <summary>📁 Image Output/</summary>
-        - 📄 Example_lower_left.html  
+        &emsp;- 📄 Example_lower_left.html  
         </details>
 
       </details>
@@ -213,7 +214,7 @@
 
         <details>
         <summary>📁 Overbite Data/</summary>
-        - 📄 Info.txt  
+        &emsp;- 📄 Info.txt  
         </details>
 
       </details>
@@ -250,7 +251,6 @@
   </details>
 
 </details>
-
 ---
 
 # Projektbeskrivelse
