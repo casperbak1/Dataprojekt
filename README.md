@@ -613,8 +613,8 @@ Træningen kan grundlæggende opdeles i følgende faser:
 8.  **Loss, Backpropagation og Optimering:**
     Når modellen har afgivet sit bud på keypointets placering (via det genererede heatmap), er næste skridt at evaluere, hvor præcist dette bud er, og derefter justere modellen for at forbedre fremtidige forudsigelser. Denne proces involverer tre centrale elementer:
 
-  * **Loss-beregning:**
-    Først beregnes modellens fejl. Dette gøres ved at sammenligne modellens **forudsagte heatmap** med det **ground truth heatmap**. En **loss-funktion** beregner en score, der angiver, hvor stor forskellen er mellem forudsigelsen og sandheden. For denne opgave anvendes følgende loss-funktioner:
+    * **Loss-beregning:**
+      Først beregnes modellens fejl. Dette gøres ved at sammenligne modellens **forudsagte heatmap** med det **ground truth heatmap**. En **loss-funktion** beregner en score, der angiver, hvor stor forskellen er mellem forudsigelsen og sandheden. For denne opgave      anvendes følgende loss-funktioner:
     <table>
       <tr>
         <th>Modul</th>
