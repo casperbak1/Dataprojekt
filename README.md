@@ -270,8 +270,8 @@ Og annoteringen:
   "images": [
     {
       "file_name": "Dataprojekt/Data/Clean Data/Overbite Data/Annotated Data Pairs/00OMSZGW_lower_left.png",
-      "height": 1080,
-      "width": 1920,
+      "height": 1024,
+      "width": 1024,
       "id": 0
     }
   ],
