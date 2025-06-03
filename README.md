@@ -595,6 +595,21 @@ Træningen kan grundlæggende opdeles i følgende faser:
     * Disse sandsynligheder beregnes ved hjælp af en softmax-funktion. Softmax sikrer, at summen af alle sandsynlighederne i et heatmap er lig med 1, hvilket gør det muligt at tolke værdierne som en sandsynlighedsfordeling.
     * Til sidst identificerer modellen den pixel i heatmappet, der har den højeste sandsynlighedsværdi. Denne pixelposition betragtes som modellens endelige bud på placeringen af keypointet.
 
+
+
+7.  **Fra Regionsforslag til Keypoints: RoI (Region of Interest) Heads**
+    * Efter RPN har identificeret potentielle regioner (region proposals), hvor objekter sandsynligvis befinder sig, tager de såkaldte **RoI (Region of Interest) Heads** over for en mere detaljeret analyse af hver region.
+    * **RoIAlign:** For hver region foreslået af RPN skal der udtrækkes et feature map af fast størrelse fra de feature maps, der er genereret af FPN. RoIAlign sikrer, at features udtrækkes præcist for regionen, uanset dens oprindelige størrelse og proportioner, og omdannes til et lille feature map med faste dimensioner (f.eks. 7x7 eller 14x14). Dette er nødvendigt for de efterfølgende fuldt forbundne lag i RoI heads.
+    * **RoI Box Head:**
+        * De faste feature maps (ét for hver region proposal) fra RoIAlign sendes nu til RoI Box Head. Denne udfører to centrale opgaver for hver region:
+            1.  **Objektklassifikation:** At bestemme klassen af objektet inde i regionen (i vores tilfælde, om området indeholder tanden eller baggrunden). Dette sker via fuldt forbundne lag, der ender i en softmax-funktion for at give klassesandsynligheder.
+            2.  **Bounding Box Regression:** At yderligere finjustere koordinaterne for den bounding box, som RPN oprindeligt foreslog. Dette giver en mere præcis afgrænsning af det detekterede objekt.
+        * Resultatet fra RoI Box Head er altså regioner, der med højere sikkerhed indeholder et objekt af den korrekte klasse, samt mere nøjagtige bounding boxes for disse objekter. Forslag, der klassificeres som baggrund (sorte områder i billedet) eller har lav tillidsscore (f.eks. kindtænder), fjernes.
+    * **RoI Keypoint Head:**
+        * For de regioner, som RoI Box Head har bekræftet som indeholdende et relevant objekt, aktiveres RoI Keypoint Head.
+        * Dette RoI Head's opgave er at forudsige placeringen af de specifikke keypoints *inden for hver bekræftet objekt-bounding box*.
+        * Modellen generer et **heatmap**, hvor hver værdi efter aktiveringsfunktionen (ReLU) repræsenterer sandsynligheden for, at det pågældende keypoint befinder sig inden for objektets region.
+        
 8.  **Loss, Backpropagation og Optimering:**
     Når modellen har afgivet sit bud på keypointets placering (via det genererede heatmap), er næste skridt at evaluere, hvor præcist dette bud er, og derefter justere modellen for at forbedre fremtidige forudsigelser. Denne proces involverer tre centrale elementer:
 
@@ -610,19 +625,18 @@ Træningen kan grundlæggende opdeles i følgende faser:
 | **ROI Keypoint Head** | Binary Cross Entropy (sigmoid pr. keypoint pixel) |
     
     * **Backpropagation:**
-        Når fejlen (loss) er beregnet, skal vi finde ud af, hvordan hver enkelt vægt (parameter) i netværket har bidraget til denne fejl. Det er her, **backpropagation** kommer ind i billedet.
+        Når fejlen er beregnet, skal vi finde ud af, hvordan hver enkelt vægt i netværket har bidraget til denne fejl. Det er her, **backpropagation** kommer ind i billedet.
         * Processen starter med den beregnede loss-værdi.
         * Ved hjælp af **kædereglen for differentiering** beregnes gradienten af loss-funktionen med hensyn til hver vægt i netværket. Gradienten fortæller os, hvor meget loss-værdien ville ændre sig, hvis vi ændrede den pågældende vægt en lille smule – altså vægtens "ansvar" for fejlen.
         * Denne beregning foregår baglæns gennem netværket, lag for lag, fra outputlaget tilbage mod inputlaget.
 
     * **Optimering:**
-        Med gradienterne beregnet via backpropagation ved vi nu, i hvilken "retning" hver vægt skal justeres for at reducere fejlen. En **optimeringsalgoritme** (f.eks. Adam, SGD) bruger disse gradienter til at opdatere modellens vægte.
+        Med gradienterne beregnet via backpropagation ved vi nu, i hvilken "retning" hver vægt skal justeres for at reducere fejlen. En **optimeringsalgoritme** (Stochastic Gradient Descent i vores tilfælde) bruger disse gradienter til at opdatere modellens vægte.
         * Vægtene justeres typisk en lille smule i modsat retning af deres gradient. Målet er at tage et lille skridt i den retning, der minimerer loss-funktionen. Størrelsen af dette skridt styres af hyperparameteren "learning rate".
 
     * **Iteration og Konvergens:**
         Hele denne cyklus – data gennem modellen, loss-beregning, backpropagation, og vægtjustering – gentages for hver **batch** af billeder. Én fuld gennemgang af hele træningsdatasættet kaldes en **epoch**.
         Modellen bliver gradvist bedre (dvs. loss-værdien falder), efterhånden som dens vægte finjusteres. Træningen stoppes, når modellen **konvergerer**, hvilket betyder, at dens ydeevne på et separat valideringsdatasæt ikke længere forbedres signifikant, eller når et forudbestemt antal epochs er nået. For den valgte model stoppede vi træningen efter 152 epochs.
-
 
 ## Pixel-matrix
 
