@@ -640,7 +640,7 @@ $$
 \kappa_w = 1 - \frac{\sum_{i,j} w_{i,j} O_{i,j}}{\sum_{i,j} w_{i,j} E_{i,j}}
 $$
 
-Her er \$O\_{i,j}\$ andelen af tilfælde, hvor ground truth er klasse \$i\$ og modellen valgte klasse \$j\$, og \$E\_{i,j}\$ er den forventede andel af sådanne tilfælde, hvis annotatorerne var uafhængige.
+Her er \$O\_{i,j}\$ antallet af observationer, hvor annoteringen var klasse \$i\$ og modellen valgte klasse \$j\$, og \$E\_{i,j}\$ er den forventede andel af sådanne tilfælde udregnet ved (række*kolonne/total).
 
 Vægtene \$w\_{i,j}\$ bruges til at straffe større fejl hårdere. Ved **kvadratisk vægtning** (“quadratic weights”) beregnes vægten som:
 
