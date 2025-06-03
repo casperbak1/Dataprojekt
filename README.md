@@ -551,42 +551,60 @@ Modellen er altså nu klar til at blive trænet.
 
 ## Keypoints R-CNN-netværk
 
-Vi trænede vores model ved at benytte os af en forudtrænet model fra Detectron2.\
-Den model vi har anvendt hedder "keypoint_rcnn_X_101_32x8d_FPN_3x".\
-Modellen er altså en Keypoint R-CNN model hvor X_101_32x8d_FPN er selve backbone-arkitekturen:\
-X_101_32x8d betyder ResNeXt-101 (101 lag) med 32 grupper og en bredde på 8 per gruppe\
-FPN står for Feature Pyramid Network, hvilket betyder, at modellen bruger flere “feature-maps” på forskellige skalaer\
+# Modeltræning med Detectron2: En Detaljeret Gennemgang
 
-Den grundlæggende måde vores træning har kørt på er:
+I vores arbejde har vi trænet en model ved hjælp af en forudtrænet model fra Detectron2-biblioteket. Den specifikke model, vi har anvendt, er **"keypoint_rcnn_X_101_32x8d_FPN_3x"**. Lad os bryde ned, hvad dette indebærer:
 
-Vi starter med billeder af størrelsen 1024x1024 som hver har et ground truth keypoint.
-Det næste der sker er at billederne bliver augmenteret på forskellige måder, f.eks. med andre billedstørrelser, spejlinger, lys- og kontrastjusteringer så modellen ikke kun lærer et specifikt udseende. Annoteringerne følger selvfølgelig med spejlinger osv.
-Denne augmentering er med til at gøre modellen mere robust.
+* **Modeltype:** Keypoint R-CNN. Dette indikerer, at modellen er designet til at identificere specifikke nøglepunkter (keypoints) på objekter.
+* **Backbone-arkitektur:** X_101_32x8d_FPN. Dette er kernen i modellen og består af:
+    * **ResNeXt-101 (X_101_32x8d):** En ResNeXt-arkitektur med 101 lag. "32x8d" specificerer, at netværket anvender 32 parallelle grupperede convolutions, hvor hver gruppe har en bredde på 8. Dette design forbedrer modellens evne til at lære komplekse mønstre.
+    * **FPN (Feature Pyramid Network):** Denne komponent gør det muligt for modellen at lære og detektere objekter på tværs af forskellige skalaer ved at udnytte feature-maps fra flere niveauer i netværket.
 
-Det næste der sker er at vi indlæser billederne i batches.
-Dette gør vi fordi at havde vi kun taget et billede af gangen, havde vi fået langsommere træning og en mere ustabil træning.
-Når vi træner modellen med en batch str. på 16, så vil modellens vægte blive opdateret på gennemsnittet af fejlen for hele batchen. Havde vi nu kun brugt 1 billede af gangen, så ville modellens vægte blive opdateret på baggrund af fejlen for dette ene billede og havde billedet nu været en outlier, så ville modellens vægte altså blive opdateret i retning af en outlier.
+## Træningsprocessen Trin for Trin
 
-Efter augmentering og batch indlæsning kommer vi til ResNeXt-101, dette er selve CNN delen.
-Her har vi 101 lag, som hver laver en convulution.
-Hver enkelt convulution bliver så indelt i 32 grupper.
-De 32 grupper finder så mønstre.
-Efter ResNeXt-101 ender vi op med en masse "Feature maps" hvor hver pixel svarer til styrken af et bestemt mønster i billedet.
+Vores træningsprocedure kan grundlæggende opdeles i følgende faser:
 
-Nu har vi en masse feature maps og det er her FPN kommer ind i billedet.
-FPN samler feature maps fra alle de forskellige lag.
-De tidligste lag finder de helt små mønstre, og de sene lag finder helhedderne.
+1.  **Inputdata:**
+    * Vi starter med billeder i en opløsning på 1024x1024 pixels.
+    * Hvert billede er forsynet med et "ground truth" keypoint, hvilket er den korrekte, manuelt markerede placering af det ønskede nøglepunkt.
 
-Vi er nu ankommet til RPN (Region Proposal Network).
-RPN foreslår tusindvis af små bokse med forskellige størrelser og former alle  de steder, hvor der kan være noget spændende.
-For hver enkelt af disse bokse scorer RPN, hvor sandsynligt det er, at boksen indeholder et objekt. De bedste forslag går videre til næste skridt.
+2.  **Data Augmentering:**
+    * For at gøre modellen mere robust og forhindre overtilpasning (at modellen kun lærer de specifikke træningsbilleder at kende), udsættes billederne for forskellige augmenteringsteknikker.
+    * Dette inkluderer variationer i billedstørrelse, spejlinger (horisontalt/vertikalt), samt justeringer af lys og kontrast.
+    * De tilhørende annoteringer (keypoints) justeres automatisk for at matche de augmenterede billeder (f.eks. flyttes keypointet med, hvis billedet spejles).
 
-Vi er nu ved at være ved vejs ende.
-For hver af de vidersendte forslag fra RPN skaber modellen et heatmap hvor hver pixel viser sandsynligheden for at vores keypoint ligger der.
-Sandsynlighederne laves med en softmax-funktion, så de summer til 1.
-Så tager modellen den pixel på heatmappet, hvor sandsynligheden er højest, da det er modellens bedste bud på keypointets placering.
+3.  **Batch-indlæsning:**
+    * Billederne indlæses i modellen i "batches" (grupper af billeder). Vi har anvendt en batch-størrelse på 16.
+    * Træning med batches frem for individuelle billeder har to primære fordele:
+        * **Hurtigere træning:** Parallel processering af flere billeder er mere effektivt.
+        * **Mere stabil træning:** Modellens vægtjusteringer baseres på gennemsnittet af fejlen for hele batchen. Dette reducerer risikoen for, at enkelte afvigende billeder (outliers) får uforholdsmæssig stor indflydelse på læringen, hvilket ville være tilfældet ved opdatering baseret på ét billede ad gangen.
 
-Til sidst er der loss, backpropagation og optimering.
+4.  **Feature Extraction med ResNeXt-101:**
+    * De augmenterede billeder (i batches) føres nu igennem ResNeXt-101 backbone-arkitekturen.
+    * De 101 lag i netværket udfører en serie af convolution-operationer.
+    * Hver convolution er yderligere opdelt i 32 grupper, som hver især specialiserer sig i at finde bestemte mønstre i billeddataene.
+    * Resultatet af denne proces er en samling af "feature maps". Hver pixel i et feature map repræsenterer styrken eller tilstedeværelsen af et specifikt mønster i det oprindelige billede.
+
+5.  **Feature Pyramid Network (FPN):**
+    * FPN-komponenten tager de feature maps, der er genereret af ResNeXt-101.
+    * Styrken ved FPN er, at den kombinerer feature maps fra forskellige dybder (lag) i netværket.
+        * Tidlige lag fanger typisk simple, lav-niveau mønstre (kanter, teksturer).
+        * Sene lag fanger mere komplekse, høj-niveau mønstre og helheder (objektdele, hele objekter).
+    * Ved at samle disse informationer kan modellen bedre detektere objekter og keypoints uanset deres størrelse i billedet.
+
+6.  **Region Proposal Network (RPN):**
+    * RPN modtager de kombinerede feature maps fra FPN.
+    * Dens opgave er at generere tusindvis af potentielle "region proposals" – små afgrænsede bokse af forskellige størrelser og former, der dækker områder i billedet, hvor der potentielt kunne være et relevant objekt.
+    * For hver af disse foreslåede bokse beregner RPN en score, der angiver sandsynligheden for, at boksen rent faktisk indeholder et objekt af interesse.
+    * De mest lovende forslag (dem med højest score) sendes videre til det næste trin.
+
+7.  **Keypoint Lokalisering:**
+    * For hver af de udvalgte region proposals fra RPN genererer modellen et "heatmap".
+    * Et heatmap er et billede, hvor hver pixelværdi repræsenterer sandsynligheden for, at det søgte keypoint befinder sig netop på dén pixelposition inden for den foreslåede region.
+    * Disse sandsynligheder beregnes ved hjælp af en softmax-funktion. Softmax sikrer, at summen af alle sandsynlighederne i et heatmap er lig med 1, hvilket gør det muligt at tolke værdierne som en sandsynlighedsfordeling.
+    * Til sidst identificerer modellen den pixel i heatmappet, der har den højeste sandsynlighedsværdi. Denne pixelposition betragtes som modellens endelige bud på placeringen af keypointet.
+
+(ikke rettet)Til sidst er der loss, backpropagation og optimering.
 Efter modellen har givet sit bedste bud på hvor keypointet skal placeres, så beregnes det hvor galt den tog fejl, med en cross-entropy loss mellem predicted og ground truth.
 Efter det sker der backpropagation;
 Den starter med fejlen og regner, hvor meget hver vægt i netværket har påvirket fejlen, dette sker lag-for-lag bagud gennem hele netværket med kædereglen for differenciering.
