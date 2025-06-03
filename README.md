@@ -786,7 +786,7 @@ Ved brug af de evalueringsmetoder, der er beskrevet i det foregående afsnit, ha
 | Overbite_Classification10.csv| 93.15 %                 | 0.9836                 | 75             | 2                 |
 
 ## Pipeline
-Som den sidste del af projektet har vi udviklet en pipeline, der tager to PLY-filer — én for overkæben og én for underkæben — som input. Pipelinen giver som output en visuel forudsigelse af det samlede tandsæt samt en klassifikation af overbid.
+Som den sidste del af projektet er der udviklet en pipeline, der tager to PLY-filer — én for overkæben og én for underkæben — som input. Pipelinen giver som output en visuel forudsigelse af det samlede tandsæt samt en klassifikation af overbid.
 
 Den første version af pipelinen byggede på kode, som vores vejleder havde stillet til rådighed, oprindeligt udviklet af en postdoc. Denne kode accepterede én enkelt PLY-fil og genererede to billeder: ét, der viste tænderne fra venstre side, og ét fra højre side.
 
