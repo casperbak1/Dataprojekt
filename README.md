@@ -551,16 +551,14 @@ Modellen er altså nu klar til at blive trænet.
 
 ## Keypoints R-CNN-netværk
 
-# Modeltræning med Detectron2: En Detaljeret Gennemgang
-
-I vores arbejde har vi trænet en model ved hjælp af en forudtrænet model fra Detectron2-biblioteket. Den specifikke model, vi har anvendt, er **"keypoint_rcnn_X_101_32x8d_FPN_3x"**. Lad os bryde ned, hvad dette indebærer:
+I vores arbejde har vi trænet en model ved hjælp af en forudtrænet model fra Detectron2-biblioteket. Den specifikke model, vi har anvendt, er **"keypoint_rcnn_X_101_32x8d_FPN_3x"**. 
 
 * **Modeltype:** Keypoint R-CNN. Dette indikerer, at modellen er designet til at identificere specifikke nøglepunkter (keypoints) på objekter.
 * **Backbone-arkitektur:** X_101_32x8d_FPN. Dette er kernen i modellen og består af:
     * **ResNeXt-101 (X_101_32x8d):** En ResNeXt-arkitektur med 101 lag. "32x8d" specificerer, at netværket anvender 32 parallelle grupperede convolutions, hvor hver gruppe har en bredde på 8. Dette design forbedrer modellens evne til at lære komplekse mønstre.
     * **FPN (Feature Pyramid Network):** Denne komponent gør det muligt for modellen at lære og detektere objekter på tværs af forskellige skalaer ved at udnytte feature-maps fra flere niveauer i netværket.
 
-## Træningsprocessen Trin for Trin
+### Træningsprocessen Trin for Trin
 
 Vores træningsprocedure kan grundlæggende opdeles i følgende faser:
 
