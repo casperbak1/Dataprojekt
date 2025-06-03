@@ -17,7 +17,7 @@
   - [Evalueringsmetoder](#evalueringsmetoder)
   - [Resultater](#resultater)
   - [Pipeline](#pipeline)
-- [Folder Structure](#folder-structure)
+
 ---
 
 ## Hurtigt Overblik over filstruktur
