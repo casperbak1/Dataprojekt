@@ -387,6 +387,7 @@ I dette projekt er følgende klassifikationer blevet anvendt som udgangspunkt fo
   </tr>
 </table>
 
+> https://www.mdpi.com/2075-4426/13/10/1472 Figur 1 (03/06/2025)
 
 
 **Dette projekt har to hovedfokusområder:**
