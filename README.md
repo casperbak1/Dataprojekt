@@ -613,15 +613,27 @@ Træningen kan grundlæggende opdeles i følgende faser:
 8.  **Loss, Backpropagation og Optimering:**
     Når modellen har afgivet sit bud på keypointets placering (via det genererede heatmap), er næste skridt at evaluere, hvor præcist dette bud er, og derefter justere modellen for at forbedre fremtidige forudsigelser. Denne proces involverer tre centrale elementer:
 
-    * **Loss-beregning:**
-        Først beregnes modellens fejl. Dette gøres ved at sammenligne modellens **forudsagte heatmap** med det **ground truth heatmap**. En **loss-funktion** beregner en score, der angiver, hvor stor forskellen er mellem forudsigelsen og sandheden. For denne opgave anvendes følgende loss-funktioner:
-          *    | Modul                     | Loss-funktion                                     |
-  |---------------------------|-------------------------------|
-  | **RPN - Region Proposal** | Binary Cross Entropy (BCE)                        |
-  |                           |                               | Smooth L1                                         |
-  | **ROI Box Head** | Cross Entropy (Softmax)                           |
-  |                           |                               | Smooth L1                                         |
-  | **ROI Keypoint Head** | Binary Cross Entropy (sigmoid pr. keypoint pixel) |
+  * **Loss-beregning:**
+    Først beregnes modellens fejl. Dette gøres ved at sammenligne modellens **forudsagte heatmap** med det **ground truth heatmap**. En **loss-funktion** beregner en score, der angiver, hvor stor forskellen er mellem forudsigelsen og sandheden. For denne opgave anvendes følgende loss-funktioner:
+    <table>
+      <tr>
+        <th>Modul</th>
+        <th>Loss-funktion</th>
+      </tr>
+      <tr>
+        <td><b>RPN - Region Proposal</b></td>
+        <td>Binary Cross Entropy (BCE)<br>Smooth L1</td>
+      </tr>
+      <tr>
+        <td><b>ROI Box Head</b></td>
+        <td>Cross Entropy (Softmax)<br>Smooth L1</td>
+      </tr>
+      <tr>
+        <td><b>ROI Keypoint Head</b></td>
+        <td>Binary Cross Entropy (sigmoid pr. keypoint pixel)</td>
+      </tr>
+    </table>
+
 
     
     * **Backpropagation:**
