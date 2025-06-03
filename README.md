@@ -3,7 +3,7 @@
 
 ---
 
-## Table of Contents
+## Indholdsfortegnelse 
 
 - [Hurtigt Overblik](#hurtigt-overblik-over-filstruktur )
   - [Mappestruktur](#Mappestruktur)
@@ -337,14 +337,6 @@
 
 # Projektbeskrivelse
 
-## Indholdsfortegnelse
-
-- Abstract
-- Introduktion
-- Data og databehandling
-- CNN-netværk
-- Resultater
-- Pipeline
 
 ---
 
