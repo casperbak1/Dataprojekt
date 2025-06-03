@@ -40,7 +40,7 @@ import shutil
 # Reinitialize config
 cfg = get_cfg()
 cfg.merge_from_file(model_zoo.get_config_file("COCO-Keypoints/keypoint_rcnn_X_101_32x8d_FPN_3x.yaml"))
-cfg.MODEL.WEIGHTS = os.path.join("Pipeline_data", "Model", "model_0054999.pth")  # Change to the path of model
+cfg.MODEL.WEIGHTS = os.path.join("Pipeline_data", "Model", "Final_model_0014999.pth")  # Change to the path of model
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.9
 cfg.MODEL.KEYPOINT_ON = True
 cfg.MODEL.DEVICE = "cpu"
