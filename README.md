@@ -365,34 +365,29 @@ Ved at måle denne afstand kan man klassificere graden af overbid hos en patient
 Et normalt overbid defineres typisk som en vertikal afstand på mellem 2 og 4 mm.
 I dette projekt er følgende klassifikationer blevet anvendt som udgangspunkt for evaluering og test af modellen. Disse klasser er udarbejdet af vores vejledere:
 
-### Overbidsklasser
+<h3>Overbidsklasser</h3>
 
 <table>
   <tr>
+    <!-- First column: the table content as plain HTML rows -->
     <td>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Klasse</th>
-            <th>Vertikal afstand</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>A</td><td>&lt; 1 mm</td></tr>
-          <tr><td>B</td><td>1–2 mm</td></tr>
-          <tr><td>C</td><td>2–3 mm</td></tr>
-          <tr><td>D</td><td>3–4 mm</td></tr>
-          <tr><td>E</td><td>&gt; 4 mm</td></tr>
-        </tbody>
+      <table border="1">
+        <tr><th>Klasse</th><th>Vertikal afstand</th></tr>
+        <tr><td>A</td><td>&lt; 1 mm</td></tr>
+        <tr><td>B</td><td>1–2 mm</td></tr>
+        <tr><td>C</td><td>2–3 mm</td></tr>
+        <tr><td>D</td><td>3–4 mm</td></tr>
+        <tr><td>E</td><td>&gt; 4 mm</td></tr>
       </table>
-      
     </td>
+
+    <!-- Second column: the image -->
     <td style="padding-left: 30px;">
       <img src="Data/Figurer/Overbite_Figure.png" alt="Illustration af overbid" width="300" height="210"/>
     </td>
   </tr>
 </table>
+
 
 
 **Dette projekt har to hovedfokusområder:**
