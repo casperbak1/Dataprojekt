@@ -259,7 +259,7 @@ Annoteringerne skal til sidst konverteres til et format som kan læses af modell
 
 Modellen modtager altså som input til træning 1580 billeder af følgende format:
 
-<img src="Data/Figurer/Data_For_Training.png" width="800" height="700"/>
+<img src="Data/Figurer/Data_For_Training.png" width="600" height="600"/>
 
 > *Keypoint markeret med rød, og bounding box markeret med grå*
 
