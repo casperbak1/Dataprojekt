@@ -365,7 +365,7 @@ Ved at måle denne afstand kan man klassificere graden af overbid hos en patient
 Et normalt overbid defineres typisk som en vertikal afstand på mellem 2 og 4 mm.
 I dette projekt er følgende klassifikationer blevet anvendt som udgangspunkt for evaluering og test af modellen. Disse klasser er udarbejdet af vores vejledere:
 
-<h5>Overbidsklasser</h5>
+<h4>Overbidsklasser</h4>
 
 <table>
   <tr>
