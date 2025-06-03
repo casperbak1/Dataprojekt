@@ -350,7 +350,9 @@
 
 ## Abstract
 
-*Automatisering og standardisering af overbidsklassificering gennem maskinlæring og billedbehandling.*
+Dette projekt præsenterer en automatiseret løsning til klassificering af overbid ud fra todimensionelle billeder baseret på tilhørende 3D-scanninger (IOS).
+Ved at anvende Keypoint R-CNN med en ResNeXt-101 × 32d FPN-backbone trænes modellen til at lokalisere præcise keypoints i intraorale billeder. Efter den første keypoint-forudsigelse finjusteres positionerne ved hjælp af en pixel-matrix-søgning, der vælger den lyseste pixel inden for et bestemt område, hvilket reducerer fejl i punktplacering fra i gennemsnit 0,095 mm til 0,037 mm på y-aksen. Evaluering med Mean Radial Error (MRE) og Success Detection Rate (SDR) viser, at pixel-matrix justeringen halverer MRE fra omkring 0,22 mm til 0,12 mm og forbedrer SDR for næsten alle thresholds (0,5 mm, 1 mm, 2 mm) til 89 %, 96 % og 99 % henholdsvis. Patientniveau-klassificeringen af overbid i fem klasser (A–E) opnår en gennemsnitlig nøjagtighed på 95,34 % og en kvadratisk vægtet Cohen’s kappa på 0,989 på simulerede testdata. Endvidere er der udviklet en pipeline, der tager .PLY filer som input, og derigennem identificerer de punkter, hvorfra overbiddet kan måles. 
+
 
 ---
 
