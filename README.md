@@ -758,9 +758,17 @@ Ved brug af de evalueringsmetoder, der er beskrevet i det foregående afsnit, ha
 
 #### Detection Metrics (gælder for alle tests)
 
+
+#### Før pixel-matrix-søgning
 | SDR (≤ 0.5 mm) | SDR (≤ 1 mm) | SDR (≤ 2 mm) | Mean Radial Error (MRE) |
 |----------------|--------------|--------------|--------------------------|
-| 89.33 %        | 96.00 %      | 99.00 %      | 0.22 mm                  |
+| 91 %           | 95.00 %      | 98.33 %      | 0.22 mm                  |
+
+
+#### Efter pixel-matrix-søgning
+| SDR (≤ 0.5 mm) | SDR (≤ 1 mm) | SDR (≤ 2 mm) | Mean Radial Error (MRE) |
+|----------------|--------------|--------------|--------------------------|
+| 89.33 %        | 96.00 %      | 99.00 %      | 0.12 mm                  |
 
 #### Test Results
 
