@@ -742,9 +742,9 @@ Outputtet fra pixel matrixen kan findes i mappen **Pixel Matrix/Image Output**. 
 
 <table>
   <tr>
-    <td><img src="Data/Figurer/Forudsagt_og_true_keypoint_1.png.png" width="250" height="250"/></td>
-    <td><img src="Data/Figurer/Forudsagt_og_true_keypoint_2.png.png" width="250" height="250"/></td>
-    <td><img src="Data/Figurer/Forudsagt_og_true_keypoint_3.png.png" width="250" height="250"/></td>
+    <td><img src="Data/Figurer/Forudsagt_og_true_keypoint_1.png.png" width="275" height="180"/></td>
+    <td><img src="Data/Figurer/Forudsagt_og_true_keypoint_2.png.png" width="275" height="180"/></td>
+    <td><img src="Data/Figurer/Forudsagt_og_true_keypoint_3.png.png" width="275" height="180"/></td>
   </tr>
 </table>
 
