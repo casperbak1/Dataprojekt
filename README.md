@@ -696,6 +696,21 @@ Nedenfor vises histogrammer over de euklidiske afstande mellem modelens forudsig
 
 > Uden outliers > 3.5 mm. 300/300 Resultater.
 
+### Statistisk evaluering af y-værdier
+
+Eftersom overbid måles ud fra de vertikale afstande mellem fortænderne, har vi fundet det relevant at udarbejde statistik for y-værdierne:
+
+|Statistic | Value (pixels)| Value (mm)|
+|------------------------|------|-----|
+|Mean absolute difference|	1.18|	0.095|
+|Mean difference|	0.53|	0.043|
+|Median difference|	0.43|	0.035|
+|Min difference|	-9.41|	-0.75|
+|Max difference|	24.08|	1.93|
+
+Vores model rammer i gennemsnit 1.18 pixels eller 0.095 mm fra den korrekte y-værdi. Den gennemsnitlige difference på 0.53 pixels (0.043 mm) indikerer, at modellen har en tendens til at placere keypointet lidt over den sande værdi. Både middel- og medianværdierne er små, hvilket tyder på en god præcision for langt de fleste punkter. Dog viser minimums- og maksimumsværdierne, at der eksisterer enkelte outliers, hvor modellen afviger markant fra det korrekte resultat.
+
+
 ### Detection Metrics (gælder for alle tests)
 
 | SDR (≤ 0.5 mm) | SDR (≤ 1 mm) | SDR (≤ 2 mm) | Mean Radial Error (MRE) |
