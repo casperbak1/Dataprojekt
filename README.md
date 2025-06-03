@@ -388,6 +388,13 @@ Det her gentager vi for hver batch indtil modellen er konvergeret.
 
 ## Pixel-matrix
 
+Efter modellen har placeret keypoints på billederne, finjusteres disse positioner ved hjælp af pixelsøgning. Dette sker ved at definere en matrix (af forudbestemt størrelse) omkring det keypoint, som modellen har forudsagt. Inden for denne matrix identificeres den pixel, der ligger højest og er lysest, og denne pixel vælges herefter som det nye, justerede keypoint. Hvis der findes to pixels med samme værdi, bliver den pixel, der ligger længst til venstre, valgt. Dette valg bygger på hvordan det sande keypoint bliver annoteret. 
+Formålet med denne proces er at sikre, at keypointet placeres så præcist som muligt ud fra det forudsagte keypoint fra modellen, hvilket forbedrer den samlede nøjagtighed og robusthed af keypoint placeringen.
+
+Figuren viser fordelingen af fejl for placeringen af keypoints efter pixelsøgningen er implementeret.
+
+<img src="Data/Figurer/Histogram_efter_pixelmatrix.png" width="600" height="600"/> 
+
 ## Evalueringsmetoder
 
 Til evaluering af modellen har vi benyttet os af tre metoder:
