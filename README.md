@@ -35,7 +35,6 @@
     <li>📄 .gitignore</li>
     <li>📄 Model.txt</li>
     <li>📄 README.md</li>
-
     <li>
       <details>
         <summary>📁 Data/</summary>
@@ -125,7 +124,6 @@
         </ul>
       </details>
     </li>
-
     <li>
       <details>
         <summary>📁 Overbite/</summary>
@@ -228,7 +226,6 @@
         </ul>
       </details>
     </li>
-
     <li>
       <details>
         <summary>📁 Pipeline/</summary>
