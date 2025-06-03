@@ -360,7 +360,7 @@ I tandlægepraksis findes der ikke én standardiseret metode til måling af over
 
 **Overbid**
 
-Overbid refererer til den vertikale afstand mellem de øverste og nederste fortænder, målt fra spidsen (incisalkanten) af overkæbens fortænder til spidsen af underkæbens. Et for stort overbid indikerer, at de øverste fortænder dækker en unormalt stor del af de nederste, hvilket kan have funktionelle og æstetiske konsekvenser.
+Overbid refererer til den vertikale afstand mellem de øverste og nederste fortænder, målt fra spidsen af overkæbens fortænder til spidsen af underkæbens. Et for stort overbid indikerer, at de øverste fortænder dækker en unormalt stor del af de nederste, hvilket kan have funktionelle og æstetiske konsekvenser.
 Ved at måle denne afstand kan man klassificere graden af overbid hos en patient og på den baggrund vurdere, om der er behov for behandling – og i så fald hvilken type behandling der vil være relevant.
 Et normalt overbid defineres typisk som en vertikal afstand på mellem 2 og 4 mm.
 I dette projekt er følgende klassifikationer blevet anvendt som udgangspunkt for evaluering og test af modellen. Disse klasser er udarbejdet af vores vejledere:
