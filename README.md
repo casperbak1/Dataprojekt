@@ -668,15 +668,15 @@ Eksempel på indhold:
 
 Nedenfor vises histogrammer over de euklidiske afstande mellem modelens forudsigelser og de sande punkter (ground truth).
 
-<img src="Data/Figurer/Histogram_0_6mm.png" width="600" height="412"/>
+<img src="Data/Figurer/Histogram_0_6mm.png" width="600" height="450"/>
 
 > Uden outliers > 0.6 mm. 276/300 Resultater.
 
-<img src="Data/Figurer/Histogram_1_mm.png" width="562" height="380"/>
+<img src="Data/Figurer/Histogram_1_mm.png" width="600" height="450"/>
 
 > Uden outliers > 1 mm. 285/300 Resultater.
 
-<img src="Data/Figurer/Histogram_3_5mm.png" width="576" height="379"/>
+<img src="Data/Figurer/Histogram_3_5mm.png" width="600" height="450"/>
 
 > Uden outliers > 3.5 mm. 300/300 Resultater.
 
