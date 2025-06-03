@@ -382,7 +382,7 @@ I dette projekt er følgende klassifikationer blevet anvendt som udgangspunkt fo
     </td>
     <!-- Second column: the image -->
     <td style="padding-left: 30px;">
-      <img src="Data/Figurer/Overbite_Figure.png" alt="Illustration af overbid" width="300" height="210"/>
+      <img src="Data/Figurer/Overbite_Figure.png" alt="Illustration af overbid" width="400" height="280"/>
     </td>
   </tr>
 </table>
