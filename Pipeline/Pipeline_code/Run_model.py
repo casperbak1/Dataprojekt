@@ -47,8 +47,8 @@ from detectron2 import model_zoo
 # Reinitialize config
 cfg = get_cfg()
 cfg.merge_from_file(model_zoo.get_config_file("COCO-Keypoints/keypoint_rcnn_X_101_32x8d_FPN_3x.yaml"))
-cfg.MODEL.WEIGHTS = os.path.join("Pipeline_data", "Model", "model_0054999.pth")  # Ændre sti til placering af modellen
-cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.9
+cfg.MODEL.WEIGHTS = os.path.join("Pipeline_data", "Model", "Final_model_0014999.pth")  # Ændre sti til placering af modellen
+cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.95
 cfg.MODEL.KEYPOINT_ON = True
 cfg.MODEL.DEVICE = "cpu"
 cfg.MODEL.ROI_KEYPOINT_HEAD.NUM_KEYPOINTS = 1 # Matcher træning
@@ -118,12 +118,12 @@ for sample in dataset_dicts:
 
     instances = outputs["instances"].to("cpu")
     if not instances.has("pred_keypoints"):
-        print(f"❌ No keypoints found in: {filename}")
+        print(f"No keypoints found in: {filename}")
         continue
 
     keypoints = instances.pred_keypoints
     if len(keypoints) == 0:
-        print(f"⚠️ Empty keypoint list in: {filename}")
+        print(f"Empty keypoint list in: {filename}")
         continue
 
     # Assume first instance
@@ -138,4 +138,4 @@ with open(output_csv, mode="w", newline="") as file:
     writer = csv.writer(file)
     writer.writerows(rows)
 
-print(f"✅ Final results saved to: {output_csv}")
+print(f"Final results saved to: {output_csv}")
