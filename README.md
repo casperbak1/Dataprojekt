@@ -616,14 +616,15 @@ Træningen kan grundlæggende opdeles i følgende faser:
     * **Loss-beregning:**
         Først beregnes modellens fejl. Dette gøres ved at sammenligne modellens **forudsagte heatmap** med det **ground truth heatmap**. En **loss-funktion** beregner en score, der angiver, hvor stor forskellen er mellem forudsigelsen og sandheden. For denne opgave anvendes følgende loss-funktioner:
 
-| Modul                     | Loss-funktion                                     |
-|---------------------------|-------------------------------|
-| **RPN - Region Proposal** | Binary Cross Entropy (BCE)                        |
-|                           |                               | Smooth L1                                         |
-| **ROI Box Head** | Cross Entropy (Softmax)                           |
-|                           |                               | Smooth L1                                         |
-| **ROI Keypoint Head** | Binary Cross Entropy (sigmoid pr. keypoint pixel) |
-    
+  | Modul                     | Loss-funktion                                     |
+  |---------------------------|-------------------------------|
+  | **RPN - Region Proposal** | Binary Cross Entropy (BCE)                        |
+  |                           |                               | Smooth L1                                         |
+  | **ROI Box Head** | Cross Entropy (Softmax)                           |
+  |                           |                               | Smooth L1                                         |
+  | **ROI Keypoint Head** | Binary Cross Entropy (sigmoid pr. keypoint pixel) |
+
+
     * **Backpropagation:**
         Når fejlen er beregnet, skal vi finde ud af, hvordan hver enkelt vægt i netværket har bidraget til denne fejl. Det er her, **backpropagation** kommer ind i billedet.
         * Processen starter med den beregnede loss-værdi.
