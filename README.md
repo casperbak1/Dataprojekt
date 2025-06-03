@@ -117,7 +117,45 @@
                 - 📄 Brunatest LowerJawScan_1.png
                 - 📄 Brunatest_UpperJawScan_0.png
                 - 📄 Brunatest_UpperJawScan_1.png
-                - 📄 Info.txt                    
+                - 📄 Info.txt
+             
+
+<details>
+<summary>📁 Dataprojekt/</summary>
+
+- 📄 .gitignore  
+- 📄 Model.txt  
+- 📄 README.md  
+
+<details>
+<summary>📁 Data/</summary>
+
+- 📄 pixel_flip_formula.png  
+- 📄 Splitting_and_flipping_of_images.ipynb  
+
+<details>
+<summary>📁 Clean Data/</summary>
+
+<details>
+<summary>📁 Overbite Data/</summary>
+
+- 📄 Updated_Labels.csv  
+
+<details>
+<summary>📁 Annotated Data Pairs/</summary>
+
+- 📄 Example_lower_left.png  
+
+</details>
+
+</details>
+
+</details>
+
+</details>
+
+</details>
+
 ---
 
 # Projektbeskrivelse
