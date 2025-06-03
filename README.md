@@ -622,7 +622,33 @@ Det vil sige, at hvis modellen forveksler “A” og “E”, tæller det som en
 
 ---
 
-## Resultater 
+## Resultater
+Projektets resultater består primært af:
+
+* CSV-filer med forudsigelser og målinger
+* Visualiseringer i form af histogrammer
+* Billeder med keypoints placeret af modellen
+
+### Modeller og gemte filer
+
+Der er blevet trænet en række modeller, som er placeret i mappen `Overbite/Other Versions (Overbite)/`.
+Én af modellerne er udvalgt som den endelige, men flere af de øvrige modeller præsterer næsten lige så godt.
+
+Ved afslutningen af træningen gemmes den valgte model som en `.pth`-fil, som anvendes sammen med biblioteket Detectron2.
+Da filen overstiger GitHubs uploadgrænse, er den ikke inkluderet direkte i repositoryet. Der findes dog et link til filen i den relevante mappe.
+
+### Keypoint-placering
+
+I mappen `Overbite/Output/Keypoint Placement/` ligger filen `KP_Placement.csv`.
+Denne indeholder både de sande (ground truth) og de forudsagte keypoints samt den euklidiske distance mellem disse målt i pixels og millimeter.
+
+Eksempel på indhold:
+
+| Filename              | X\_True | Y\_True | X\_Model | Y\_Model | Euc\_dist | mm\_dist |
+| --------------------- | ------- | ------- | -------- | -------- | --------- | -------- |
+| 013FHA7K\_lower\_left | 844     | 369     | 842.22   | 368.63   | 1.82      | 0.15     |
+
+
 ### Detection Metrics (gælder for alle tests)
 
 | SDR (≤ 0.5 mm) | SDR (≤ 1 mm) | SDR (≤ 2 mm) | Mean Radial Error (MRE) |
