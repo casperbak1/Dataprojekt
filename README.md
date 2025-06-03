@@ -380,7 +380,6 @@ I dette projekt er følgende klassifikationer blevet anvendt som udgangspunkt fo
         <tr><td>E</td><td>&gt; 4 mm</td></tr>
       </table>
     </td>
-
     <!-- Second column: the image -->
     <td style="padding-left: 30px;">
       <img src="Data/Figurer/Overbite_Figure.png" alt="Illustration af overbid" width="300" height="210"/>
