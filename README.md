@@ -828,6 +828,13 @@ Ved brug af de evalueringsmetoder, der er beskrevet i det foregående afsnit, ha
 | Overbite_Classification9.csv | 97.30 %                 | 0.9935                 | 75             | 1                 |
 | Overbite_Classification10.csv| 93.15 %                 | 0.9836                 | 75             | 2                 |
 
+
+Ud fra vores resultater ses det, at vi får en MRE på 0,12 mm og en SDR på  (0,5 mm, 1 mm, 2 mm) til 89 %, 96 % og 99 % henholdsvis. 
+På de simulerede testdata har Classification Accuracy en gennemsnitlig nøjagtighed på 95,34 %, og den kvadratisk vægtede Cohen’s kappa er på 0,989. 
+
+Disse resultater tyder på, at modellen leverer en meget præcis keypoint‐placering og en robust patientklassifikation.
+
+
 ## Pipeline
 Som den sidste del af projektet er der udviklet en pipeline, der tager to PLY-filer — én for overkæben og én for underkæben — som input. Pipelinen giver som output en visuel forudsigelse af det samlede tandsæt samt en klassifikation af overbid.
 
