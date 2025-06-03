@@ -748,7 +748,7 @@ Outputtet fra pixel matrixen kan findes i mappen **Pixel Matrix/Image Output**. 
   </tr>
 </table>
 
->  Rød: Model punkt, grøn: ground truth punkt, blå: refined punkt og gul: søgefelt):
+>  Rød: model punkt, grøn: ground truth punkt, blå: refined punkt og gul: søgefelt (I overstående figur er der overlap mellem grøn og blå, og derfor er kun den ene synlig):
 
 ### Test med simulerede CSV-filer
 Til sidst er modellen blevet testet på simulerede CSV-filer. Hver fil repræsenterer 75 patienter, hvor en vertikal translate key er angivet for hver patient. Denne nøgle bruges til at justere overkæben vertikalt, så både over- og underkæbe bringes ind i samme koordinatsystem og danner et “bid”.
