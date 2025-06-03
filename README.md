@@ -607,16 +607,13 @@ Træningen kan grundlæggende opdeles i følgende faser:
     * **Loss-beregning:**
         Først beregnes modellens fejl. Dette gøres ved at sammenligne modellens **forudsagte heatmap** med det **ground truth heatmap**. En **loss-funktion** beregner en score, der angiver, hvor stor forskellen er mellem forudsigelsen og sandheden. For denne opgave anvendes følgende loss-funktioner:
 
-| Modul                     | Formål                        | Loss-navn i logs | Loss-funktion                                     | Optimizer / Gradient Flow                 |
+| Modul                     | Formål                        | Loss-funktion                                     | Optimizer / Gradient Flow                 |
 |---------------------------|-------------------------------|------------------|---------------------------------------------------|-------------------------------------------|
-| **RPN - Region Proposal** | Objekt-foreslag (anchors)     | `loss_rpn_cls`   | Binary Cross Entropy (BCE)                        | Backprop via **SGD** |
-|                           |                               | `loss_rpn_loc`   | Smooth L1                                         | Backprop via **SGD** |
-| **ROI Box Head** | Objektklassifikation + BBox   | `loss_cls`       | Cross Entropy (Softmax)                           | Backprop via **SGD** |
-|                           |                               | `loss_box_reg`   | Smooth L1                                         | Backprop via **SGD** |
-| **ROI Keypoint Head** | Forudsig keypoints (heatmaps) | `loss_keypoint`  | Binary Cross Entropy (sigmoid pr. keypoint pixel) | Backprop via **SGD** |
-| **SGD Optimizer** | Vægt-opdatering               | –                | –                                                 | `torch.optim.SGD` med momentum = 0.9      |
-| **Learning Rate** | Læringshastighed              | –                | –                                                 | Starter ved `BASE_LR = 0.002` + warmup  |
-| **AMP (Mixed Precision)** | Hurtigere træning             | –                | –                                                 | Ja (`cfg.SOLVER.AMP.ENABLED = True`)    |
+| **RPN - Region Proposal** | Objekt-foreslag (anchors)     | Binary Cross Entropy (BCE)                        | Backprop via **SGD** |
+|                           |                               | Smooth L1                                         | Backprop via **SGD** |
+| **ROI Box Head** | Objektklassifikation + BBox   | Cross Entropy (Softmax)                           | Backprop via **SGD** |
+|                           |                               | Smooth L1                                         | Backprop via **SGD** |
+| **ROI Keypoint Head** | Forudsig keypoints (heatmaps) | Binary Cross Entropy (sigmoid pr. keypoint pixel) | Backprop via **SGD** |
     
     * **Backpropagation:**
         Når fejlen (loss) er beregnet, skal vi finde ud af, hvordan hver enkelt vægt (parameter) i netværket har bidraget til denne fejl. Det er her, **backpropagation** kommer ind i billedet.
