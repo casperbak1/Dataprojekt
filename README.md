@@ -607,13 +607,13 @@ Træningen kan grundlæggende opdeles i følgende faser:
     * **Loss-beregning:**
         Først beregnes modellens fejl. Dette gøres ved at sammenligne modellens **forudsagte heatmap** med det **ground truth heatmap**. En **loss-funktion** beregner en score, der angiver, hvor stor forskellen er mellem forudsigelsen og sandheden. For denne opgave anvendes følgende loss-funktioner:
 
-| Modul                     | Formål                        | Loss-funktion                                     | Optimizer / Gradient Flow                 |
-|---------------------------|-------------------------------|------------------|---------------------------------------------------|-------------------------------------------|
-| **RPN - Region Proposal** | Objekt-foreslag (anchors)     | Binary Cross Entropy (BCE)                        | Backprop via **SGD** |
-|                           |                               | Smooth L1                                         | Backprop via **SGD** |
-| **ROI Box Head** | Objektklassifikation + BBox   | Cross Entropy (Softmax)                           | Backprop via **SGD** |
-|                           |                               | Smooth L1                                         | Backprop via **SGD** |
-| **ROI Keypoint Head** | Forudsig keypoints (heatmaps) | Binary Cross Entropy (sigmoid pr. keypoint pixel) | Backprop via **SGD** |
+| Modul                     | Loss-funktion                                     |
+|---------------------------|-------------------------------|
+| **RPN - Region Proposal** | Binary Cross Entropy (BCE)                        |
+|                           |                               | Smooth L1                                         |
+| **ROI Box Head** | Cross Entropy (Softmax)                           |
+|                           |                               | Smooth L1                                         |
+| **ROI Keypoint Head** | Binary Cross Entropy (sigmoid pr. keypoint pixel) |
     
     * **Backpropagation:**
         Når fejlen (loss) er beregnet, skal vi finde ud af, hvordan hver enkelt vægt (parameter) i netværket har bidraget til denne fejl. Det er her, **backpropagation** kommer ind i billedet.
