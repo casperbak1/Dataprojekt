@@ -491,7 +491,7 @@ Formålet med denne proces er at sikre, at keypointet placeres så præcist som 
 
 Figuren viser fordelingen af fejl for placeringen af keypoints efter pixelsøgningen er implementeret.
 
-<img src="Data/Figurer/Histogram_efter_pixelmatrix.png" width="600" height="600"/> 
+<img src="Data/Figurer/Histogram_efter_pixelmatrix.png" width="900" height="400"/> 
 
 ## Evalueringsmetoder
 
