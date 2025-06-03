@@ -753,7 +753,7 @@ Outputtet fra pixel matrixen kan findes i mappen **Pixel Matrix/Image Output**. 
 ### Test med simulerede CSV-filer
 Til sidst er modellen blevet testet på simulerede CSV-filer. Hver fil repræsenterer 75 patienter, hvor en vertikal translate key er angivet for hver patient. Denne nøgle bruges til at justere overkæben vertikalt, så både over- og underkæbe bringes ind i samme koordinatsystem og danner et “bid”.
 Disse translate keys er udarbejdet af vores vejledere og sikrer, at hvert tandsæt i testdata har en bestemt grad af overbid. Vi har modtaget 10 af disse simulerede CSV-filer, som gør det muligt at evaluere modellen i en simuleret virkelighed. Hvis en patients overbid ligger på grænsen mellem to klasser, så klassificeres patienten med klassen None og bliver ekskluderet fra testen.
-Ved brug af de evalueringsmetoder, der er beskrevet i det foregående afsnit, har vi opnået følgende nøglemålinger for de 10 tests:
+Ved brug af de evalueringsmetoder, der er beskrevet i det foregående afsnit, har vi opnået følgende resultater for de 10 tests:
 
 
 #### Detection Metrics (gælder for alle tests)
@@ -784,8 +784,6 @@ Ved brug af de evalueringsmetoder, der er beskrevet i det foregående afsnit, ha
 | Overbite_Classification8.csv | 94.52 %                 | 0.9882                 | 75             | 2                 |
 | Overbite_Classification9.csv | 97.30 %                 | 0.9935                 | 75             | 1                 |
 | Overbite_Classification10.csv| 93.15 %                 | 0.9836                 | 75             | 2                 |
-
-SDR og MRE er målt på forudsigelserne efter pixelmatrix-søgning, hvor de resterende målinger er for hvert af de 10 testfiler. 
 
 ## Pipeline
 Som den sidste del af projektet har vi udviklet en pipeline, der tager to PLY-filer — én for overkæben og én for underkæben — som input. Pipelinen giver som output en visuel forudsigelse af det samlede tandsæt samt en klassifikation af overbid.
