@@ -234,9 +234,8 @@ Og den nye CSV vil derfor blive til:
 > Outliers og fejl rettes i CSV efter databehandling.  
 > Alt databehandling findes i `Splitting_and_flipping_of_images.ipynb`.
 
----
 
-### Data
+---
 
 Oversigt over fordelingen af billeder:
 
@@ -249,7 +248,27 @@ Oversigt over fordelingen af billeder:
 | Overbite Data/Annotated Test data    | 300         | 75 | Yes |
 | Overbite Data/Unannotated Data Pairs | 722         | 180 | NaN|
 
-Dataen er nu klargjort til at træne og teste en maskinlæringsmodel.
+Efter dataen er opdelt i mapper mangler vi kun 2 ting inden træningen kan påbegynde:
+
+1. Opsætte en bounding boks
+2. Konvertere annoteringer til "COCO JSON" format
+
+Vi opsætter en bounding boks for at hjælpe med at lokalisere objektet af interesse. Det hjælper modellen med at finde det område den skal fokusere på, for at lave forudsigelser. Dette gør modellen mere præcis og effektiv.
+
+Annoteringerne skal til sidst konverteres til et format som kan læses af modellen.
+
+Modellen modtager altså som input til træning 1580 billeder af følgende format:
+
+<img src="Data/Figurer/Data_For_Training.png" width="400" height="400"/>
+
+> *Keypoint markeret med rød, og bounding box markeret med grå*
+
+Og annoteringen:
+
+<pre lang="markdown"> ```json { "images": [ { "file_name": "Dataprojekt/Data/Clean Data/Overbite Data/Annotated Data Pairs/00OMSZGW_lower_left.png", "height": 1024, "width": 1024, "id": 0 } ], "annotations": [ { "bbox": [740, 492, 62, 125], "bbox_mode": 1, "category_id": 0, "keypoints": [777, 492, 2], "num_keypoints": 1, "image_id": 0, "id": 0 } ], "categories": [ { "id": 0, "name": "tooth", "keypoints": ["apex"], "skeleton": [] } ] } ``` </pre>
+
+Modellen er altså nu klar til at blive trænet.
+
 
 ---
 
