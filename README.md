@@ -854,6 +854,11 @@ Processen at gå fra .PLY-fil til 2D billeder af tænderne sker i et kodestykke,
 
 ![Test af Pipeline](‎Data/Figurer/Bruna_Out.png)
 
+<p align="center">
+  <img src="Data/Figurer/Bruna_Out.png" width="285" height="145"/>
+</p>
+
+
 | Filename | X_Model | Y_Model | X_Refined | Y_Refined |
 |----------|---------|---------|-----------|-----------|
 |Brunatest_UpperJawScan_1| 763| 378   | 760  |  378  |
