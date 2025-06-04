@@ -851,6 +851,7 @@ Som den sidste del af projektet er der udviklet en pipeline, der tager 3D IOS sc
 Processen at gå fra .PLY-fil til 2D billeder af tænderne sker i et kodestykke, vi har fået af vores vejledere. Vi integrerede det kodestykke og tilføjede et par linjer, så 2D billederne blev omdannet til samme format, som vi brugte til træning. Efterfølgende bliver modellen indlæst og kørt på billederne, hvorefter pixel-matrix-søgningen bruges, og vi får den justerede placering af de forudsagte keypoints fra modellen.
 
 <img src="‎Data/Figurer/Bruna_Out.png" width="800" height="355"/> 
+![Test af Pipeline](‎Data/Figurer/Bruna_Out.png)
 
 | Filename | X_Model | Y_Model | X_Refined | Y_Refined |
 |----------|---------|---------|-----------|-----------|
