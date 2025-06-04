@@ -773,7 +773,7 @@ Efter at have anvendt pixel-matrix-søgning opnås justerede keypoints. Afstande
 | 013FHA7K_lower_left   | 842| 368|843 | 369 | 844 |369 | 1 | 0.08 |
 
 
-Nedenfor ses et histogram over fordelingen af den euklidiske afstand mellem ground truth og de raffinerede keypoints. Det fremgår tydeligt, at fejlen er reduceret markant i forhold til modellens oprindelige forudsigelser.
+Nedenfor ses et histogram over fordelingen af den euklidiske afstand mellem ground truth og de justerede keypoints. Det fremgår tydeligt, at fejlen er reduceret markant i forhold til modellens oprindelige forudsigelser.
 
 <img src="Data/Figurer/Histogram_efter_pixelmatrix.png" width="900" height="400"/> 
 
