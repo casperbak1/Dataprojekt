@@ -606,7 +606,7 @@ Træningen kan grundlæggende opdeles i følgende faser:
         * Resultatet fra RoI Box Head er altså regioner, der med højere sikkerhed indeholder et objekt af den korrekte klasse, samt mere nøjagtige bounding boxes for disse objekter. Forslag, der klassificeres som baggrund (sorte områder i billedet) eller har lav tillidsscore (f.eks. kindtænder), fjernes.
     * **RoI Keypoint Head:**
         * For de regioner, som RoI Box Head har bekræftet som indeholdende et relevant objekt, aktiveres RoI Keypoint Head.
-        * Dette RoI Head's opgave er at forudsige placeringen af de specifikke keypoints *inden for hver bekræftet objekt-bounding box*.
+        * Det er RoI keypoints Head's opgave at forudsige placeringen af de specifikke keypoints *inden for hver bekræftet objekt-bounding box*.
         * Modellen generer et **heatmap**, hvor hver værdi efter aktiveringsfunktionen (ReLU) repræsenterer sandsynligheden for, at det pågældende keypoint befinder sig inden for objektets region.
         
 8.  **Loss, Backpropagation og Optimering:**
