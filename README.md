@@ -29,6 +29,7 @@
 ---
 
 ## Mappestruktur
+Mappestrukturen kan udfoldes ved at klikke på pilene.
 <details open>
   <summary>📁 Dataprojekt/</summary>
   <ul>
