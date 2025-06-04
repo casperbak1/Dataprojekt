@@ -467,9 +467,9 @@ Og den nye CSV vil derfor blive til:
 - Et *par* = 4 billeder med koordinater (left/right, upper/lower)
 - Ufuldstændige par → *Unannotated Data Pairs*
 - Resten inddeles i:
-    - *Annotated Data Pairs* (træning)
-    - *Annotated Verication data* (verifikation under træning)
-    - *Annotated Test data* (test efter træning)
+    - *Annotated Data Pairs* - 80% (træning)
+    - *Annotated Verication data* - 5% (verifikation under træning)
+    - *Annotated Test data* - 15% (test efter træning)
 
 > Outliers og fejl rettes i CSV efter databehandling.  
 > Alt databehandling findes i `Splitting_and_flipping_of_images.ipynb`.
