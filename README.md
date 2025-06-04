@@ -686,7 +686,7 @@ $$
 
 Her er \$N\$ antallet af predikterede punkter, og \$K\$ er antallet af korrekt placerede punkter indenfor et tilladt "fejl"-interval. Vi har brugt intervaller, der tillader 0.5, 1 og 2 mm afstand i forhold til ground truth, hvor vi benytter den euklidiske afstand.
 
-SDR viser, hvor stor en andel af modellens forudsigelser der ligger indenfor et givent toleranceniveau fra ground truth (fx 0.5, 1 eller 2 mm). Det er særligt nyttigt, hvis man vil vide, hvor ofte modellen rammer “tilstrækkeligt tæt” på det korrekte punkt, givet at man accepterer en vis fejlmargin.
+ SDR er særligt nyttigt, hvis man vil vide, hvor ofte modellen rammer “tilstrækkeligt tæt” på det korrekte punkt, givet at man accepterer en vis fejlmargin.
 
 **Weighted Cohen’s kappa** (\$\kappa\_w\$) bruges til at måle, hvor god overensstemmelse der er mellem modellens klassifikation og den sande (ekspert-annoterede) klasse, hvor tilfældig overensstemmelse er korrigeret for:
 
