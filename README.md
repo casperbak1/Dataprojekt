@@ -766,7 +766,7 @@ Vores model rammer i gennemsnit 1.18 pixels eller 0.095 mm fra den korrekte y-v�
 
 ### Resultater efter pixel-matrix-søgning
 
-Efter at have anvendt pixel-matrix-søgning opnås justerede keypoints. Afstanden mellem disse raffinerede keypoints og de sande værdier er målt i både pixels og millimeter og gemt i KP_Refinement_Distance.csv:
+Efter at have anvendt pixel-matrix-søgning opnås justerede keypoints. Afstanden mellem disse justerede keypoints og de sande værdier er målt i både pixels og millimeter og gemt i KP_Refinement_Distance.csv:
 
 | Filename | X_Model  | Y_Model  | X_Refined  | Y_Refined | X_True | Y_True | Refined_Pixel_Dist| Refined_mm_Dist|
 |----------------------------|-----|-----|-----|-----|-----|-----|-----|-----|
