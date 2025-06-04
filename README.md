@@ -841,7 +841,7 @@ Ved brug af de evalueringsmetoder, der er beskrevet i afsnittet "Evualeringsmeto
 
 
 Ud fra vores resultater ses det, at vi får en MRE på 0,12 mm og en SDR på henholdsvis 89 %, 96 % og 99 %. 
-På de simulerede testdata har Classification Accuracy en gennemsnitlig nøjagtighed på 95,34 %, og den kvadratisk vægtede Cohen’s kappa er på 0,989. 
+På de simulerede testdata har Classification Accuracy en gennemsnitlig nøjagtighed på 95,34 %, og den kvadratisk vægtede Cohen’s kappa er på 0,989 i gennemsnit. 
 
 Disse resultater tyder på, at modellen leverer en meget præcis keypoint‐placering og en robust patientklassifikation.
 
