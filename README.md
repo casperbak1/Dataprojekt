@@ -6,17 +6,16 @@
 ## Indholdsfortegnelse 
 
 - [Hurtigt Overblik](#hurtigt-overblik-over-filstruktur )
-  - [Mappestruktur](#Mappestruktur)
+- [Mappestruktur](#Mappestruktur)
 - [Projektbeskrivelse](#projektbeskrivelse)
   - [Abstract](#abstract)
   - [Introduktion](#introduktion)
   - [Data og Databehandling](#data-og-databehandling)
-    - [Databehandling](#databehandling)
-  - [RCNN-netværk](#Keypoints-R-CNN-netværk)
+  - [Keypoint RCNN-netværk](#Keypoint-R-CNN-netværk)
   - [Pixel-matrix](#pixel-matrix)
   - [Evalueringsmetoder](#evalueringsmetoder)
   - [Resultater](#resultater)
-  - [Pipeline](#pipeline)
+- [Pipeline](#pipeline)
 
 ---
 
@@ -390,7 +389,7 @@ I dette projekt er følgende klassifikationer blevet anvendt som udgangspunkt fo
 1. Udvikling og træning af maskinlæringsmodeller til præcis overbidsklassificering.
 2. Udarbejdelse af en pipeline, der går fra 3D-filer (.PLY) til keypoint-markering, der muliggør automatisk måling.
 
-**Bemærk:** Resten af denne projektbeskrivelse omhandler kun punkt 1. Pipeline beskrives separat i sektionen "Pipeline".
+**Bemærk:** Resten af denne projektbeskrivelse indtil sektionen Pipeline omhandler punkt 1. Pipelinen beskrives separat i sektionen "Pipeline".
 
 Projektet bygger på et offentligt datasæt bestående af 1.351 tredimensionelle intraorale scanninger. Til dette projekt er 3D-scanningerne konverteret til todimensionelle billeder. Som model anvender vi Keypoint R-CNN, en videreudvikling af Mask R-CNN, der er designet til at finde præcise keypoints i billeder. Ved at kombinere regions­forslag med punktdetektion gør modellen det muligt at identificere nøjagtige punkter på tænder, hvilket er afgørende for vores opgave, da overbid måles som den vertikale afstand mellem to præcise punkter på fortænderne.
 
@@ -542,7 +541,7 @@ Modellen er altså nu klar til at blive trænet.
 
 ---
 
-## Keypoints R-CNN-netværk
+## Keypoint R-CNN-netværk
 
 I vores arbejde har vi trænet en model ved hjælp af en forudtrænet model fra Detectron2-biblioteket. Den specifikke model, vi har anvendt, er **"keypoint_rcnn_X_101_32x8d_FPN_3x"**. 
 
