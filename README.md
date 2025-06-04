@@ -241,9 +241,6 @@ Mappestrukturen kan udfoldes ved at klikke på pilene.
               </ul>
             </details>
           </li>
-              </ul>
-            </details>
-          </li>
           <li>
             <details>
               <summary>📁 Pipeline_code/</summary>
