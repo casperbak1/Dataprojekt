@@ -789,7 +789,7 @@ Efter anvendelse af pixel-matrix-søgning er der udarbejdet følgende statistik 
 |Min difference|	-9.0|	-0.72|
 |Max difference|	20.0|	1.60|
 
-Efter pixel-søgningen er modellens absolutte gennemsnitlige afvigelse reduceret til 0.457 pixels, svarende til 0.037 mm fra den korrekte y-værdi. Den gennemsnitlige forskel ligger nu på 0.03, hvilket indikerer, at modellen kun i meget begrænset omfang overskyder y-værdien.
+Efter pixel-søgningen er modellens absolutte gennemsnitlige afvigelse reduceret til 0.457 pixels, svarende til 0.037 mm fra den korrekte y-værdi. Den gennemsnitlige forskel ligger nu på 0.03 pixels svarende til 0.0024 mm, hvilket indikerer, at modellen kun i meget begrænset omfang overskyder y-værdien.
 Både medianen og middelværdien for forskellene er faldet markant sammenlignet med før pixel-søgningen, hvilket illustrerer en tydelig forbedring i modellens præcision. Selvom der stadig findes enkelte outliers, er både minimums- og maksimumafvigelserne blevet mindre, hvilket viser, at de mest ekstreme fejl er reduceret.
 
 Outputtet fra pixel matrixen kan findes i mappen **Pixel Matrix/Image Output**. Her er det muligt at downloade enhver html fil, åbne den i sin browser og interagere med visualiseringen. 
