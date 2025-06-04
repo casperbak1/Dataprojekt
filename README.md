@@ -847,8 +847,8 @@ Disse resultater tyder på, at modellen leverer en meget præcis keypoint‐plac
 
 
 ## Pipeline
-Som den sidste del af projektet er der udviklet en pipeline der tager 3D IOS scanninger af .PLY formatet som input. Som output kommer der en visuel forudsigelse af de 4 punkter der danner grundlag for overbidsmålingen for en patient.
-At gå fra .PLY fil til 2D billeder af tænderne, sker i et kodestykke vi har fået givet af vores vejledere. Vi integrerede det  kodestykke og tilføjede et par linjer, så 2D billederne blev til samme format som vi brugte til træning. Efterfølgende bliver modellen indlæst og kørt og til sidst bliver pixel-matrixen kørt, så vi får den justerede placering.
+Som den sidste del af projektet er der udviklet en pipeline, der tager 3D IOS scanninger af .PLY formatet som input. Som output kommer der en visuel forudsigelse af de 4 punkter, der danner grundlag for overbidsmålingen for en patient.
+Processen at gå fra .PLY-fil til 2D billeder af tænderne sker i et kodestykke, vi har fået af vores vejledere. Vi integrerede det kodestykke og tilføjede et par linjer, så 2D billederne blev omdannet til samme format, som vi brugte til træning. Efterfølgende bliver modellen indlæst og kørt på billederne, hvorefter pixel-matrix-søgningen bruges, og vi får den justerede placering af de forudsagte keypoints fra modellen.
 
 <img src="‎Data/Figurer/Bruna_Out.png" width="800" height="400"/> 
 
