@@ -694,9 +694,9 @@ $$
 \kappa_w = 1 - \frac{\sum_{i,j} w_{i,j} O_{i,j}}{\sum_{i,j} w_{i,j} E_{i,j}}
 $$
 
-Her er \$O\_{i,j}\$ antallet af observationer, hvor annoteringen var klasse \$i\$ og modellen valgte klasse \$j\$, og \$E\_{i,j}\$ er den forventede andel af sådanne tilfælde udregnet ved (række*kolonne/total).
+Her er \$O\_{i,j}\$ antallet af observationer, hvor annoteringen var klasse \$i\$ og modellen valgte klasse \$j\$, og \$E\_{i,j}\$ er den forventede andel af sådanne tilfælde udregnet ud fra enighedsmatricen \$O\$.
 
-Vægtene \$w\_{i,j}\$ bruges til at straffe større fejl hårdere. Ved **kvadratisk vægtning** (“quadratic weights”) beregnes vægten som:
+Vægtene \$w\_{i,j}\$ bruges til at straffe større fejl hårdere. Ved **kvadratisk vægtning** beregnes vægten som:
 
 $$
 w_{i,j} = \left( \frac{i - j}{k - 1} \right)^2
