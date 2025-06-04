@@ -597,7 +597,7 @@ Træningen kan grundlæggende opdeles i følgende faser:
 
 
 7.  **Fra Regionsforslag til Keypoints: RoI (Region of Interest) Heads**
-    * Efter RPN har identificeret potentielle regioner (region proposals), hvor objekter sandsynligvis befinder sig, tager de såkaldte **RoI (Region of Interest) Heads** over for en mere detaljeret analyse af hver region.
+    * Efter RPN har identificeret potentielle regioner (region proposals), hvor objekter sandsynligvis befinder sig, tager de såkaldte **RoI Heads** over for en mere detaljeret analyse af hver region.
     * **RoIAlign:** For hver region foreslået af RPN skal der udtrækkes et feature map af fast størrelse fra de feature maps, der er genereret af FPN. RoIAlign sikrer, at features udtrækkes præcist for regionen, uanset dens oprindelige størrelse og proportioner, og omdannes til et lille feature map med faste dimensioner (f.eks. 7x7 eller 14x14). Dette er nødvendigt for de efterfølgende fuldt forbundne lag i RoI heads.
     * **RoI Box Head:**
         * De faste feature maps (ét for hver region proposal) fra RoIAlign sendes nu til RoI Box Head. Denne udfører to centrale opgaver for hver region:
