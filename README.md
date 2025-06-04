@@ -416,7 +416,7 @@ Til billederne var der **1166 annoteringer**, eksempelvis:
 
 1. Split kombinerede billeder til tre separate billeder (left, middle, right)
 2. Fordel billeder i mapper: **Bolton Data** og **Overbite Data**
-3. Ensret orientering og koordinationer i "Overbite Data" (ved transponering)
+3. Ensret orientering og koordinater i "Overbite Data" (ved transponering)
 4. Gruppér data som billed-par
 5. Del data i træning, test, verifikation, og uannoteret data
 
