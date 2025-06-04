@@ -503,7 +503,7 @@ Modellen modtager altså som input til træning 1580 billeder af følgende forma
 
 > *Keypoint markeret med rød, og bounding box markeret med grå*
 
-Og annoteringen:
+Og annoteringen i COCO-json format:
 
 ```json
 {
