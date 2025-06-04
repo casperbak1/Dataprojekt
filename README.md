@@ -807,7 +807,7 @@ Outputtet fra pixel matrixen kan findes i mappen **Pixel Matrix/Image Output**. 
 ### Test med simulerede CSV-filer
 Til sidst er modellen blevet testet på simulerede CSV-filer. Hver fil repræsenterer 75 patienter, hvor en vertikal translate key er angivet for hver patient. Denne nøgle bruges til at justere overkæben vertikalt, så både over- og underkæbe bringes ind i samme koordinatsystem og danner et “bid”.
 Disse translate keys er udarbejdet af vores vejledere og sikrer, at hvert tandsæt i testdata har en bestemt grad af overbid. Vi har modtaget 10 af disse simulerede CSV-filer, som gør det muligt at evaluere modellen i en simuleret virkelighed. Hvis en patients overbid ligger på grænsen mellem to klasser, så klassificeres patienten med klassen None og bliver ekskluderet fra testen.
-Ved brug af de evalueringsmetoder, der er beskrevet i det foregående afsnit, har vi opnået følgende resultater for de 10 tests:
+Ved brug af de evalueringsmetoder, der er beskrevet i afsnittet "Evualeringsmetoder", har vi opnået følgende resultater for de 10 tests:
 
 
 #### Detection Metrics (gælder for alle tests)
