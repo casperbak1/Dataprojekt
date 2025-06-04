@@ -726,7 +726,7 @@ Da filen overstiger GitHubs uploadgrænse, er den ikke inkluderet direkte i repo
 ### Keypoint-placering
 
 I mappen `Overbite/Output/Keypoint Placement/` ligger filen `KP_Placement.csv`.
-Denne indeholder både de sande (ground truth) og de forudsagte keypoints samt den euklidiske distance mellem disse målt i pixels og millimeter.
+Denne indeholder både de sande (ground truth) og de forudsagte keypoints samt den euklidiske afstand mellem disse målt i pixels og millimeter.
 
 Eksempel på indhold:
 
