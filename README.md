@@ -585,7 +585,7 @@ Træningen kan grundlæggende opdeles i følgende faser:
 
 6.  **Region Proposal Network (RPN):**
     * RPN modtager de kombinerede feature maps fra FPN.
-    * Dens opgave er at generere tusindvis af "region proposals" – små afgrænsede bokse af forskellige størrelser og former, der dækker områder i billedet, hvor der potentielt kunne være et relevant objekt.
+    * Dens opgave er at generere "region proposals" – små afgrænsede bokse af forskellige størrelser og former, der dækker områder i billedet, hvor der potentielt kunne være et relevant objekt.
     * For hver af disse foreslåede bokse beregner RPN en score, der angiver sandsynligheden for, at boksen rent faktisk indeholder et objekt af interesse.
     * De mest lovende forslag (dem med højest score) sendes videre til det næste trin.
 
